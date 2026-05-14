@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>갤러리 - EMCL 고려대 에너지물질순환연구실</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Roboto:wght@400;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 10px;
+      margin-top: 16px;
+    }
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 4px;
+      cursor: pointer;
+      background: #eee;
+    }
+    .gallery-item .thumb {
+      width: 100%;
+      padding-top: 75%;
+      position: relative;
+      overflow: hidden;
+    }
+    .gallery-item .thumb-inner {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      color: #fff;
+      font-weight: 600;
+      transition: transform 0.3s;
+    }
+    .gallery-item:hover .thumb-inner {
+      transform: scale(1.05);
+    }
+    .gallery-item .caption {
+      padding: 6px 8px;
+      font-size: 11px;
+      color: #444;
+      background: #fff;
+      border: 1px solid #eee;
+      border-top: none;
+    }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+
+  <header id="header">
+    <div class="header-top">
+      <div class="header-logo">
+        <div class="logo-ku">고려대학교<span>KOREA UNIVERSITY</span></div>
+        <div class="logo-emcl">
+          <span class="emcl-title">EMCL</span>
+          <span class="emcl-sub">에너지물질순환연구실</span>
+        </div>
+      </div>
+      <div class="header-utils">
+        <a href="../index.html">HOME</a>
+        <a href="contact.html">CONTACT</a>
+      </div>
+    </div>
+  </header>
+
+  <div id="gnb">
+    <button class="nav-toggle" aria-label="메뉴 열기"><span></span><span></span><span></span></button>
+    <nav>
+      <ul>
+        <li><a href="introduction.html">INTRODUCTION</a></li>
+        <li><a href="professor.html">PROFESSOR</a></li>
+        <li><a href="members.html">MEMBERS</a></li>
+        <li><a href="lectures.html">LECTURES</a></li>
+        <li><a href="publications.html">PUBLICATIONS</a></li>
+        <li><a href="project.html">PROJECT</a></li>
+        <li><a href="community.html" class="active">COMMUNITY</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <main>
+    <div class="page-container">
+      <div class="breadcrumb">
+        <a href="../index.html">HOME</a>
+        <span class="sep">&gt;</span>
+        <a href="community.html">COMMUNITY</a>
+        <span class="sep">&gt;</span>
+        <span>갤러리</span>
+      </div>
+      <div class="page-header">
+        <h1>Gallery</h1>
+        <p>연구실 활동 사진</p>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <div class="thumb">
+            <div class="thumb-inner" style="background:linear-gradient(135deg,#8b0000,#c0392b);">연구실 전경</div>
+          </div>
+          <div class="caption">연구실 전경 (2024)</div>
+        </div>
+        <div class="gallery-item">
+          <div class="thumb">
+            <div class="thumb-inner" style="background:linear-gradient(135deg,#1a5276,#2980b9);">실험 장면</div>
+          </div>
+          <div class="caption">PCM 실험 (2024)</div>
+        </div>
+        <div class="gallery-item">
+          <div class="thumb">
+            <div class="thumb-inner" style="background:linear-gradient(135deg,#1e8449,#27ae60);">학술대회</div>
+          </div>
+          <div class="caption">ICEB 2024 발표</div>
+        </div>
+        <div class="gallery-item">
+          <div class="thumb">
+            <div class="thumb-inner" style="background:linear-gradient(135deg,#784212,#e67e22);">MT 행사</div>
+          </div>
+          <div class="caption">연구실 MT (2024)</div>
+        </div>
+        <div class="gallery-item">
+          <div class="thumb">
+            <div class="thumb-inner" style="background:linear-gradient(135deg,#4a235a,#8e44ad);">세미나</div>
+          </div>
+          <div class="caption">연구실 세미나</div>
+        </div>
+        <div class="gallery-item">
+          <div class="thumb">
+            <div class="thumb-inner" style="background:linear-gradient(135deg,#1a3a4a,#2e86c1);">졸업식</div>
+          </div>
+          <div class="caption">2024 졸업식</div>
+        </div>
+        <div class="gallery-item">
+          <div class="thumb">
+            <div class="thumb-inner" style="background:linear-gradient(135deg,#2e4057,#48a999);">장비 설치</div>
+          </div>
+          <div class="caption">신규 장비 설치</div>
+        </div>
+        <div class="gallery-item">
+          <div class="thumb">
+            <div class="thumb-inner" style="background:linear-gradient(135deg,#5d4037,#a1887f);">수상</div>
+          </div>
+          <div class="caption">우수논문상 수상</div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer id="footer">
+    <div class="footer-inner">
+      <div class="footer-info">
+        <strong>에너지물질순환연구실 (EMCL)</strong><br>
+        서울특별시 성북구 안암로 145, 고려대학교 공과대학 기계공학부
+      </div>
+      <div class="footer-links">
+        <a href="https://www.korea.ac.kr" target="_blank" rel="noopener">고려대학교</a>
+        <a href="contact.html">오시는 길</a>
+      </div>
+    </div>
+    <div class="footer-copy">COPYRIGHT&copy; <strong>EMCL</strong>. ALL RIGHT RESERVED.</div>
+  </footer>
+
+</div>
+<script src="../js/main.js"></script>
+</body>
+</html>

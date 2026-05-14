@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>논문 - EMCL 고려대 에너지물질순환연구실</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Roboto:wght@400;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+<div id="wrapper">
+
+  <header id="header">
+    <div class="header-top">
+      <div class="header-logo">
+        <div class="logo-ku">고려대학교<span>KOREA UNIVERSITY</span></div>
+        <div class="logo-emcl">
+          <span class="emcl-title">EMCL</span>
+          <span class="emcl-sub">에너지물질순환연구실</span>
+        </div>
+      </div>
+      <div class="header-utils">
+        <a href="../index.html">HOME</a>
+        <a href="contact.html">CONTACT</a>
+      </div>
+    </div>
+  </header>
+
+  <div id="gnb">
+    <button class="nav-toggle" aria-label="메뉴 열기"><span></span><span></span><span></span></button>
+    <nav>
+      <ul>
+        <li><a href="introduction.html">INTRODUCTION</a></li>
+        <li><a href="professor.html">PROFESSOR</a></li>
+        <li><a href="members.html">MEMBERS</a></li>
+        <li><a href="lectures.html">LECTURES</a></li>
+        <li><a href="publications.html" class="active">PUBLICATIONS</a></li>
+        <li><a href="project.html">PROJECT</a></li>
+        <li><a href="community.html">COMMUNITY</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <main>
+    <div class="page-container">
+      <div class="breadcrumb">
+        <a href="../index.html">HOME</a>
+        <span class="sep">&gt;</span>
+        <span>PUBLICATIONS</span>
+      </div>
+      <div class="page-header">
+        <h1>Publications</h1>
+        <p>Journal Articles &amp; Conference Papers</p>
+      </div>
+
+      <!-- Filter tabs -->
+      <div style="display:flex;gap:6px;margin-bottom:16px;flex-wrap:wrap;">
+        <button onclick="filterPub('all',this)" style="background:#8b0000;color:#fff;border:none;padding:5px 14px;font-size:11px;border-radius:2px;cursor:pointer;font-family:inherit;">전체</button>
+        <button onclick="filterPub('journal',this)" style="background:#eee;color:#555;border:none;padding:5px 14px;font-size:11px;border-radius:2px;cursor:pointer;font-family:inherit;">저널 논문</button>
+        <button onclick="filterPub('conference',this)" style="background:#eee;color:#555;border:none;padding:5px 14px;font-size:11px;border-radius:2px;cursor:pointer;font-family:inherit;">학술대회</button>
+      </div>
+
+      <div class="pub-list" id="pubList">
+
+        <div class="pub-item" data-type="journal">
+          <div class="pub-title">Thermal energy storage performance of phase change material composites with enhanced thermal conductivity for building applications</div>
+          <div class="pub-authors">Hong G., Kim Y., Lee E., Park S.</div>
+          <div class="pub-journal">Applied Energy <span class="pub-year">2024</span></div>
+        </div>
+
+        <div class="pub-item" data-type="journal">
+          <div class="pub-title">Nanocomposite phase change materials for latent heat thermal energy storage: A review of preparation methods and thermal properties</div>
+          <div class="pub-authors">Kim Y., Hong G., Choi H.</div>
+          <div class="pub-journal">Energy Storage Materials <span class="pub-year">2024</span></div>
+        </div>
+
+        <div class="pub-item" data-type="journal">
+          <div class="pub-title">Plus energy building design with integrated renewable energy systems and thermal storage</div>
+          <div class="pub-authors">Lee E., Park S., Hong G.</div>
+          <div class="pub-journal">Energy and Buildings <span class="pub-year">2023</span></div>
+        </div>
+
+        <div class="pub-item" data-type="conference">
+          <div class="pub-title">Experimental investigation of PCM-based thermal energy storage for HVAC applications</div>
+          <div class="pub-authors">Park S., Hong G.</div>
+          <div class="pub-journal">International Conference on Energy and Buildings (ICEB 2023) <span class="pub-year">2023</span></div>
+        </div>
+
+        <div class="pub-item" data-type="journal">
+          <div class="pub-title">Thermoelectric energy harvesting from building envelope using novel composite materials</div>
+          <div class="pub-authors">Choi H., Kim Y., Hong G.</div>
+          <div class="pub-journal">Nano Energy <span class="pub-year">2023</span></div>
+        </div>
+
+        <div class="pub-item" data-type="conference">
+          <div class="pub-title">Development of high-performance thermal interface materials for electronics cooling</div>
+          <div class="pub-authors">Hong G., Lee E.</div>
+          <div class="pub-journal">KSME Annual Conference <span class="pub-year">2022</span></div>
+        </div>
+
+        <div class="pub-item" data-type="journal">
+          <div class="pub-title">Microencapsulation of phase change materials for thermal energy storage in building materials</div>
+          <div class="pub-authors">Kim Y., Park S., Hong G.</div>
+          <div class="pub-journal">Construction and Building Materials <span class="pub-year">2022</span></div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <footer id="footer">
+    <div class="footer-inner">
+      <div class="footer-info">
+        <strong>에너지물질순환연구실 (EMCL)</strong><br>
+        서울특별시 성북구 안암로 145, 고려대학교 공과대학 기계공학부
+      </div>
+      <div class="footer-links">
+        <a href="https://www.korea.ac.kr" target="_blank" rel="noopener">고려대학교</a>
+        <a href="contact.html">오시는 길</a>
+      </div>
+    </div>
+    <div class="footer-copy">COPYRIGHT&copy; <strong>EMCL</strong>. ALL RIGHT RESERVED.</div>
+  </footer>
+
+</div>
+<script src="../js/main.js"></script>
+<script>
+function filterPub(type, btn) {
+  document.querySelectorAll('#pubList .pub-item').forEach(item => {
+    item.style.display = (type === 'all' || item.dataset.type === type) ? '' : 'none';
+  });
+  document.querySelectorAll('button[onclick^="filterPub"]').forEach(b => {
+    b.style.background = '#eee'; b.style.color = '#555';
+  });
+  btn.style.background = '#8b0000'; btn.style.color = '#fff';
+}
+</script>
+</body>
+</html>
