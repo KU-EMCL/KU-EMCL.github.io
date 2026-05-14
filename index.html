@@ -1,1225 +1,387 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EMCL · Energy & Material Cycle Lab — Korea University</title>
-<meta name="description" content="고려대학교 에너지물질순환연구실 (Energy & Material Cycle Lab). 지속가능한 에너지와 물질 순환을 연구합니다.">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-
-<style>
-  :root {
-    --bg: #f7f5f0;
-    --bg-alt: #efece4;
-    --ink: #1a2820;
-    --ink-soft: #4a5550;
-    --ink-mute: #7d847f;
-    --accent: #2d5a3d;
-    --accent-warm: #b8754a;
-    --line: #d8d2c4;
-    --paper: #fdfcf8;
-  }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  html { scroll-behavior: smooth; }
-
-  body {
-    font-family: 'Inter', -apple-system, sans-serif;
-    background: var(--bg);
-    color: var(--ink);
-    line-height: 1.65;
-    font-weight: 400;
-    -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
-  }
-
-  .serif { font-family: 'Fraunces', Georgia, serif; }
-  .mono { font-family: 'JetBrains Mono', monospace; }
-
-  /* ===== NAVIGATION ===== */
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    background: rgba(247, 245, 240, 0.85);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid transparent;
-    z-index: 100;
-    transition: border-color 0.3s, background 0.3s;
-  }
-  nav.scrolled { border-bottom-color: var(--line); }
-
-  .nav-inner {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 1.2rem 2.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .logo {
-    font-family: 'Fraunces', serif;
-    font-weight: 500;
-    font-size: 1.25rem;
-    letter-spacing: -0.01em;
-    color: var(--ink);
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-  }
-  .logo-mark {
-    width: 28px; height: 28px;
-    border: 1.5px solid var(--accent);
-    border-radius: 50%;
-    position: relative;
-  }
-  .logo-mark::before, .logo-mark::after {
-    content: '';
-    position: absolute;
-    background: var(--accent);
-  }
-  .logo-mark::before {
-    top: 50%; left: 15%; right: 15%;
-    height: 1.5px;
-    transform: translateY(-50%);
-  }
-  .logo-mark::after {
-    left: 50%; top: 15%; bottom: 15%;
-    width: 1.5px;
-    transform: translateX(-50%);
-  }
-
-  .nav-links {
-    display: flex;
-    gap: 2.5rem;
-    list-style: none;
-  }
-  .nav-links a {
-    color: var(--ink-soft);
-    text-decoration: none;
-    font-size: 0.92rem;
-    font-weight: 500;
-    letter-spacing: 0.01em;
-    transition: color 0.2s;
-    position: relative;
-  }
-  .nav-links a:hover { color: var(--accent); }
-  .nav-links a::after {
-    content: '';
-    position: absolute;
-    bottom: -4px; left: 0;
-    width: 0; height: 1px;
-    background: var(--accent);
-    transition: width 0.3s ease;
-  }
-  .nav-links a:hover::after { width: 100%; }
-
-  /* ===== HERO ===== */
-  .hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    position: relative;
-    padding: 8rem 2.5rem 4rem;
-    overflow: hidden;
-  }
-
-  .hero-bg {
-    position: absolute;
-    inset: 0;
-    background: 
-      radial-gradient(ellipse at top right, rgba(45, 90, 61, 0.08), transparent 50%),
-      radial-gradient(ellipse at bottom left, rgba(184, 117, 74, 0.06), transparent 50%);
-    pointer-events: none;
-  }
-
-  /* Decorative grain texture */
-  .grain {
-    position: absolute;
-    inset: 0;
-    opacity: 0.4;
-    pointer-events: none;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.15'/%3E%3C/svg%3E");
-    mix-blend-mode: multiply;
-  }
-
-  .hero-inner {
-    max-width: 1280px;
-    margin: 0 auto;
-    width: 100%;
-    position: relative;
-    z-index: 2;
-    display: grid;
-    grid-template-columns: 1.4fr 1fr;
-    gap: 4rem;
-    align-items: center;
-  }
-
-  .hero-eyebrow {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.78rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 1.5rem;
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-    opacity: 0;
-    animation: fadeUp 0.8s 0.2s forwards;
-  }
-  .hero-eyebrow::before {
-    content: '';
-    width: 32px;
-    height: 1px;
-    background: var(--accent);
-  }
-
-  .hero-title {
-    font-family: 'Fraunces', serif;
-    font-size: clamp(2.8rem, 6vw, 5rem);
-    font-weight: 300;
-    line-height: 1.05;
-    letter-spacing: -0.025em;
-    color: var(--ink);
-    margin-bottom: 1.8rem;
-    opacity: 0;
-    animation: fadeUp 0.8s 0.4s forwards;
-  }
-  .hero-title em {
-    font-style: italic;
-    font-weight: 400;
-    color: var(--accent);
-  }
-
-  .hero-subtitle {
-    font-size: 1.15rem;
-    color: var(--ink-soft);
-    line-height: 1.7;
-    max-width: 32rem;
-    margin-bottom: 2.5rem;
-    opacity: 0;
-    animation: fadeUp 0.8s 0.6s forwards;
-  }
-
-  .hero-meta {
-    display: flex;
-    gap: 2.5rem;
-    font-size: 0.88rem;
-    color: var(--ink-mute);
-    opacity: 0;
-    animation: fadeUp 0.8s 0.8s forwards;
-  }
-  .hero-meta-item { display: flex; flex-direction: column; gap: 0.3rem; }
-  .hero-meta-label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.7rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--ink-mute);
-  }
-  .hero-meta-value { color: var(--ink); font-weight: 500; }
-
-  /* Hero visual */
-  .hero-visual {
-    position: relative;
-    aspect-ratio: 1;
-    opacity: 0;
-    animation: fadeIn 1.2s 0.6s forwards;
-  }
-
-  .hero-visual svg { width: 100%; height: 100%; }
-
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
-  @keyframes rotate {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-  }
-  @keyframes rotateReverse {
-    from { transform: rotate(360deg); }
-    to { transform: rotate(0deg); }
-  }
-
-  .ring-outer { animation: rotate 60s linear infinite; transform-origin: center; }
-  .ring-mid { animation: rotateReverse 45s linear infinite; transform-origin: center; }
-  .ring-inner { animation: rotate 30s linear infinite; transform-origin: center; }
-
-  /* ===== SECTIONS ===== */
-  section { padding: 7rem 2.5rem; position: relative; }
-  .container { max-width: 1280px; margin: 0 auto; }
-
-  .section-header {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 4rem;
-    margin-bottom: 4rem;
-    align-items: end;
-  }
-  .section-label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.78rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--accent);
-    padding-top: 1rem;
-    border-top: 1px solid var(--line);
-  }
-  .section-title {
-    font-family: 'Fraunces', serif;
-    font-size: clamp(2rem, 4vw, 3.2rem);
-    font-weight: 300;
-    line-height: 1.1;
-    letter-spacing: -0.02em;
-    color: var(--ink);
-  }
-  .section-title em {
-    font-style: italic;
-    color: var(--accent);
-  }
-
-  /* ===== ABOUT ===== */
-  #about { background: var(--paper); }
-
-  .about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5rem;
-    align-items: start;
-  }
-  .about-text {
-    font-size: 1.08rem;
-    line-height: 1.85;
-    color: var(--ink-soft);
-  }
-  .about-text p { margin-bottom: 1.5rem; }
-  .about-text p:first-letter {
-    font-family: 'Fraunces', serif;
-    font-size: 3rem;
-    font-weight: 400;
-    float: left;
-    line-height: 0.9;
-    margin: 0.3rem 0.6rem 0 0;
-    color: var(--accent);
-  }
-
-  .stats {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    margin-top: 2rem;
-    padding-top: 2rem;
-    border-top: 1px solid var(--line);
-  }
-  .stat-item {}
-  .stat-num {
-    font-family: 'Fraunces', serif;
-    font-size: 3rem;
-    font-weight: 300;
-    color: var(--accent);
-    line-height: 1;
-    margin-bottom: 0.4rem;
-  }
-  .stat-label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.72rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--ink-mute);
-  }
-
-  /* ===== RESEARCH ===== */
-  .research-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-  }
-  .research-card {
-    background: var(--paper);
-    padding: 2.5rem 2rem;
-    border: 1px solid var(--line);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    position: relative;
-    overflow: hidden;
-  }
-  .research-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 2px;
-    background: var(--accent);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.4s ease;
-  }
-  .research-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 20px 40px -20px rgba(45, 90, 61, 0.15);
-  }
-  .research-card:hover::before { transform: scaleX(1); }
-
-  .research-num {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.78rem;
-    color: var(--ink-mute);
-    margin-bottom: 1.5rem;
-  }
-  .research-icon {
-    width: 48px; height: 48px;
-    margin-bottom: 1.5rem;
-    color: var(--accent);
-  }
-  .research-title {
-    font-family: 'Fraunces', serif;
-    font-size: 1.5rem;
-    font-weight: 400;
-    margin-bottom: 0.8rem;
-    color: var(--ink);
-    letter-spacing: -0.01em;
-  }
-  .research-desc {
-    font-size: 0.95rem;
-    color: var(--ink-soft);
-    line-height: 1.7;
-  }
-  .research-tags {
-    margin-top: 1.5rem;
-    padding-top: 1.5rem;
-    border-top: 1px dashed var(--line);
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-  .tag {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.68rem;
-    letter-spacing: 0.05em;
-    padding: 0.3rem 0.7rem;
-    background: var(--bg-alt);
-    color: var(--ink-soft);
-    border-radius: 2px;
-  }
-
-  /* ===== PEOPLE ===== */
-  #people { background: var(--paper); }
-
-  .pi-card {
-    display: grid;
-    grid-template-columns: 280px 1fr;
-    gap: 3rem;
-    margin-bottom: 5rem;
-    align-items: start;
-  }
-  .pi-photo {
-    aspect-ratio: 3/4;
-    background: linear-gradient(135deg, var(--bg-alt) 0%, var(--line) 100%);
-    position: relative;
-    overflow: hidden;
-  }
-  .pi-photo::after {
-    content: 'PHOTO';
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.75rem;
-    letter-spacing: 0.15em;
-    color: var(--ink-mute);
-  }
-  .pi-name {
-    font-family: 'Fraunces', serif;
-    font-size: 2rem;
-    font-weight: 400;
-    margin-bottom: 0.3rem;
-    letter-spacing: -0.01em;
-  }
-  .pi-role {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.82rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 1.5rem;
-  }
-  .pi-bio {
-    color: var(--ink-soft);
-    line-height: 1.8;
-    margin-bottom: 1.5rem;
-  }
-  .pi-links {
-    display: flex;
-    gap: 1.5rem;
-    font-size: 0.88rem;
-  }
-  .pi-links a {
-    color: var(--ink);
-    text-decoration: none;
-    border-bottom: 1px solid var(--line);
-    padding-bottom: 2px;
-    transition: all 0.2s;
-  }
-  .pi-links a:hover {
-    color: var(--accent);
-    border-bottom-color: var(--accent);
-  }
-
-  .members-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.5rem;
-  }
-  .member-card {
-    background: var(--bg);
-    padding: 1.5rem;
-    border: 1px solid var(--line);
-    transition: all 0.3s;
-  }
-  .member-card:hover {
-    border-color: var(--accent);
-    transform: translateY(-2px);
-  }
-  .member-photo {
-    aspect-ratio: 1;
-    background: var(--bg-alt);
-    margin-bottom: 1rem;
-    border-radius: 50%;
-    position: relative;
-  }
-  .member-photo::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .member-name {
-    font-family: 'Fraunces', serif;
-    font-size: 1.1rem;
-    font-weight: 500;
-    margin-bottom: 0.2rem;
-  }
-  .member-role {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.72rem;
-    color: var(--ink-mute);
-    letter-spacing: 0.05em;
-  }
-
-  /* ===== PUBLICATIONS ===== */
-  .pub-filters {
-    display: flex;
-    gap: 0.5rem;
-    margin-bottom: 3rem;
-    flex-wrap: wrap;
-  }
-  .pub-filter {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.78rem;
-    padding: 0.6rem 1.2rem;
-    background: transparent;
-    border: 1px solid var(--line);
-    color: var(--ink-soft);
-    cursor: pointer;
-    transition: all 0.2s;
-    letter-spacing: 0.05em;
-  }
-  .pub-filter:hover { border-color: var(--accent); color: var(--accent); }
-  .pub-filter.active {
-    background: var(--accent);
-    color: var(--paper);
-    border-color: var(--accent);
-  }
-
-  .pub-list { list-style: none; }
-  .pub-item {
-    display: grid;
-    grid-template-columns: 80px 1fr auto;
-    gap: 2rem;
-    padding: 1.8rem 0;
-    border-bottom: 1px solid var(--line);
-    align-items: start;
-    transition: padding 0.3s;
-  }
-  .pub-item:hover { padding-left: 1rem; }
-  .pub-year {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.92rem;
-    color: var(--accent);
-    font-weight: 500;
-    padding-top: 0.2rem;
-  }
-  .pub-content { }
-  .pub-title {
-    font-family: 'Fraunces', serif;
-    font-size: 1.15rem;
-    font-weight: 500;
-    color: var(--ink);
-    margin-bottom: 0.4rem;
-    line-height: 1.4;
-  }
-  .pub-authors {
-    font-size: 0.9rem;
-    color: var(--ink-soft);
-    margin-bottom: 0.3rem;
-  }
-  .pub-authors strong { color: var(--accent); font-weight: 500; }
-  .pub-venue {
-    font-style: italic;
-    font-size: 0.88rem;
-    color: var(--ink-mute);
-    font-family: 'Fraunces', serif;
-  }
-  .pub-badge {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.68rem;
-    padding: 0.3rem 0.7rem;
-    background: var(--bg-alt);
-    color: var(--ink-soft);
-    letter-spacing: 0.05em;
-    align-self: start;
-    white-space: nowrap;
-  }
-
-  /* ===== NEWS ===== */
-  #news { background: var(--paper); }
-
-  .news-list { list-style: none; }
-  .news-item {
-    display: grid;
-    grid-template-columns: 140px 1fr;
-    gap: 2rem;
-    padding: 1.5rem 0;
-    border-bottom: 1px solid var(--line);
-  }
-  .news-date {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.82rem;
-    color: var(--ink-mute);
-    padding-top: 0.2rem;
-  }
-  .news-text { color: var(--ink); line-height: 1.7; }
-  .news-text strong { color: var(--accent); font-weight: 500; }
-
-  /* ===== CONTACT ===== */
-  .contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5rem;
-  }
-  .contact-info { }
-  .contact-block { margin-bottom: 2.5rem; }
-  .contact-label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.72rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--ink-mute);
-    margin-bottom: 0.6rem;
-  }
-  .contact-value {
-    font-family: 'Fraunces', serif;
-    font-size: 1.3rem;
-    color: var(--ink);
-  }
-  .contact-value a {
-    color: var(--ink);
-    text-decoration: none;
-    border-bottom: 1px solid var(--line);
-    transition: border-color 0.2s;
-  }
-  .contact-value a:hover { border-bottom-color: var(--accent); color: var(--accent); }
-
-  .map-placeholder {
-    aspect-ratio: 4/3;
-    background: linear-gradient(135deg, var(--bg-alt), var(--line));
-    position: relative;
-    border: 1px solid var(--line);
-    overflow: hidden;
-  }
-  .map-placeholder svg { width: 100%; height: 100%; }
-
-  /* ===== FOOTER ===== */
-  footer {
-    padding: 3rem 2.5rem;
-    background: var(--ink);
-    color: var(--bg);
-  }
-  .footer-inner {
-    max-width: 1280px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-  }
-  .footer-logo {
-    font-family: 'Fraunces', serif;
-    font-size: 1.1rem;
-    font-weight: 400;
-  }
-  .footer-text {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.78rem;
-    color: rgba(247, 245, 240, 0.5);
-    letter-spacing: 0.05em;
-  }
-
-  /* ===== RESPONSIVE ===== */
-  @media (max-width: 968px) {
-    .nav-inner { padding: 1rem 1.5rem; }
-    .nav-links { gap: 1.5rem; font-size: 0.85rem; }
-    section { padding: 5rem 1.5rem; }
-    .hero { padding: 7rem 1.5rem 3rem; }
-    .hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
-    .hero-visual { max-width: 320px; margin: 0 auto; }
-    .section-header { grid-template-columns: 1fr; gap: 1.5rem; }
-    .about-grid { grid-template-columns: 1fr; gap: 3rem; }
-    .research-grid { grid-template-columns: 1fr; }
-    .pi-card { grid-template-columns: 1fr; gap: 2rem; }
-    .pi-photo { max-width: 240px; }
-    .members-grid { grid-template-columns: repeat(2, 1fr); }
-    .pub-item { grid-template-columns: 60px 1fr; }
-    .pub-badge { grid-column: 2; margin-top: 0.5rem; }
-    .news-item { grid-template-columns: 1fr; gap: 0.3rem; }
-    .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-  }
-
-  @media (max-width: 640px) {
-    .nav-links { display: none; }
-    .hero-meta { flex-direction: column; gap: 1rem; }
-    .stats { grid-template-columns: 1fr; }
-    .members-grid { grid-template-columns: 1fr; }
-  }
-</style>
-</head>
-<body>
-
-<!-- ===== NAVIGATION ===== -->
-<nav id="nav">
-  <div class="nav-inner">
-    <a href="#" class="logo">
-      <span class="logo-mark"></span>
-      <span>EMCL</span>
-    </a>
-    <ul class="nav-links">
-      <li><a href="#about">소개</a></li>
-      <li><a href="#research">연구</a></li>
-      <li><a href="#people">구성원</a></li>
-      <li><a href="#publications">논문</a></li>
-      <li><a href="#news">소식</a></li>
-      <li><a href="#contact">연락</a></li>
-    </ul>
-  </div>
-</nav>
-
-<!-- ===== HERO ===== -->
-<section class="hero">
-  <div class="hero-bg"></div>
-  <div class="grain"></div>
-  <div class="hero-inner">
-    <div class="hero-content">
-      <div class="hero-eyebrow">Korea University · Since 2010</div>
-      <h1 class="hero-title">
-        에너지와 물질의<br>
-        <em>순환을 다시 쓰다</em>
-      </h1>
-      <p class="hero-subtitle">
-        에너지물질순환연구실(EMCL)은 지속가능한 미래를 위해 에너지·물질의 흐름을 정량적으로 분석하고, 자원순환 기반의 새로운 시스템을 설계합니다.
-      </p>
-      <div class="hero-meta">
-        <div class="hero-meta-item">
-          <span class="hero-meta-label">Faculty</span>
-          <span class="hero-meta-value">Prof. Name</span>
-        </div>
-        <div class="hero-meta-item">
-          <span class="hero-meta-label">Founded</span>
-          <span class="hero-meta-value">2010</span>
-        </div>
-        <div class="hero-meta-item">
-          <span class="hero-meta-label">Location</span>
-          <span class="hero-meta-value">Seoul, KR</span>
-        </div>
-      </div>
-    </div>
-    <div class="hero-visual">
-      <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <radialGradient id="centerGlow" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stop-color="#2d5a3d" stop-opacity="0.3"/>
-            <stop offset="100%" stop-color="#2d5a3d" stop-opacity="0"/>
-          </radialGradient>
-        </defs>
-
-        <!-- Background glow -->
-        <circle cx="200" cy="200" r="180" fill="url(#centerGlow)"/>
-
-        <!-- Outer ring with dashes representing material flow -->
-        <g class="ring-outer">
-          <circle cx="200" cy="200" r="180" fill="none" stroke="#2d5a3d" stroke-width="0.5" stroke-dasharray="2 8"/>
-          <circle cx="200" cy="20" r="4" fill="#2d5a3d"/>
-          <circle cx="380" cy="200" r="3" fill="#b8754a"/>
-          <circle cx="200" cy="380" r="3" fill="#2d5a3d"/>
-          <circle cx="20" cy="200" r="3" fill="#b8754a"/>
-        </g>
-
-        <!-- Middle ring -->
-        <g class="ring-mid">
-          <circle cx="200" cy="200" r="130" fill="none" stroke="#2d5a3d" stroke-width="1" stroke-opacity="0.4"/>
-          <path d="M 200 70 L 200 60 M 330 200 L 340 200 M 200 330 L 200 340 M 70 200 L 60 200" stroke="#2d5a3d" stroke-width="1.5"/>
-        </g>
-
-        <!-- Inner hexagon (representing molecular structure) -->
-        <g class="ring-inner">
-          <polygon points="200,120 270,160 270,240 200,280 130,240 130,160" 
-                   fill="none" stroke="#2d5a3d" stroke-width="1.5"/>
-          <circle cx="200" cy="120" r="5" fill="#2d5a3d"/>
-          <circle cx="270" cy="160" r="5" fill="#b8754a"/>
-          <circle cx="270" cy="240" r="5" fill="#2d5a3d"/>
-          <circle cx="200" cy="280" r="5" fill="#b8754a"/>
-          <circle cx="130" cy="240" r="5" fill="#2d5a3d"/>
-          <circle cx="130" cy="160" r="5" fill="#b8754a"/>
-        </g>
-
-        <!-- Center -->
-        <circle cx="200" cy="200" r="8" fill="#2d5a3d"/>
-        <circle cx="200" cy="200" r="20" fill="none" stroke="#2d5a3d" stroke-width="0.5" stroke-opacity="0.5"/>
-
-        <!-- Labels -->
-        <text x="200" y="50" text-anchor="middle" font-family="JetBrains Mono" font-size="9" fill="#7d847f" letter-spacing="2">ENERGY</text>
-        <text x="200" y="365" text-anchor="middle" font-family="JetBrains Mono" font-size="9" fill="#7d847f" letter-spacing="2">MATERIAL</text>
-        <text x="35" y="205" text-anchor="middle" font-family="JetBrains Mono" font-size="9" fill="#7d847f" letter-spacing="2" transform="rotate(-90 35 205)">CYCLE</text>
-        <text x="365" y="205" text-anchor="middle" font-family="JetBrains Mono" font-size="9" fill="#7d847f" letter-spacing="2" transform="rotate(90 365 205)">FLOW</text>
-      </svg>
-    </div>
-  </div>
-</section>
-
-<!-- ===== ABOUT ===== -->
-<section id="about">
-  <div class="container">
-    <div class="section-header">
-      <div class="section-label">01 — About</div>
-      <h2 class="section-title">탄소중립 시대,<br>우리는 <em>흐름</em>을 연구합니다</h2>
-    </div>
-    <div class="about-grid">
-      <div class="about-text">
-        <p>
-          에너지물질순환연구실은 고려대학교에 자리한 학제간 연구 그룹입니다. 우리는 에너지와 물질이 어떻게 만들어지고, 사용되고, 다시 자연으로 돌아가는지—그 전 과정을 정량적으로 추적합니다.
-        </p>
-        <p>
-          기후위기와 자원고갈이라는 시대적 과제 앞에서, 단순한 효율 개선을 넘어 시스템 자체를 재설계하는 연구를 지향합니다. 산업생태학, 전과정평가(LCA), 물질흐름분석(MFA), 그리고 데이터 기반 시뮬레이션을 핵심 도구로 사용합니다.
-        </p>
-        <p>
-          학생들이 학문적 깊이와 실천적 관점을 함께 키울 수 있는 연구실을 만들고자 합니다.
-        </p>
-      </div>
-      <div class="about-aside">
-        <div class="stats">
-          <div class="stat-item">
-            <div class="stat-num">60+</div>
-            <div class="stat-label">Publications</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-num">15</div>
-            <div class="stat-label">Active Members</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-num">24</div>
-            <div class="stat-label">Alumni</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-num">12</div>
-            <div class="stat-label">Ongoing Projects</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== RESEARCH ===== -->
-<section id="research">
-  <div class="container">
-    <div class="section-header">
-      <div class="section-label">02 — Research</div>
-      <h2 class="section-title">세 가지 <em>축</em>으로 보는<br>지속가능성</h2>
-    </div>
-    <div class="research-grid">
-
-      <div class="research-card">
-        <div class="research-num">/ 01</div>
-        <svg class="research-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
-          <circle cx="24" cy="24" r="20"/>
-          <path d="M24 4 Q34 14 24 24 Q14 34 24 44"/>
-          <path d="M4 24 Q14 14 24 24 Q34 34 44 24"/>
-        </svg>
-        <h3 class="research-title">자원순환 시스템</h3>
-        <p class="research-desc">
-          폐자원의 흐름을 추적하고 재활용·재제조 경로를 설계하여 자원효율을 극대화합니다. 도시광산, 폐플라스틱, 배터리 순환이 핵심 주제입니다.
-        </p>
-        <div class="research-tags">
-          <span class="tag">Circular Economy</span>
-          <span class="tag">MFA</span>
-          <span class="tag">Urban Mining</span>
-        </div>
-      </div>
-
-      <div class="research-card">
-        <div class="research-num">/ 02</div>
-        <svg class="research-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
-          <path d="M24 4 L40 14 L40 34 L24 44 L8 34 L8 14 Z"/>
-          <path d="M24 14 L32 19 L32 29 L24 34 L16 29 L16 19 Z"/>
-          <circle cx="24" cy="24" r="2" fill="currentColor"/>
-        </svg>
-        <h3 class="research-title">에너지 시스템 분석</h3>
-        <p class="research-desc">
-          재생에너지 통합, 수소경제, 그리드 안정성을 정량적으로 모델링합니다. 시나리오 기반 정책 분석을 통해 탄소중립 경로를 탐색합니다.
-        </p>
-        <div class="research-tags">
-          <span class="tag">Energy Modeling</span>
-          <span class="tag">Hydrogen</span>
-          <span class="tag">Net Zero</span>
-        </div>
-      </div>
-
-      <div class="research-card">
-        <div class="research-num">/ 03</div>
-        <svg class="research-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
-          <rect x="6" y="12" width="36" height="28" rx="2"/>
-          <path d="M6 20 L42 20"/>
-          <circle cx="14" cy="16" r="1" fill="currentColor"/>
-          <circle cx="18" cy="16" r="1" fill="currentColor"/>
-          <path d="M14 28 L20 32 L26 26 L34 34" stroke-width="2"/>
-        </svg>
-        <h3 class="research-title">전과정평가 (LCA)</h3>
-        <p class="research-desc">
-          제품과 서비스의 환경영향을 라이프사이클 전 단계에서 평가합니다. AI 기반 데이터 통합으로 LCA 방법론을 고도화하고 있습니다.
-        </p>
-        <div class="research-tags">
-          <span class="tag">LCA</span>
-          <span class="tag">Environmental Impact</span>
-          <span class="tag">Data Science</span>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ===== PEOPLE ===== -->
-<section id="people">
-  <div class="container">
-    <div class="section-header">
-      <div class="section-label">03 — People</div>
-      <h2 class="section-title">함께 <em>질문하는</em> 사람들</h2>
-    </div>
-
-    <div class="pi-card">
-      <div class="pi-photo"></div>
-      <div class="pi-info">
-        <h3 class="pi-name">홍길동 교수</h3>
-        <div class="pi-role">Principal Investigator · Professor</div>
-        <p class="pi-bio">
-          홍길동 교수는 산업생태학과 자원순환 분야의 전문가로, 국내외 100여 편의 논문을 발표했습니다. 서울대학교에서 환경공학 박사학위를 받았으며, MIT 방문연구원을 거쳐 2010년 고려대학교에 부임했습니다. 현재 한국LCA학회 부회장, IEA Bioenergy Task 위원으로 활동 중입니다.
-        </p>
-        <div class="pi-links">
-          <a href="mailto:professor@korea.ac.kr">이메일</a>
-          <a href="#">Google Scholar</a>
-          <a href="#">ORCID</a>
-          <a href="#">CV (PDF)</a>
-        </div>
-      </div>
-    </div>
-
-    <h4 style="font-family:'JetBrains Mono',monospace;font-size:0.82rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--ink-mute);margin-bottom:1.5rem;">현재 구성원</h4>
-    <div class="members-grid">
-      <div class="member-card">
-        <div class="member-photo"></div>
-        <div class="member-name">김연구</div>
-        <div class="member-role">Postdoc</div>
-      </div>
-      <div class="member-card">
-        <div class="member-photo"></div>
-        <div class="member-name">이박사</div>
-        <div class="member-role">Ph.D. Candidate</div>
-      </div>
-      <div class="member-card">
-        <div class="member-photo"></div>
-        <div class="member-name">박학생</div>
-        <div class="member-role">Ph.D. Student</div>
-      </div>
-      <div class="member-card">
-        <div class="member-photo"></div>
-        <div class="member-name">최석사</div>
-        <div class="member-role">M.S. Student</div>
-      </div>
-      <div class="member-card">
-        <div class="member-photo"></div>
-        <div class="member-name">정연구</div>
-        <div class="member-role">M.S. Student</div>
-      </div>
-      <div class="member-card">
-        <div class="member-photo"></div>
-        <div class="member-name">강학생</div>
-        <div class="member-role">M.S. Student</div>
-      </div>
-      <div class="member-card">
-        <div class="member-photo"></div>
-        <div class="member-name">윤지은</div>
-        <div class="member-role">Undergraduate</div>
-      </div>
-      <div class="member-card">
-        <div class="member-photo"></div>
-        <div class="member-name">한도윤</div>
-        <div class="member-role">Undergraduate</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== PUBLICATIONS ===== -->
-<section id="publications">
-  <div class="container">
-    <div class="section-header">
-      <div class="section-label">04 — Publications</div>
-      <h2 class="section-title">연구의 <em>흔적</em></h2>
-    </div>
-
-    <div class="pub-filters">
-      <button class="pub-filter active" data-filter="all">All</button>
-      <button class="pub-filter" data-filter="2025">2025</button>
-      <button class="pub-filter" data-filter="2024">2024</button>
-      <button class="pub-filter" data-filter="2023">2023</button>
-      <button class="pub-filter" data-filter="earlier">Earlier</button>
-    </div>
-
-    <ul class="pub-list">
-      <li class="pub-item" data-year="2025">
-        <div class="pub-year">2025</div>
-        <div class="pub-content">
-          <div class="pub-title">Quantifying material flows of critical metals in Korea's EV transition</div>
-          <div class="pub-authors"><strong>Hong, G.</strong>, Kim, Y., Lee, J.</div>
-          <div class="pub-venue">Resources, Conservation and Recycling</div>
-        </div>
-        <span class="pub-badge">Q1 · IF 13.2</span>
-      </li>
-
-      <li class="pub-item" data-year="2025">
-        <div class="pub-year">2025</div>
-        <div class="pub-content">
-          <div class="pub-title">Spatially explicit life cycle assessment of hydrogen production pathways</div>
-          <div class="pub-authors">Park, S., Choi, M., <strong>Hong, G.</strong></div>
-          <div class="pub-venue">Nature Sustainability</div>
-        </div>
-        <span class="pub-badge">Featured</span>
-      </li>
-
-      <li class="pub-item" data-year="2024">
-        <div class="pub-year">2024</div>
-        <div class="pub-content">
-          <div class="pub-title">Closing the loop: A systems perspective on plastic recycling in East Asia</div>
-          <div class="pub-authors">Kim, Y., <strong>Hong, G.</strong>, Tanaka, H.</div>
-          <div class="pub-venue">Environmental Science & Technology</div>
-        </div>
-        <span class="pub-badge">Q1</span>
-      </li>
-
-      <li class="pub-item" data-year="2024">
-        <div class="pub-year">2024</div>
-        <div class="pub-content">
-          <div class="pub-title">Machine learning approaches for impact assessment in LCA</div>
-          <div class="pub-authors">Lee, J., <strong>Hong, G.</strong></div>
-          <div class="pub-venue">Journal of Cleaner Production</div>
-        </div>
-        <span class="pub-badge">Q1</span>
-      </li>
-
-      <li class="pub-item" data-year="2023">
-        <div class="pub-year">2023</div>
-        <div class="pub-content">
-          <div class="pub-title">Urban mining potential of rare earth elements from end-of-life electronics</div>
-          <div class="pub-authors">Choi, M., <strong>Hong, G.</strong>, Yamada, K.</div>
-          <div class="pub-venue">Waste Management</div>
-        </div>
-        <span class="pub-badge">Q1</span>
-      </li>
-
-      <li class="pub-item" data-year="2023">
-        <div class="pub-year">2023</div>
-        <div class="pub-content">
-          <div class="pub-title">Carbon footprint of green hydrogen: A comparative analysis of pathways</div>
-          <div class="pub-authors"><strong>Hong, G.</strong>, Smith, R., Park, S.</div>
-          <div class="pub-venue">Applied Energy</div>
-        </div>
-        <span class="pub-badge">Q1</span>
-      </li>
-
-      <li class="pub-item" data-year="earlier">
-        <div class="pub-year">2022</div>
-        <div class="pub-content">
-          <div class="pub-title">Material flow analysis of lithium in the Korean battery industry</div>
-          <div class="pub-authors">Park, S., Kim, Y., <strong>Hong, G.</strong></div>
-          <div class="pub-venue">Journal of Industrial Ecology</div>
-        </div>
-        <span class="pub-badge">Q1</span>
-      </li>
-    </ul>
-
-    <div style="margin-top:3rem;text-align:center;">
-      <a href="#" style="font-family:'JetBrains Mono',monospace;font-size:0.85rem;color:var(--accent);text-decoration:none;letter-spacing:0.1em;border-bottom:1px solid var(--accent);padding-bottom:4px;">VIEW ALL PUBLICATIONS →</a>
-    </div>
-  </div>
-</section>
-
-<!-- ===== NEWS ===== -->
-<section id="news">
-  <div class="container">
-    <div class="section-header">
-      <div class="section-label">05 — News</div>
-      <h2 class="section-title">최근 <em>소식</em></h2>
-    </div>
-
-    <ul class="news-list">
-      <li class="news-item">
-        <div class="news-date">2026.04.20</div>
-        <div class="news-text">박사과정 <strong>김연구</strong> 학생이 한국LCA학회 학술대회에서 <em>우수논문상</em>을 수상했습니다.</div>
-      </li>
-      <li class="news-item">
-        <div class="news-date">2026.03.15</div>
-        <div class="news-text">EMCL의 <strong>Nature Sustainability</strong> 논문이 게재 승인되었습니다. 축하합니다!</div>
-      </li>
-      <li class="news-item">
-        <div class="news-date">2026.02.28</div>
-        <div class="news-text">2026년 봄학기 신입 대학원생 <strong>두 명</strong>이 합류했습니다. 환영합니다.</div>
-      </li>
-      <li class="news-item">
-        <div class="news-date">2026.01.10</div>
-        <div class="news-text">환경부 신규 과제 <strong>"순환경제 모니터링 플랫폼"</strong>(3년, 9억원) 선정.</div>
-      </li>
-      <li class="news-item">
-        <div class="news-date">2025.12.05</div>
-        <div class="news-text">EMCL 송년회 및 졸업생 환송. 모두 수고하셨습니다.</div>
-      </li>
-      <li class="news-item">
-        <div class="news-date">2025.11.18</div>
-        <div class="news-text">홍길동 교수, <strong>International Society for Industrial Ecology</strong> 정기학술대회 기조강연.</div>
-      </li>
-    </ul>
-  </div>
-</section>
-
-<!-- ===== CONTACT ===== -->
-<section id="contact">
-  <div class="container">
-    <div class="section-header">
-      <div class="section-label">06 — Contact</div>
-      <h2 class="section-title">함께 <em>연구하실</em> 분을 찾습니다</h2>
-    </div>
-
-    <div class="contact-grid">
-      <div class="contact-info">
-        <div class="contact-block">
-          <div class="contact-label">Address</div>
-          <div class="contact-value">고려대학교 신공학관 ○○○호<br>서울특별시 성북구 안암로 145</div>
-        </div>
-        <div class="contact-block">
-          <div class="contact-label">Email</div>
-          <div class="contact-value"><a href="mailto:emcl@korea.ac.kr">emcl@korea.ac.kr</a></div>
-        </div>
-        <div class="contact-block">
-          <div class="contact-label">Phone</div>
-          <div class="contact-value">+82 (0)2 3290 ○○○○</div>
-        </div>
-        <div class="contact-block">
-          <div class="contact-label">For Prospective Students</div>
-          <div class="contact-value" style="font-size:1rem;line-height:1.7;color:var(--ink-soft);">
-            대학원 진학에 관심 있는 학생은 연구 관심사와 CV를 첨부하여 이메일로 문의해 주세요.
-          </div>
-        </div>
-      </div>
-      <div class="map-placeholder">
-        <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-          <rect width="400" height="300" fill="#efece4"/>
-          <g stroke="#d8d2c4" stroke-width="0.5" fill="none">
-            <path d="M0 50 L400 50 M0 100 L400 100 M0 150 L400 150 M0 200 L400 200 M0 250 L400 250"/>
-            <path d="M50 0 L50 300 M100 0 L100 300 M150 0 L150 300 M200 0 L200 300 M250 0 L250 300 M300 0 L300 300 M350 0 L350 300"/>
-          </g>
-          <path d="M50 180 Q150 160 200 170 T380 150" stroke="#b8754a" stroke-width="2" fill="none" opacity="0.5"/>
-          <path d="M80 220 L320 210" stroke="#7d847f" stroke-width="3" fill="none" opacity="0.4"/>
-          <circle cx="200" cy="150" r="8" fill="#2d5a3d"/>
-          <circle cx="200" cy="150" r="16" fill="#2d5a3d" opacity="0.2"/>
-          <text x="210" y="145" font-family="JetBrains Mono" font-size="10" fill="#1a2820">Korea University</text>
-          <text x="210" y="158" font-family="JetBrains Mono" font-size="8" fill="#7d847f">Anam Campus</text>
-        </svg>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== FOOTER ===== -->
-<footer>
-  <div class="footer-inner">
-    <div class="footer-logo">Energy & Material Cycle Lab</div>
-    <div class="footer-text">© 2026 EMCL · Korea University · All rights reserved</div>
-  </div>
-</footer>
-
-<script>
-  // Navigation scroll effect
-  const nav = document.getElementById('nav');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) nav.classList.add('scrolled');
-    else nav.classList.remove('scrolled');
-  });
-
-  // Publication filter
-  const filters = document.querySelectorAll('.pub-filter');
-  const pubItems = document.querySelectorAll('.pub-item');
-
-  filters.forEach(filter => {
-    filter.addEventListener('click', () => {
-      filters.forEach(f => f.classList.remove('active'));
-      filter.classList.add('active');
-      const target = filter.dataset.filter;
-      pubItems.forEach(item => {
-        if (target === 'all' || item.dataset.year === target) {
-          item.style.display = '';
-        } else {
-          item.style.display = 'none';
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMCL | 고려대학교 에너지물질순환연구실</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ku: {
+                            crimson: '#8A1538', // 고대 크림슨
+                            dark: '#5b0e25',
+                            light: '#b0214a',
+                            bg: '#f8f9fa'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Noto Sans KR', 'sans-serif'],
+                    }
+                }
+            }
         }
-      });
-    });
-  });
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .hero-pattern {
+            background-color: #8A1538;
+            background-image: linear-gradient(135deg, #8A1538 0%, #2b0410 100%);
+        }
+        /* SPA 뷰 전환을 위한 클래스 */
+        .page-view { display: none; opacity: 0; transition: opacity 0.3s ease-in-out; }
+        .page-view.active { display: block; opacity: 1; }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-ku-bg flex flex-col min-h-screen">
 
-  // Smooth scroll for nav links (offset for fixed nav)
-  document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', (e) => {
-      e.preventDefault();
-      const target = document.querySelector(link.getAttribute('href'));
-      if (target) {
-        const offset = 80;
-        const top = target.offsetTop - offset;
-        window.scrollTo({ top, behavior: 'smooth' });
-      }
-    });
-  });
-</script>
+    <!-- Header / Navigation -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo Area -->
+                <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="navigate('home')">
+                    <div class="flex flex-col">
+                        <span class="text-2xl font-bold text-ku-crimson tracking-tight">EMCL</span>
+                        <span class="text-xs text-gray-500 font-medium hidden sm:block">고려대학교 에너지물질순환연구실</span>
+                    </div>
+                </div>
+                <!-- Desktop Menu with Dropdowns -->
+                <nav class="hidden md:flex space-x-2">
+                    
+                    <!-- INTRODUCTION -->
+                    <div class="relative group">
+                        <button onclick="navigate('home')" class="nav-link text-gray-700 hover:text-ku-crimson px-3 py-6 text-sm font-bold uppercase transition-colors h-full flex items-center" data-target="home">Introduction</button>
+                        <div class="absolute left-0 mt-0 w-48 bg-white border border-gray-100 shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                            <a href="#" class="block px-4 py-3 text-sm text-gray-700 hover:bg-ku-bg hover:text-ku-crimson font-medium border-b border-gray-50">About us</a>
+                            <a href="#" class="block px-4 py-3 text-sm text-gray-700 hover:bg-ku-bg hover:text-ku-crimson font-medium border-b border-gray-50">Research Area</a>
+                            <a href="#" class="block px-4 py-3 text-sm text-gray-700 hover:bg-ku-bg hover:text-ku-crimson font-medium">Contact Us</a>
+                        </div>
+                    </div>
 
+                    <!-- PROFESSOR -->
+                    <div class="relative group">
+                        <button class="text-gray-700 hover:text-ku-crimson px-3 py-6 text-sm font-bold uppercase transition-colors h-full flex items-center">Professor</button>
+                        <div class="absolute left-0 mt-0 w-48 bg-white border border-gray-100 shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                            <a href="#" class="block px-4 py-3 text-sm text-gray-700 hover:bg-ku-bg hover:text-ku-crimson font-medium border-b border-gray-50">Professor</a>
+                            <a href="#" class="block px-4 py-3 text-sm text-gray-700 hover:bg-ku-bg hover:text-ku-crimson font-medium">Adjunct professor</a>
+                        </div>
+                    </div>
+
+                    <!-- MEMBERS -->
+                    <div class="relative group">
+                        <button class="text-gray-700 hover:text-ku-crimson px-3 py-6 text-sm font-bold uppercase transition-colors h-full flex items-center">Members</button>
+                        <div class="absolute left-0 mt-0 w-48 bg-white border border-gray-100 shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                            <a href="#" class="block px-4 py-3 text-sm text-gray-700 hover:bg-ku-bg hover:text-ku-crimson font-medium border-b border-gray-50">Post Doctor & Staff</a>
+                            <a href="#" class="block px-4 py-3 text-sm text-gray-700 hover:bg-ku-bg hover:text-ku-crimson font-medium border-b border-gray-50">Students</a>
+                            <a href="#" class="block px-4 py-3 text-sm text-gray-700 hover:bg-ku-bg hover:text-ku-crimson font-medium">Alumni</a>
+                        </div>
+                    </div>
+
+                    <!-- LECTURES -->
+                    <div class="relative group">
+                        <button class="text-gray-700 hover:text-ku-crimson px-3 py-6 text-sm font-bold uppercase transition-colors h-full flex items-center">Lectures</button>
+                        <!-- 하위 탭 이미지가 없으므로 빈 드롭다운 또는 제외 -->
+                    </div>
+
+                    <!-- PUBLICATIONS -->
+                    <div class="relative group">
+                        <button onclick="navigate('publications')" class="nav-link text-gray-700 hover:text-ku-crimson px-3 py-6 text-sm font-bold uppercase transition-colors h-full flex items-center" data-target="publications">Publications</button>
+                        <div class="absolute left-0 mt-0 w-48 bg-white border border-gray-100 shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                            <a href="#" class="block px-4 py-3 text-sm text-gray-700 hover:bg-ku-bg hover:text-ku-crimson font-medium border-b border-gray-50">Journal</a>
+                            <a href="#" class="block px-4 py-3 text-sm text-gray-700 hover:bg-ku-bg hover:text-ku-crimson font-medium border-b border-gray-50">Conference</a>
+                            <a href="#" class="block px-4 py-3 text-sm text-gray-700 hover:bg-ku-bg hover:text-ku-crimson font-medium">Patent</a>
+                        </div>
+                    </div>
+
+                    <!-- PROJECT -->
+                    <div class="relative group">
+                        <button class="text-gray-700 hover:text-ku-crimson px-3 py-6 text-sm font-bold uppercase transition-colors h-full flex items-center">Project</button>
+                        <div class="absolute left-0 mt-0 w-48 bg-white border border-gray-100 shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                            <a href="#" class="block px-4 py-3 text-sm text-gray-700 hover:bg-ku-bg hover:text-ku-crimson font-medium">Ongoing Projects</a>
+                        </div>
+                    </div>
+
+                    <!-- COMMUNITY -->
+                    <div class="relative group">
+                        <button class="text-gray-700 hover:text-ku-crimson px-3 py-6 text-sm font-bold uppercase transition-colors h-full flex items-center">Community</button>
+                        <div class="absolute left-0 mt-0 w-48 bg-white border border-gray-100 shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                            <a href="#" class="block px-4 py-3 text-sm text-gray-700 hover:bg-ku-bg hover:text-ku-crimson font-medium border-b border-gray-50">News & Notice</a>
+                            <a href="#" class="block px-4 py-3 text-sm text-gray-700 hover:bg-ku-bg hover:text-ku-crimson font-medium">Gallery</a>
+                        </div>
+                    </div>
+
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="flex-grow relative">
+
+        <!-- ==========================================
+             PAGE 1: HOME
+        =========================================== -->
+        <div id="page-home" class="page-view active">
+            <!-- Hero Section -->
+            <section class="hero-pattern relative py-32 flex items-center justify-center text-center px-4 overflow-hidden">
+                <div class="relative z-10 max-w-4xl mx-auto text-white">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-4 tracking-tight">Energy Materials Circulation Lab</h1>
+                    <p class="text-lg md:text-2xl mb-8 font-light text-gray-200">KOREA UNIVERSITY</p>
+                    
+                    <div class="mt-10 bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-6 shadow-xl max-w-2xl mx-auto text-left flex items-start space-x-4">
+                        <div class="bg-ku-crimson p-3 rounded-full flex-shrink-0 shadow-lg">
+                            <i class="fas fa-newspaper text-white"></i>
+                        </div>
+                        <div>
+                            <span class="inline-block px-2 py-1 bg-ku-crimson text-white text-xs font-bold rounded mb-2">Latest News</span>
+                            <h3 class="text-lg font-medium text-white mb-1">세계 최초 압축기 없는 냉각 기술 구현... 전력 소비 65% 감소</h3>
+                            <p class="text-sm text-gray-300">"소음·냉매 가스 없는 냉장고 시대"</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Background Grid -->
+                <div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+                    <svg class="absolute w-full h-full" xmlns="http://www.w3.org/2000/svg">
+                        <defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" stroke-width="0.5"/></pattern></defs>
+                        <rect width="100%" height="100%" fill="url(#grid)" />
+                    </svg>
+                </div>
+            </section>
+
+            <!-- PEB Banner -->
+            <section class="bg-white py-10 border-b border-gray-200">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="bg-gray-50 rounded-lg shadow-sm p-6 flex flex-col md:flex-row items-center justify-between border-l-4 border-ku-crimson">
+                        <div>
+                            <h2 class="text-xl font-bold text-gray-800">PEB 플러스에너지빌딩 혁신기술 연구센터</h2>
+                            <p class="text-gray-600 mt-1">제로에너지빌딩을 넘어 미래를 선도하는 연구센터</p>
+                        </div>
+                        <a href="#" class="mt-4 md:mt-0 px-6 py-2 bg-ku-crimson text-white font-bold rounded hover:bg-ku-dark transition-colors shadow-md">GO</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Links -->
+            <section class="py-16 bg-ku-bg">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <!-- News -->
+                        <div class="bg-white border border-gray-100 rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300">
+                            <h3 class="text-lg font-bold text-ku-crimson mb-4 border-b pb-2">News & Notice</h3>
+                            <ul class="space-y-3 text-sm text-gray-600">
+                                <li class="truncate hover:text-ku-crimson cursor-pointer"><i class="fas fa-angle-right text-ku-crimson mr-2"></i>세계 최상위 2% 연구자 선정</li>
+                                <li class="truncate hover:text-ku-crimson cursor-pointer"><i class="fas fa-angle-right text-ku-crimson mr-2"></i>제9회 기계공학부 학술제 우수상</li>
+                            </ul>
+                        </div>
+                        <!-- Publications Link -->
+                        <div onclick="navigate('publications')" class="cursor-pointer bg-white border border-gray-100 rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col items-center justify-center text-center group">
+                            <i class="fas fa-book-open text-4xl text-ku-crimson mb-4 group-hover:scale-110 transition-transform"></i>
+                            <h3 class="text-lg font-bold text-gray-800">Publications</h3>
+                            <p class="text-sm text-gray-500 mt-2">View our latest research papers</p>
+                        </div>
+                        <!-- Gallery Link -->
+                        <div class="bg-white border border-gray-100 rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col items-center justify-center text-center group opacity-70">
+                            <i class="fas fa-images text-4xl text-gray-400 mb-4"></i>
+                            <h3 class="text-lg font-bold text-gray-800">Gallery</h3>
+                            <p class="text-sm text-gray-500 mt-2">Coming soon</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ==========================================
+             PAGE 2: PUBLICATIONS (동적 렌더링)
+        =========================================== -->
+        <div id="page-publications" class="page-view">
+            <section class="bg-ku-crimson py-16 text-center text-white">
+                <h1 class="text-4xl font-bold tracking-tight mb-2">Publications</h1>
+                <p class="text-ku-light font-medium">에너지물질순환연구실 연구 실적</p>
+            </section>
+            
+            <section class="py-12 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- 동적 필터 버튼 영역 -->
+                <div class="flex justify-center space-x-2 mb-10" id="year-filters">
+                    <!-- JS에서 버튼 동적 생성됨 -->
+                </div>
+
+                <!-- 논문 리스트 영역 -->
+                <div id="publications-list" class="space-y-6">
+                    <!-- JS에서 논문 데이터 동적 생성됨 -->
+                </div>
+            </section>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-10 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center space-y-4 md:space-y-0 border-b border-gray-800 pb-8 mb-8">
+                <div>
+                    <h4 class="text-white text-lg font-bold mb-2">고려대학교 에너지물질순환연구실</h4>
+                    <p class="text-sm leading-relaxed max-w-2xl text-gray-500">
+                        서울특별시 성북구 안암로 145 고려대학교 공과대학 기계공학부<br>
+                        Energy Materials Circulation Lab., College of Engineering, Korea University,<br>
+                        145, Anam-ro, Seongbuk-gu, Seoul, Korea
+                    </p>
+                </div>
+            </div>
+            <p class="text-xs text-center md:text-left">COPYRIGHT(C) 2026 EMCL ALL RIGHT RESERVED.</p>
+        </div>
+    </footer>
+
+    <!-- ==========================================
+         JAVASCRIPT: SPA 라우팅 및 동적 데이터 관리
+    =========================================== -->
+    <script>
+        // 1. 페이지 네비게이션 함수 (SPA 라우팅)
+        function navigate(pageId) {
+            // 모든 페이지 숨기기
+            document.querySelectorAll('.page-view').forEach(page => {
+                page.classList.remove('active');
+            });
+            // 선택한 페이지만 보이기
+            document.getElementById('page-' + pageId).classList.add('active');
+            
+            // 메뉴 색상 하이라이트 변경
+            document.querySelectorAll('.nav-link').forEach(link => {
+                if(link.getAttribute('data-target') === pageId) {
+                    link.classList.add('text-ku-crimson');
+                } else {
+                    link.classList.remove('text-ku-crimson');
+                }
+            });
+
+            // 스크롤 맨 위로
+            window.scrollTo(0, 0);
+        }
+
+        // 2. 동적 논문 데이터베이스 (이 배열만 수정하면 홈페이지에 자동 반영됩니다)
+        const publicationsData = [
+            {
+                year: 2026,
+                type: "International Journal",
+                title: "Advanced Compressor-less Cooling Technologies for Net-Zero Buildings",
+                authors: "Hong Gildong, Kim Chulsoo, and Lee Younghee",
+                journal: "Nature Energy",
+                volume: "11",
+                pages: "102-115",
+                link: "#"
+            },
+            {
+                year: 2025,
+                type: "International Journal",
+                title: "Thermodynamic Analysis of Novel Energy Materials in Circulation Loops",
+                authors: "Lee Younghee, Hong Gildong",
+                journal: "Applied Energy",
+                volume: "350",
+                pages: "121700",
+                link: "#"
+            },
+            {
+                year: 2025,
+                type: "Domestic Conference",
+                title: "플러스에너지빌딩을 위한 친환경 냉방 시스템 설계",
+                authors: "김철수, 홍길동",
+                journal: "대한기계학회 춘계학술대회",
+                volume: "-",
+                pages: "-",
+                link: "#"
+            },
+            {
+                year: 2024,
+                type: "International Journal",
+                title: "Review of Energy Material Lifecycles in Modern Architecture",
+                authors: "Hong Gildong",
+                journal: "Renewable and Sustainable Energy Reviews",
+                volume: "180",
+                pages: "113300",
+                link: "#"
+            }
+        ];
+
+        // 3. 논문 렌더링 로직
+        function renderPublications(filterYear = 'All') {
+            const listContainer = document.getElementById('publications-list');
+            listContainer.innerHTML = ''; // 초기화
+
+            // 필터링 적용
+            const filteredData = filterYear === 'All' 
+                ? publicationsData 
+                : publicationsData.filter(pub => pub.year === filterYear);
+
+            if (filteredData.length === 0) {
+                listContainer.innerHTML = '<p class="text-center text-gray-500 py-10">해당 연도의 논문이 없습니다.</p>';
+                return;
+            }
+
+            // HTML 카드 생성
+            filteredData.forEach(pub => {
+                const pubHTML = `
+                    <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow relative overflow-hidden group">
+                        <div class="absolute top-0 left-0 w-1 h-full bg-ku-crimson opacity-70 group-hover:opacity-100 transition-opacity"></div>
+                        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                            <div class="flex-grow">
+                                <div class="flex items-center space-x-3 mb-2">
+                                    <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs font-bold rounded">${pub.year}</span>
+                                    <span class="text-xs font-semibold ${pub.type.includes('International') ? 'text-blue-600' : 'text-ku-crimson'}">${pub.type}</span>
+                                </div>
+                                <h3 class="text-lg font-bold text-gray-900 leading-snug mb-2">${pub.title}</h3>
+                                <p class="text-sm text-gray-600 mb-1">${pub.authors}</p>
+                                <p class="text-sm font-medium text-gray-800 italic">${pub.journal} <span class="font-normal text-gray-500">Vol. ${pub.volume}, pp. ${pages}</span></p>
+                            </div>
+                            ${pub.link !== '#' ? `<a href="${pub.link}" target="_blank" class="flex-shrink-0 px-4 py-2 border border-gray-200 rounded text-sm font-bold text-gray-600 hover:text-ku-crimson hover:border-ku-crimson transition-colors">View Paper <i class="fas fa-external-link-alt ml-1"></i></a>` : ''}
+                        </div>
+                    </div>
+                `;
+                listContainer.insertAdjacentHTML('beforeend', pubHTML);
+            });
+        }
+
+        // 4. 연도 필터 버튼 생성
+        function setupFilters() {
+            const filterContainer = document.getElementById('year-filters');
+            // 중복 없는 연도 추출 및 내림차순 정렬
+            const years = [...new Set(publicationsData.map(pub => pub.year))].sort((a, b) => b - a);
+            
+            let buttonsHTML = `<button onclick="handleFilterClick(this, 'All')" class="filter-btn px-4 py-2 rounded-full text-sm font-bold bg-ku-crimson text-white transition-colors">All</button>`;
+            
+            years.forEach(year => {
+                buttonsHTML += `<button onclick="handleFilterClick(this, ${year})" class="filter-btn px-4 py-2 rounded-full text-sm font-bold bg-white text-gray-600 border border-gray-200 hover:border-ku-crimson hover:text-ku-crimson transition-colors">${year}</button>`;
+            });
+
+            filterContainer.innerHTML = buttonsHTML;
+        }
+
+        // 5. 연도 버튼 클릭 이벤트 처리
+        function handleFilterClick(btnElement, year) {
+            // 모든 버튼 초기화
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.className = "filter-btn px-4 py-2 rounded-full text-sm font-bold bg-white text-gray-600 border border-gray-200 hover:border-ku-crimson hover:text-ku-crimson transition-colors";
+            });
+            // 클릭된 버튼 활성화 스타일 적용
+            btnElement.className = "filter-btn px-4 py-2 rounded-full text-sm font-bold bg-ku-crimson text-white transition-colors";
+            
+            // 리스트 재렌더링
+            renderPublications(year);
+        }
+
+        // 초기화 실행
+        document.addEventListener('DOMContentLoaded', () => {
+            navigate('home'); // 첫 화면을 Home으로 설정
+            setupFilters();   // 논문 필터 버튼 세팅
+            renderPublications('All'); // 논문 전체 리스트 세팅
+        });
+    </script>
 </body>
 </html>
