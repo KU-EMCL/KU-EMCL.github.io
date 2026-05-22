@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>논문 · EMCL 고려대학교 에너지물질순환연구실</title>
+  <meta name="description" content="에너지물질순환연구실(EMCL)의 저널 논문 및 학술대회 발표 목록." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@400;500;600&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body data-page="publications" data-depth="1">
+<div id="app">
+  <div class="header-spacer"></div>
+
+  <section class="page-hero"><div class="wrap">
+    <nav class="breadcrumb"><a href="../index.html">Home</a><span class="sep">/</span><span>Publications</span></nav>
+    <span class="kicker">Research Output</span>
+    <h1 class="serif">논문</h1>
+    <div class="sub">Journal Articles &amp; Conference Proceedings</div>
+    <div class="ghost-no">論</div>
+  </div></section>
+
+  <section class="page-body"><div class="wrap">
+
+    <div class="pub-filter reveal">
+      <button class="active" data-filter="all">전체</button>
+      <button data-filter="journal">저널 논문</button>
+      <button data-filter="conference">학술대회</button>
+    </div>
+
+    <div class="pub-list">
+      <div class="pub-row reveal" data-type="journal">
+        <div><div class="pyear">2024</div><div class="ptype">Journal</div></div>
+        <div>
+          <h3>Thermal energy storage performance of PCM composites with enhanced thermal conductivity for building applications</h3>
+          <div class="pauth">Hong G., Kim Y., Lee E., Park S.</div>
+          <div class="pjour">Applied Energy</div>
+        </div>
+      </div>
+      <div class="pub-row reveal" data-type="journal">
+        <div><div class="pyear">2024</div><div class="ptype">Journal</div></div>
+        <div>
+          <h3>Nanocomposite phase change materials for advanced thermal management: a review</h3>
+          <div class="pauth">Kim Y., Hong G., Choi H.</div>
+          <div class="pjour">Energy Storage Materials</div>
+        </div>
+      </div>
+      <div class="pub-row reveal" data-type="journal">
+        <div><div class="pyear">2023</div><div class="ptype">Journal</div></div>
+        <div>
+          <h3>Plus energy building design with integrated renewable energy systems and thermal storage</h3>
+          <div class="pauth">Lee E., Park S., Hong G.</div>
+          <div class="pjour">Energy and Buildings</div>
+        </div>
+      </div>
+      <div class="pub-row reveal" data-type="conference">
+        <div><div class="pyear">2023</div><div class="ptype">Conference</div></div>
+        <div>
+          <h3>Experimental investigation of PCM-based thermal energy storage for HVAC applications</h3>
+          <div class="pauth">Park S., Hong G.</div>
+          <div class="pjour">ICEB 2023</div>
+        </div>
+      </div>
+      <div class="pub-row reveal" data-type="journal">
+        <div><div class="pyear">2023</div><div class="ptype">Journal</div></div>
+        <div>
+          <h3>Thermoelectric energy harvesting from building envelope using novel composite materials</h3>
+          <div class="pauth">Choi H., Kim Y., Hong G.</div>
+          <div class="pjour">Nano Energy</div>
+        </div>
+      </div>
+      <div class="pub-row reveal" data-type="conference">
+        <div><div class="pyear">2022</div><div class="ptype">Conference</div></div>
+        <div>
+          <h3>Development of high-performance thermal interface materials for electronics cooling</h3>
+          <div class="pauth">Hong G., Lee E.</div>
+          <div class="pjour">KSME 2022</div>
+        </div>
+      </div>
+      <div class="pub-row reveal" data-type="journal">
+        <div><div class="pyear">2022</div><div class="ptype">Journal</div></div>
+        <div>
+          <h3>Microencapsulation of phase change materials for thermal energy storage in building materials</h3>
+          <div class="pauth">Kim Y., Park S., Hong G.</div>
+          <div class="pjour">Construction and Building Materials</div>
+        </div>
+      </div>
+    </div>
+
+  </div></section>
+
+</div>
+<script src="../js/main.js"></script>
+<script>
+  (function () {
+    var btns = document.querySelectorAll('.pub-filter button');
+    var rows = document.querySelectorAll('.pub-row');
+    btns.forEach(function (b) {
+      b.addEventListener('click', function () {
+        btns.forEach(function (x) { x.classList.remove('active'); });
+        b.classList.add('active');
+        var f = b.getAttribute('data-filter');
+        rows.forEach(function (r) {
+          r.style.display = (f === 'all' || r.getAttribute('data-type') === f) ? '' : 'none';
+        });
+      });
+    });
+  })();
+</script>
+</body>
+</html>
