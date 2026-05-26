@@ -174,7 +174,7 @@ h1,h2,h3,h4 { font-weight: 600; line-height: 1.12; letter-spacing: -.01em; color
 #site-header.scrolled .bar .wrap { height: 64px; }
 
 /* spacer so fixed header doesn't overlap content */
-.header-spacer { height: 190px; }
+.header-spacer { height: 160px; }
 
 /* ============================================================
    HERO (home)
@@ -613,7 +613,7 @@ body.nav-open { overflow: hidden; }
   }
   #site-header .bar nav { width: 100%; }
   #site-header .bar .nav { justify-content: flex-start; }
-  .header-spacer { height: 200px; }
+  .header-spacer { height: 160px; }
 }
 /* 헤더 전체를 불투명 흰색으로 강제 (비침 방지) */
 #site-header { background: #FFFFFF; }
