@@ -131,7 +131,7 @@ h1,h2,h3,h4 { font-weight: 600; line-height: 1.12; letter-spacing: -.01em; color
 }
 .brand .mark sup { font-family: var(--font-mono); font-size: 10px; letter-spacing: .1em; vertical-align: super; color: var(--accent); }
 .brand .div { width: 1px; height: 34px; background: var(--line); }
-.brand .meta { display: flex; flex-direction: column; gap: 1px; }
+.brand .meta { display: flex; flex-direction: column; gap: 1px; line-height: 1.15; }
 .brand .meta .ko { font-size: 16px; font-weight: 700; color: var(--ink); letter-spacing: -.01em; }
 .brand .meta .en { font-family: var(--font-mono); font-size: 9.5px; letter-spacing: .14em; color: var(--ink-3); text-transform: uppercase; }
 
@@ -598,7 +598,7 @@ body.nav-open { overflow: hidden; }
 /* 로고 크기·정렬 */
 .brand .ku-logo { height: 40px; width: auto; }
 .brand .ku-name { display: flex; flex-direction: column; line-height: 1.15; margin-right: 4px; }
-.brand .ku-name b { font-size: 18px; font-weight: 800; color: var(--ink); letter-spacing: .12em; }
+.brand .ku-name b { font-size: 18px; font-weight: 900; color: var(--ink); letter-spacing: .11em; }
 .brand .ku-name i { font-style: normal; font-size: 9.5px; letter-spacing: .08em; color: var(--ink-3); }
 
 /* 데스크톱: 헤더를 2단으로 (위=로고, 아래=메뉴) */
