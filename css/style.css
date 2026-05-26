@@ -587,3 +587,4 @@ section { position: relative; }
 .nav-toggle.x span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 body.nav-open { overflow: hidden; }
 .page-hero .ghost-no { display: none; }
+* { font-style: normal !important; }
