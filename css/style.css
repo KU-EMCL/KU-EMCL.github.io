@@ -184,7 +184,7 @@ h1,h2,h3,h4 { font-weight: 600; line-height: 1.12; letter-spacing: -.01em; color
   background: #FFFFFF;
   border-bottom: 1px solid var(--line);
 }
-.hero .wrap { position: relative; display: grid; grid-template-columns: 1.05fr .95fr; gap: 40px; align-items: center; min-height: 78vh; padding-top: 60px; padding-bottom: 60px; }
+.hero .wrap { position: relative; display: grid; grid-template-columns: 1.05fr .95fr; gap: 40px; align-items: center; min-height: 60vh; padding-top: 40px; padding-bottom: 40px; }
 .hero-copy { max-width: 600px; }
 .hero-copy h1 {
   font-family: var(--font-display); font-weight: 400; letter-spacing: -.02em;
