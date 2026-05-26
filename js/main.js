@@ -68,7 +68,7 @@
       '</div></div>' +
       '<div class="bar"><div class="wrap">' +
         '<a class="brand" href="' + abs("index.html") + '">' +
-          '<span class="mark">EMCL<sup>KU</sup></span>' +
+          '<span class="mark">EMCL</span>' +
           '<span class="div"></span>' +
           '<span class="meta"><span class="ko">에너지물질순환연구실</span>' +
           '<span class="en">Energy Materials Circulation Lab</span></span>' +
@@ -88,7 +88,7 @@
   var footer =
     '<footer id="site-footer"><div class="wrap">' +
       '<div class="top">' +
-        '<div><div class="mark">EMCL<sup>KU</sup></div>' +
+        '<div><div class="mark">EMCL</div>' +
           '<address>에너지물질순환연구실 (Energy Materials Circulation Laboratory)<br>' +
           '고려대학교 공과대학 기계공학부<br>' +
           '서울특별시 성북구 안암로 145 (02841)<br>' +
