@@ -589,3 +589,4 @@ body.nav-open { overflow: hidden; }
 .page-hero .ghost-no { display: none; }
 * { font-style: normal !important; }
 @media (max-width: 860px) { #site-header .topbar { display: none; } }
+.brand .ku-logo { height: 36px; width: auto; }
