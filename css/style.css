@@ -596,9 +596,9 @@ body.nav-open { overflow: hidden; }
 }
 
 /* 로고 크기·정렬 */
-.brand .ku-logo { height: 30px; width: auto; }
+.brand .ku-logo { height: 40px; width: auto; }
 .brand .ku-name { display: flex; flex-direction: column; line-height: 1.15; margin-right: 4px; }
-.brand .ku-name b { font-size: 15px; font-weight: 700; color: var(--ink); }
+.brand .ku-name b { font-size: 18px; font-weight: 700; color: var(--ink); }
 .brand .ku-name i { font-style: normal; font-size: 9px; letter-spacing: .08em; color: var(--ink-3); }
 
 /* 데스크톱: 헤더를 2단으로 (위=로고, 아래=메뉴) */
@@ -606,12 +606,12 @@ body.nav-open { overflow: hidden; }
   #site-header .bar .wrap {
     flex-direction: column;
     height: auto;
-    align-items: center;
+    align-items: flex-start;
     gap: 8px;
     padding-top: 12px;
     padding-bottom: 12px;
   }
   #site-header .bar nav { width: 100%; }
-  #site-header .bar .nav { justify-content: center; }
+  #site-header .bar .nav { justify-content: flex-start; }
   .header-spacer { height: 160px; }
 }
