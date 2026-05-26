@@ -613,5 +613,5 @@ body.nav-open { overflow: hidden; }
   }
   #site-header .bar nav { width: 100%; }
   #site-header .bar .nav { justify-content: flex-start; }
-  .header-spacer { height: 160px; }
+  .header-spacer { height: 200px; }
 }
