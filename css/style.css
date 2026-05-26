@@ -619,3 +619,4 @@ body.nav-open { overflow: hidden; }
 #site-header { background: #FFFFFF; }
 #site-header .bar { background: #FFFFFF; backdrop-filter: none; }
 #site-header.scrolled .bar { background: #FFFFFF; backdrop-filter: none; }
+.hero { padding-top: 175px; }
