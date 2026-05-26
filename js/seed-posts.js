@@ -18,9 +18,9 @@
 
 window.EMCL_SEED_POSTS = [
   { id: "p10", category: "notice",  pinned: true,
-    title: "2024년 신입 연구원 모집 공고",
-    author: "관리자", date: "2024.11.01",
-    content: "에너지물질순환연구실(EMCL)에서 2025학년도 신입 대학원생(석사·박사) 및 학부연구생을 모집합니다.\n\n· 모집 분야: 플러스에너지빌딩, CO₂ 포집·활용, 차세대 히트펌프, 열관리·에너지 하베스팅\n· 지원 자격: 기계공학·화학공학·재료공학 등 관련 전공\n· 문의: ytkang@korea.ac.kr\n\n연구에 열정이 있는 분들의 많은 지원 바랍니다.",
+    title: "2027년 신입 연구원 모집 공고",
+    author: "관리자", date: "2026.05.26",
+    content: "에너지물질순환연구실(EMCL)에서 2027학년도 신입 대학원생(석사·박사) 및 학부연구생을 모집합니다.\n\n· 모집 분야: 플러스에너지빌딩, CO₂ 포집·활용, 차세대 히트펌프, 열관리·에너지 하베스팅\n· 지원 자격: 기계공학·화학공학·재료공학 등 관련 전공\n· 문의: ytkang@korea.ac.kr\n\n연구에 열정이 있는 분들의 많은 지원 바랍니다.",
     images: [] },
   { id: "p9", category: "seminar", pinned: false,
     title: "국제 학술대회 논문 발표 안내",
@@ -52,21 +52,6 @@ window.EMCL_SEED_POSTS = [
     author: "관리자", date: "2024.05.20",
     content: "한국기계학회(KSME) 춘계 학술대회에서 본 연구실 연구원들이 다수의 논문을 발표하였습니다.",
     images: [] },
-  { id: "p3", category: "news", pinned: false,
-    title: "신규 연구 과제 수주 안내",
-    author: "관리자", date: "2024.04.10",
-    content: "직접 공기 포집(DAC) 및 CO₂ 활용 시스템 개발 연구 과제를 신규 수주하였습니다. 대기 중 CO₂ 포집과 물 하베스팅을 연계하는 통합 모듈을 개발할 예정입니다.",
-    images: [] },
-  { id: "p2", category: "notice", pinned: false,
-    title: "연구실 홈페이지 리뉴얼 안내",
-    author: "관리자", date: "2024.03.01",
-    content: "연구실 홈페이지가 새롭게 단장되었습니다. 게시판 및 갤러리 기능이 추가되어 연구실 소식을 더욱 편리하게 확인하실 수 있습니다.",
-    images: [] },
-  { id: "p1", category: "notice", pinned: false,
-    title: "2024년 신학기 연구실 오리엔테이션",
-    author: "관리자", date: "2024.02.28",
-    content: "2024학년도 신학기 연구실 오리엔테이션을 진행합니다. 신규 구성원의 많은 참여 바랍니다.",
-    images: [] }
 ];
 
 window.EMCL_SEED_GALLERY = [
