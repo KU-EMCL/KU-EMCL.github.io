@@ -24,24 +24,24 @@
   // navigation model
   var NAV = [
     { key: "intro",    label: "Introduction", href: "pages/introduction.html", sub: [
-      { label: "연구실 소개", href: "pages/introduction.html" },
-      { label: "연구 분야",  href: "pages/research.html" } ] },
+      { label: "About Us", href: "pages/introduction.html" },
+      { label: "Research Area",  href: "pages/research.html" } ] },
     { key: "prof",     label: "Professor",    href: "pages/professor.html", sub: [
-      { label: "교수 소개", href: "pages/professor.html" } ] },
+      { label: "Professor", href: "pages/professor.html" } ] },
     { key: "members",  label: "Members",      href: "pages/members.html", sub: [
-      { label: "연구원 소개", href: "pages/members.html" },
-      { label: "졸업생",     href: "pages/alumni.html" } ] },
+      { label: "Students", href: "pages/members.html" },
+      { label: "Alumni",     href: "pages/alumni.html" } ] },
     { key: "lectures", label: "Lectures",     href: "pages/lectures.html", sub: [
-      { label: "강의 목록", href: "pages/lectures.html" } ] },
+      { label: "Courses", href: "pages/lectures.html" } ] },
     { key: "pubs",     label: "Publications", href: "pages/publications.html", sub: [
-      { label: "논문", href: "pages/publications.html" },
-      { label: "특허", href: "pages/patents.html" } ] },
+      { label: "Paper", href: "pages/publications.html" },
+      { label: "Patent", href: "pages/patents.html" } ] },
     { key: "project",  label: "Project",      href: "pages/project.html", sub: [
-      { label: "진행 과제", href: "pages/project.html#ongoing" },
-      { label: "완료 과제", href: "pages/project.html#completed" } ] },
+      { label: "Ongoing", href: "pages/project.html#ongoing" },
+      { label: "Completed", href: "pages/project.html#completed" } ] },
     { key: "community",label: "Community",    href: "pages/community.html", sub: [
-      { label: "게시판",   href: "pages/community.html" },
-      { label: "갤러리",   href: "pages/gallery.html" } ] }
+      { label: "News & Notice",   href: "pages/community.html" },
+      { label: "Gallery",   href: "pages/gallery.html" } ] }
   ];
 
   function abs(h) { return P + h; }
