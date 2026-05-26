@@ -596,7 +596,7 @@ body.nav-open { overflow: hidden; }
 }
 
 /* 로고 크기·정렬 */
-.brand .ku-logo { height: 40px; width: auto; }
+.brand .ku-logo { height: 36px; width: auto; }
 .brand .ku-name { display: flex; flex-direction: column; line-height: 1.15; margin-right: 4px; }
 .brand .ku-name b { font-size: 18px; font-weight: 900; color: var(--ink); letter-spacing: .11em; }
 .brand .ku-name i { font-style: normal; font-size: 9.5px; letter-spacing: .08em; color: var(--ink-3); }
