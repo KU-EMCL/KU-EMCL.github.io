@@ -615,3 +615,7 @@ body.nav-open { overflow: hidden; }
   #site-header .bar .nav { justify-content: flex-start; }
   .header-spacer { height: 200px; }
 }
+/* 헤더 전체를 불투명 흰색으로 강제 (비침 방지) */
+#site-header { background: #FFFFFF; }
+#site-header .bar { background: #FFFFFF; backdrop-filter: none; }
+#site-header.scrolled .bar { background: #FFFFFF; backdrop-filter: none; }
