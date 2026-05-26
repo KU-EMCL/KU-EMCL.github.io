@@ -7,8 +7,8 @@
 /* ---------- Design tokens ---------- */
 :root {
   /* paper / ink */
-  --paper:      #F6F3EC;   /* warm ivory canvas */
-  --paper-2:    #FCFAF5;   /* raised surfaces */
+  --paper:      #FFFFFF;   /* warm ivory canvas */
+  --paper-2:    #FFFFFF;   /* raised surfaces */
   --paper-3:    #FFFFFF;   /* cards */
   --ink:        #1B1916;   /* near-black, warm */
   --ink-2:      #4C473F;   /* secondary text */
@@ -181,10 +181,7 @@ h1,h2,h3,h4 { font-weight: 600; line-height: 1.12; letter-spacing: -.01em; color
    ============================================================ */
 .hero {
   position: relative; overflow: hidden;
-  background:
-    radial-gradient(120% 100% at 85% 0%, rgba(44,110,99,.10), transparent 55%),
-    radial-gradient(120% 120% at 10% 100%, rgba(138,21,56,.10), transparent 50%),
-    var(--paper);
+  background: #FFFFFF;
   border-bottom: 1px solid var(--line);
 }
 .hero .wrap { position: relative; display: grid; grid-template-columns: 1.05fr .95fr; gap: 40px; align-items: center; min-height: 78vh; padding-top: 60px; padding-bottom: 60px; }
@@ -327,9 +324,7 @@ section { position: relative; }
    INNER PAGE chrome
    ============================================================ */
 .page-hero {
-  background:
-    radial-gradient(100% 120% at 92% -10%, rgba(138,21,56,.10), transparent 55%),
-    var(--paper);
+  background: #FFFFFF;
   border-bottom: 1px solid var(--line); position: relative; overflow: hidden;
 }
 .page-hero .wrap { padding-block: clamp(46px, 7vw, 86px); }
@@ -591,3 +586,4 @@ section { position: relative; }
 .nav-toggle.x span:nth-child(2) { opacity: 0; }
 .nav-toggle.x span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 body.nav-open { overflow: hidden; }
+.page-hero .ghost-no { display: none; }
