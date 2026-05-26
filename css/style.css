@@ -193,7 +193,7 @@ h1,h2,h3,h4 { font-weight: 600; line-height: 1.12; letter-spacing: -.01em; color
   font-family: var(--font-display); font-weight: 400; letter-spacing: -.02em;
   font-size: clamp(36px, 5vw, 60px); line-height: 1.02; margin: 22px 0 24px;
 }
-.hero-copy h1 em { font-style: italic; color: var(--crimson); }
+.hero-copy h1 em { font-style: normal; color: var(--crimson); }
 .hero-copy .lede { font-size: 17px; color: var(--ink-2); max-width: 46ch; margin-bottom: 34px; }
 .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
 
@@ -212,7 +212,7 @@ h1,h2,h3,h4 { font-weight: 600; line-height: 1.12; letter-spacing: -.01em; color
 .node.n3 { animation: spin 20s linear infinite; }
 .pulse { animation: pulse 3.6s var(--ease) infinite; transform-origin: 250px 250px; }
 @keyframes pulse { 0%,100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.06); opacity: .85; } }
-.hero-core-label { font-family: var(--font-display); font-style: italic; }
+.hero-core-label { font-family: var(--font-display); font-style: normal; }
 
 @media (prefers-reduced-motion: reduce) {
   .orbit-dash, .node, .pulse { animation: none !important; }
@@ -300,7 +300,7 @@ section { position: relative; }
 .pub-feed .pf .pt { font-family: var(--font-display); font-weight: 500; font-size: 16px; line-height: 1.35; margin-bottom: 6px; transition: color .25s; }
 .pub-feed .pf:hover .pt { color: var(--crimson); }
 .pub-feed .pf .pm { font-size: 13px; color: var(--ink-3); }
-.pub-feed .pf .pj { color: var(--accent); font-style: italic; font-family: var(--font-serif); }
+.pub-feed .pf .pj { color: var(--accent); font-style: normal; font-family: var(--font-serif); }
 
 /* CTA join */
 .cta { background: var(--crimson); color: #fff; text-align: center; }
@@ -424,7 +424,7 @@ section { position: relative; }
 .pub-row .ptype { font-family: var(--font-mono); font-size: 10px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); margin-top: 6px; }
 .pub-row h3 { font-family: var(--font-display); font-weight: 500; font-size: 19px; line-height: 1.35; margin-bottom: 8px; }
 .pub-row .pauth { font-size: 13.5px; color: var(--ink-2); }
-.pub-row .pjour { font-family: var(--font-serif); font-style: italic; color: var(--accent); font-size: 14px; }
+.pub-row .pjour { font-family: var(--font-serif); font-style: normal; color: var(--accent); font-size: 14px; }
 
 /* projects */
 .proj-card { border: 1px solid var(--line); border-left: 3px solid var(--crimson); border-radius: var(--radius); padding: 24px 28px; margin-bottom: 16px; background: var(--paper-2); transition: box-shadow .3s var(--ease); display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
