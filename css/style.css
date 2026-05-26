@@ -118,7 +118,7 @@ h1,h2,h3,h4 { font-weight: 600; line-height: 1.12; letter-spacing: -.01em; color
 #site-header .topbar .util { display: flex; gap: 18px; }
 
 #site-header .bar {
-  background: rgba(246,243,236,.82); backdrop-filter: blur(14px);
+  background: rgba(255,255,255,.82); backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--line);
   transition: all .4s var(--ease);
 }
@@ -170,7 +170,7 @@ h1,h2,h3,h4 { font-weight: 600; line-height: 1.12; letter-spacing: -.01em; color
 /* scrolled state */
 #site-header.scrolled .topbar { height: 0; overflow: hidden; }
 #site-header.scrolled .topbar .wrap { height: 0; }
-#site-header.scrolled .bar { background: rgba(246,243,236,.95); }
+#site-header.scrolled .bar { background: rgba(255,255,255,.95); }
 #site-header.scrolled .bar .wrap { height: 64px; }
 
 /* spacer so fixed header doesn't overlap content */
