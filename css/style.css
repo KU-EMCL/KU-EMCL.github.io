@@ -588,7 +588,8 @@ section { position: relative; }
 body.nav-open { overflow: hidden; }
 .page-hero .ghost-no { display: none; }
 * { font-style: normal !important; }
-@media (max-width: 860px) { #site-header .topbar { display: none; } }
+@media (max-width: 860px) {
+  .nav, .brand .div, .brand .meta, .brand .ku-name { display: none; }
 .brand .ku-logo { height: 36px; width: auto; }
 .brand .ku-name { display: flex; flex-direction: column; line-height: 1.15; margin-right: 4px; }
 .brand .ku-name b { font-size: 15px; font-weight: 700; color: var(--ink); }
