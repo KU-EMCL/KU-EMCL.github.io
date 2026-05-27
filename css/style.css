@@ -347,17 +347,37 @@ section { position: relative; }
 .tag-row { display: flex; flex-wrap: wrap; gap: 8px; }
 .tag-row span { font-family: var(--font-mono); font-size: 11px; letter-spacing: .04em; padding: 6px 13px; border-radius: 20px; background: var(--crimson-tint); color: var(--crimson); }
 
-.member-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 22px; margin-bottom: 48px; }
+/* ============================================================
+   MEMBER LIST (가로형 리스트 / 액자형 사진)
+   ============================================================ */
 .count-badge { display: inline-block; font-family: var(--font-mono); font-size: 12px; font-weight: 500; color: #fff; background: var(--crimson); border-radius: 20px; padding: 2px 11px; vertical-align: middle; margin-left: 10px; }
-.member-card { background: var(--paper-2); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; transition: all .35s var(--ease); }
-.member-card:hover { box-shadow: var(--shadow); transform: translateY(-4px); }
-.member-card .mphoto { aspect-ratio: 4/5; background: linear-gradient(150deg,#efe9dd,#ded6c6); display: flex; align-items: center; justify-content: center; overflow: hidden; }
-.member-card .mphoto svg { width: 38%; fill: #c3b9a5; }
-.member-card .mphoto img { width: 100%; height: 100%; object-fit: cover; }
-.member-card .minfo { padding: 16px; }
-.member-card .mname { font-family: var(--font-display); font-weight: 700; font-size: 18px; }
-.member-card .mrole { font-family: var(--font-mono); font-size: 11px; letter-spacing: .06em; color: var(--crimson); text-transform: uppercase; margin: 4px 0 8px; }
-.member-card .memail { font-size: 12px; color: var(--ink-3); word-break: break-all; }
+
+.member-list { display: flex; flex-direction: column; margin-bottom: 48px; }
+.member-list-item { 
+  display: grid; grid-template-columns: 150px 1fr; gap: 40px; padding: 30px 0; 
+  border-bottom: 1px solid var(--line); align-items: center; 
+}
+.member-list-item:last-child { border-bottom: none; }
+
+/* 사진 영역 (액자 스타일) */
+.member-list-item .mphoto { 
+  aspect-ratio: 3/4; border: 1px solid #c19c67; padding: 4px; background: #fff;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.06); 
+}
+.member-list-item .mphoto img { width: 100%; height: 100%; object-fit: cover; }
+
+/* 텍스트 및 세부 정보 */
+.member-list-item .minfo { padding-top: 5px; }
+.member-list-item .mname { 
+  font-family: var(--font-display); font-weight: 700; font-size: 24px; color: var(--crimson); 
+  margin-bottom: 20px; display: flex; align-items: baseline; gap: 12px;
+}
+.member-list-item .mname-en { font-size: 18px; font-weight: 400; color: var(--ink-3); }
+.member-list-item dl { display: grid; grid-template-columns: 140px 1fr; gap: 12px; font-size: 14.5px; }
+.member-list-item dt { font-weight: 700; color: var(--ink-2); display: flex; align-items: center; gap: 8px; }
+.member-list-item dt::before { content: "▪"; font-size: 11px; color: var(--ink-3); }
+.member-list-item dd { color: var(--ink-2); }
+
 
 .pub-filter { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 30px; }
 .pub-filter button { font-family: var(--font-mono); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; padding: 9px 18px; border: 1px solid var(--line); background: var(--paper-2); color: var(--ink-2); border-radius: 2px; transition: all .25s; }
@@ -522,6 +542,12 @@ section { position: relative; }
   .prof-head { grid-template-columns: 1fr; }
   .prof-photo { max-width: 200px; }
   .field-row { grid-template-columns: 1fr; }
+  
+  /* 멤버 리스트 모바일 대응 추가 */
+  .member-list-item { grid-template-columns: 110px 1fr; gap: 20px; }
+  .member-list-item .mname { font-size: 20px; flex-direction: column; gap: 4px; }
+  .member-list-item .mname-en { font-size: 15px; }
+  .member-list-item dl { grid-template-columns: 120px 1fr; }
 }
 
 /* hamburger active */
