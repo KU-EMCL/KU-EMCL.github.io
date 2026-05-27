@@ -12,7 +12,6 @@
       display: flex; align-items: center; gap: 12px; margin: 36px 0 14px; }
     .pub-year::before { content: ""; width: 14px; height: 14px; background: var(--crimson); display: inline-block; }
     .pub-year:first-of-type { margin-top: 0; }
-    .pub-year .yc { font-family: var(--font-mono); font-size: 15px; font-weight: 400; color: var(--ink-3); }
     .paper { display: grid; grid-template-columns: 44px 1fr; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--line); }
     .paper .pno { font-family: var(--font-mono); font-size: 15px; font-weight: 700; color: var(--crimson); text-align: right; padding-top: 2px; }
     .paper .pbody { font-size: 14.5px; line-height: 1.6; color: var(--ink-2); }
@@ -88,7 +87,7 @@
     slice.forEach(function (p) {
       if (p.year !== curYear) {
         curYear = p.year;
-        html += '<div class="pub-year">' + curYear + ' <span class="yc">(' + yearCount[curYear] + ')</span></div>';
+        html += '<div class="pub-year">' + curYear + '</div>';
       }
       html += '<div class="paper"><div class="pno">' + p._no + '</div>' +
         '<div class="pbody">' + boldKang(p.authors) +
