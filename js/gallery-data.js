@@ -67,7 +67,6 @@ window.EMCL_GALLERY = [
   "content": "일자: 2024년 11월 29일\n대한설비공학회 동계학술발표대회",
   "year": 2024,
   "images": [
-   "g0021.png",
    "g0022.jpg",
    "g0023.jpg",
    "g0024.jpg",
