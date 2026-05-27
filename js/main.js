@@ -12,30 +12,47 @@
   var P     = depth === 1 ? "../" : "";                      // path prefix to root
 
   // top-level highlight map
+// top-level highlight map
   var GROUP = {
     home: "home", introduction: "intro", research: "intro",
-    professor: "prof", members: "members", alumni: "members",
-    lectures: "lectures", publications: "pubs", patents: "pubs",
+    
+    // 👇 adjunct_professor: "prof" 추가
+    professor: "prof", adjunct_professor: "prof", members: "members", alumni: "members",
+    
+    // 👇 conference: "pubs" 추가
+    lectures: "lectures", publications: "pubs", patents: "pubs", conference: "pubs",
+    
     project: "project", community: "community", gallery: "community",
     contact: "contact"
   };
   var active = GROUP[page] || "";
 
   // navigation model
+// navigation model
   var NAV = [
     { key: "intro",    label: "Introduction", href: "pages/introduction.html", sub: [
       { label: "About Us", href: "pages/introduction.html" },
       { label: "Research Area",  href: "pages/research.html" } ] },
+    
     { key: "prof",     label: "Professor",    href: "pages/professor.html", sub: [
-      { label: "Professor", href: "pages/professor.html" } ] },
+      { label: "Professor", href: "pages/professor.html" },
+      // 👇 여기에 Adjunct Professor 추가
+      { label: "Adjunct Professor", href: "pages/adjunct-professor.html" } 
+    ] },
+    
     { key: "members",  label: "Members",      href: "pages/members.html", sub: [
       { label: "Students", href: "pages/members.html" },
       { label: "Alumni",     href: "pages/alumni.html" } ] },
     { key: "lectures", label: "Lectures",     href: "pages/lectures.html", sub: [
       { label: "Courses", href: "pages/lectures.html" } ] },
+    
     { key: "pubs",     label: "Publications", href: "pages/publications.html", sub: [
       { label: "Paper", href: "pages/publications.html" },
-      { label: "Patent", href: "pages/patents.html" } ] },
+      { label: "Patent", href: "pages/patents.html" },
+      // 👇 여기에 Conference 추가
+      { label: "Conference", href: "pages/conference.html" } 
+    ] },
+    
     { key: "project",  label: "Project",      href: "pages/project.html", sub: [
       { label: "Ongoing", href: "pages/project.html#ongoing" },
       { label: "Completed", href: "pages/project.html#completed" } ] },
