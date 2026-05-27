@@ -12,6 +12,7 @@
       display: flex; align-items: center; gap: 12px; margin: 36px 0 14px; }
     .pub-year::before { content: ""; width: 14px; height: 14px; background: var(--crimson); display: inline-block; }
     .pub-year:first-of-type { margin-top: 0; }
+    .pub-year .yc { font-family: var(--font-mono); font-size: 15px; font-weight: 400; color: var(--ink-3); }
     .paper { display: grid; grid-template-columns: 44px 1fr; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--line); }
     .paper .pno { font-family: var(--font-mono); font-size: 15px; font-weight: 700; color: var(--crimson); text-align: right; padding-top: 2px; }
     .paper .pbody { font-size: 14.5px; line-height: 1.6; color: var(--ink-2); }
@@ -53,9 +54,18 @@
   // 연도 내림차순 정렬 (같은 연도는 입력 순서 유지)
   papers.sort(function (a, b) { return b.year - a.year; });
 
-  // 전체에 번호 매기기: 가장 오래된 게 1번, 최신이 큰 번호
   var total = papers.length;
-  papers.forEach(function (p, i) { p._no = total - i; });
+
+  // 연도별 개수 세기
+  var yearCount = {};
+  papers.forEach(function (p) { yearCount[p.year] = (yearCount[p.year] || 0) + 1; });
+
+  // 연도별 번호 매기기: 각 연도 안에서 (그 해 총 개수) → 1 로 내려감
+  var seen = {};
+  papers.forEach(function (p) {
+    seen[p.year] = (seen[p.year] || 0) + 1;
+    p._no = yearCount[p.year] - seen[p.year] + 1;
+  });
 
   var page = 1;
   var pages = Math.max(1, Math.ceil(total / PER_PAGE));
@@ -78,7 +88,7 @@
     slice.forEach(function (p) {
       if (p.year !== curYear) {
         curYear = p.year;
-        html += '<div class="pub-year">' + curYear + '</div>';
+        html += '<div class="pub-year">' + curYear + ' <span class="yc">(' + yearCount[curYear] + ')</span></div>';
       }
       html += '<div class="paper"><div class="pno">' + p._no + '</div>' +
         '<div class="pbody">' + boldKang(p.authors) +
