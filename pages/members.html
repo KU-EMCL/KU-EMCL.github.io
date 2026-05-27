@@ -21,7 +21,7 @@
 
   <section class="page-body"><div class="wrap">
 
-    <p class="prose reveal" style="margin-bottom:36px;">현재 박사 후 연구원 1명, 박사과정 11명, 석사과정 11명, 학부연구생 1명이 함께 연구하고 있습니다.</p>
+    <p class="prose reveal" style="margin-bottom:36px;">박사 후 연구원 1명, 박사과정 11명, 석사과정 11명, 학부연구생 1명이 함께 연구하고 있습니다.</p>
     
     <h2 class="lab-section-title reveal" style="margin-top: 60px;">박사 후 연구원 · Post Doctor <span class="count-badge">3</span></h2>
     <div class="member-list">
@@ -46,7 +46,7 @@
 
       <div class="member-list-item reveal">
         <div class="mphoto">
-          <img src="../images/ko_yun_mo.jpg" alt="고윤모">
+          <img src="../images/yun_mo_ko.jpg" alt="고윤모">
         </div>
         <div class="minfo">
           <div class="mname">고윤모 <span class="mname-en">Ko, Yun Mo</span></div>
@@ -72,5 +72,24 @@
 
 </div>
 <script src="../js/main.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // 1. 모든 섹션 제목(h2)을 찾습니다.
+    var titles = document.querySelectorAll(".lab-section-title");
+    
+    titles.forEach(function (title) {
+      // 2. 제목 안에 있는 뱃지와 바로 밑에 있는 멤버 리스트 박스를 찾습니다.
+      var badge = title.querySelector(".count-badge");
+      var list = title.nextElementSibling;
+      
+      // 3. 뱃지와 리스트가 정상적으로 존재한다면 개수를 셉니다.
+      if (badge && list && list.classList.contains("member-list")) {
+        // 리스트 안의 실제 사람(member-list-item) 수를 세어 뱃지 숫자를 바꿉니다.
+        var count = list.querySelectorAll(".member-list-item").length;
+        badge.textContent = count;
+      }
+    });
+  });
+  </script>
 </body>
 </html>
