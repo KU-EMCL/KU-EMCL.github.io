@@ -43,28 +43,14 @@
   </div></section>
 </div>
 
+<script src="../js/conference.js"></script>
 <script src="../js/main.js"></script>
 <script>
 (function () {
   var PER_PAGE = 15;
   
-  // 학술대회 데이터 배열 (여기에 발표 데이터를 양식에 맞춰 추가하시면 됩니다)
-  var conferences = [
-    {
-      year: 2026,
-      authors: "Soohwan Lim, Yong Tae Kang",
-      title: "Condensation Heat Transfer Characteristics of Low-GWP Refrigerant R-1233zd(E) at High Pressure Systems",
-      conference: "The 18th International Heat Transfer Conference (IHTC-18)",
-      location: "Rio de Janeiro, Brazil"
-    },
-    {
-      year: 2025,
-      authors: "Gildong Hong, Yong Tae Kang",
-      title: "Experimental Study on Sorption Thermal Battery for Plus-Energy Building Applications",
-      conference: "International Sorption Heat Pump Conference (ISHPC)",
-      location: "Paris, France"
-    }
-  ];
+  // window 객체에 선언된 배열을 가져옵니다. (없으면 빈 배열)
+  var conferences = (window.EMCL_CONFERENCES || []).slice();
 
   // 연도 내림차순 정렬
   conferences.sort(function (a, b) { return b.year - a.year; });
