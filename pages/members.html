@@ -21,53 +21,56 @@
 
   <section class="page-body"><div class="wrap">
 
-    <p class="prose reveal" style="margin-bottom:36px;">현재 박사 후 연구원 1명, 박사과정 11명, 석사과정 13명, 학부연구생 3명이 함께 연구하고 있습니다. 아래는 구성원 현황이며, 개별 프로필 사진과 이름은 추후 업데이트됩니다.</p>
-
-    <!--
-      개별 연구원을 추가하려면 아래 member-card 블록을 복사해 이름·역할·이메일을 채우세요.
-      사진은 images/ 폴더에 넣고 .mphoto 안의 <svg>를 <img src="../images/이름.jpg" alt="이름">로 교체하면 됩니다.
-    -->
-
-    <h2 class="lab-section-title reveal">박사 후 연구원 · Postdoctoral Researcher <span class="count-badge">1</span></h2>
-    <div class="member-grid">
-      <div class="member-card reveal">
-        <div class="mphoto"><svg viewBox="0 0 70 70" xmlns="http://www.w3.org/2000/svg"><circle cx="35" cy="26" r="16"/><ellipse cx="35" cy="62" rx="26" ry="16"/></svg></div>
-        <div class="minfo"><div class="mname">Postdoc</div><div class="mrole">Postdoctoral Researcher</div><div class="memail">&mdash;</div></div>
+    <p class="prose reveal" style="margin-bottom:36px;">현재 박사 후 연구원 1명, 박사과정 11명, 석사과정 11명, 학부연구생 1명이 함께 연구하고 있습니다.</p>
+    
+    <h2 class="lab-section-title reveal" style="margin-top: 60px;">박사 후 연구원 · Post Doctor <span class="count-badge">3</span></h2>
+    <div class="member-list">
       </div>
-    </div>
-
+    
     <h2 class="lab-section-title reveal">박사과정 · Ph.D. Candidates <span class="count-badge">11</span></h2>
-    <div class="member-grid" id="phd-grid"></div>
+    <div class="member-list">
+      
+      <div class="member-list-item reveal">
+        <div class="mphoto">
+          <img src="../images/ok_jung_soo.jpg" alt="옥정수">
+        </div>
+        <div class="minfo">
+          <div class="mname">옥정수 <span class="mname-en">Ok, Jung Soo</span></div>
+          <dl>
+            <dt>Research interest</dt><dd>Heat exchanger analysis</dd>
+            <dt>Room</dt><dd>Innovation Hall 616</dd>
+            <dt>E-mail</dt><dd>coral5603@korea.ac.kr</dd>
+          </dl>
+        </div>
+      </div>
 
-    <h2 class="lab-section-title reveal">석사과정 · M.S. Students <span class="count-badge">13</span></h2>
-    <div class="member-grid" id="ms-grid"></div>
+      <div class="member-list-item reveal">
+        <div class="mphoto">
+          <img src="../images/ko_yun_mo.jpg" alt="고윤모">
+        </div>
+        <div class="minfo">
+          <div class="mname">고윤모 <span class="mname-en">Ko, Yun Mo</span></div>
+          <dl>
+            <dt>Research interest</dt><dd>Thermal regenerative battery</dd>
+            <dt>Room</dt><dd>Innovation hall 616</dd>
+            <dt>E-mail</dt><dd>yunmoko@korea.ac.kr</dd>
+          </dl>
+        </div>
+      </div>
+      
+      </div>
 
-    <h2 class="lab-section-title reveal">학부연구생 · Undergraduate Researchers <span class="count-badge">3</span></h2>
-    <div class="member-grid" id="ug-grid"></div>
+    <h2 class="lab-section-title reveal" style="margin-top: 60px;">석사과정 · M.S. Students <span class="count-badge">13</span></h2>
+    <div class="member-list">
+      </div>
+
+    <h2 class="lab-section-title reveal" style="margin-top: 60px;">학부연구생 · Undergraduate Researchers <span class="count-badge">3</span></h2>
+    <div class="member-list">
+      </div>
 
   </div></section>
 
 </div>
 <script src="../js/main.js"></script>
-<script>
-  // 인원 수만큼 자리표시 카드를 자동 생성합니다. (이름이 정해지면 위 안내대로 수동 카드로 교체하세요.)
-  (function () {
-    function fill(id, role, n) {
-      var g = document.getElementById(id);
-      if (!g) return;
-      var svg = '<svg viewBox="0 0 70 70" xmlns="http://www.w3.org/2000/svg"><circle cx="35" cy="26" r="16"/><ellipse cx="35" cy="62" rx="26" ry="16"/></svg>';
-      var html = "";
-      for (var i = 1; i <= n; i++) {
-        html += '<div class="member-card reveal"><div class="mphoto">' + svg +
-          '</div><div class="minfo"><div class="mname">' + role + ' ' + i +
-          '</div><div class="mrole">' + role + '</div><div class="memail">&mdash;</div></div></div>';
-      }
-      g.innerHTML = html;
-    }
-    fill("phd-grid", "Ph.D.", 11);
-    fill("ms-grid", "M.S.", 13);
-    fill("ug-grid", "Undergrad", 3);
-  })();
-</script>
 </body>
 </html>
