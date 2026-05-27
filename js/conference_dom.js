@@ -1,64 +1,981 @@
 /* ============================================================
-   EMCL 논문 목록 데이터
-   ------------------------------------------------------------
-   ▶ 새 논문 추가법: 아래 목록 맨 위에 한 줄(블록)을 복사해 추가하세요.
-     - year:    연도 (숫자)
-     - authors: 저자 (Yong Tae Kang은 자동으로 굵게 표시됩니다)
-     - title:   논문 제목
-     - journal: 저널명 + 부가정보 (IF, TOP %, ERC 등)
-     - status:  "Published" / "Under Review" / "In Revision" 등
-   ▶ 순서는 신경 쓰지 않아도 됩니다. 연도별로 자동 정렬·묶음·페이지 분할됩니다.
+   EMCL Conference Proceedings Data (2014 - 2026)
    ============================================================ */
-window.EMCL_PAPERS = [
 
-  // ===== 2026 =====
-  { year: 2026, authors: "Joo Young Shin, Jin Un Byun, Seung Hwa Ryu, Hyun Soo Kim, Ronghuan Xu, Yong Tae Kang",
-    title: "Low waste heat driven indoor CO2 capture via 3D-printed hybrid TPMS monoliths",
-    journal: "Nature Communications (IF=16.7, TOP 4.78%)", status: "Under Review" },
+window.EMCL_CONFERENCES_DOM = [
+  // ----------------------------------------------------------
+  // 2026년 (국내 학회 실적만 포함)
+  // ----------------------------------------------------------
+  {
+    year: 2026,
+    authors: "안형섭, 강용태",
+    title: "태양광 구동 대기 중 수분 하베스팅 및 DAC 동시 확보 장치",
+    conference: "대한기계학회 마이크로/나노공학부문 2026년 춘계학술대회",
+    location: "여수, 대한민국"
+  },
+  {
+    year: 2026,
+    authors: "신재현, 강용태",
+    title: "물 쌍극자 모멘트를 이용한 쌍극자 칼로리 냉동 사이클",
+    conference: "대한기계학회 마이크로/나노공학부문 2026년 춘계학술대회",
+    location: "여수, 대한민국"
+  },
+  {
+    year: 2026,
+    authors: "김경은, 강용태",
+    title: "폐열구동 무동력 제습기 적용 MERV 시스템 개발",
+    conference: "대한기계학회 열공학부문 2026년 춘계학술대회",
+    location: "제주도, 대한민국"
+  },
+  {
+    year: 2026,
+    authors: "고윤모, 강용태",
+    title: "암모니아 크로스오버 저감을 통한 열 재생 배터리의 운전 안정성 및 방전 시간 효율화",
+    conference: "대한기계학회 열공학부문 2026년 춘계학술대회",
+    location: "제주도, 대한민국"
+  },
+  {
+    year: 2026,
+    authors: "구자룡, 강용태",
+    title: "가정 난방 부하 대응을 위한 연속 충,방전 옵션 열배터리의 온수기의 작동조건 최적화",
+    conference: "대한기계학회 열공학부문 2026년 춘계학술대회",
+    location: "제주도, 대한민국"
+  },
 
-  { year: 2026, authors: "Yun Mo Ko, Sunghun Lee, Seonggon Kim, Yong Tae Kang",
-    title: "Ammonia-based thermally regenerative batteries enable waste-heat-powered defrosting",
-    journal: "Nature Communications (ERC, 중견, IF=16.7, TOP 4.78%)", status: "Under Review" },
+  // ----------------------------------------------------------
+  // 2025년 (국내 학회 실적만 포함)
+  // ----------------------------------------------------------
+  {
+    year: 2025,
+    authors: "정대영, 강용태",
+    title: "습선 열배터리의 안정적 열출력 유지를 위한 동적 제어 모드 개발 및 실증",
+    conference: "대한기계학회 80주년 기념 학술대회",
+    location: "정선, 대한민국"
+  },
+  {
+    year: 2025,
+    authors: "이성훈, 강용태",
+    title: "저농도 CO2 흡수 구동 전기 및 수소 동시 생산 시스템",
+    conference: "대한기계학회 80주년 기념 학술대회",
+    location: "정선, 대한민국"
+  },
+  {
+    year: 2025,
+    authors: "안형섭, 강용태",
+    title: "태양광 구동 대기 중 수분 하베스팅 및 DAC 동시 확보 장치",
+    conference: "대한기계학회 80주년 기념 학술대회",
+    location: "정선, 대한민국"
+  },
+  {
+    year: 2025,
+    authors: "심정보, 강용태",
+    title: "산업용 고온 히트펌프 운전 조건에서 형상 가공 응축 전열관의 열전달 성능 평가",
+    conference: "대한설비공학회 2025년도 동계학술발표대회",
+    location: "강남, 대한민국"
+  },
+  {
+    year: 2025,
+    authors: "김현수, 강용태",
+    title: "실내 CO2 제거를 위한 저온 부분 재생 전략",
+    conference: "대한설비공학회 2025년도 동계학술발표대회",
+    location: "강남, 대한민국"
+  },
+  {
+    year: 2025,
+    authors: "임수환, 강용태",
+    title: "Low GWP 냉매 적용 이상유동 조건에서의 전열관 형상 최적화를 통한 열전달 성능 수치해석 연구",
+    conference: "대한설비공학회 2025년도 하계학술발표대회",
+    location: "평창, 대한민국"
+  },
+  {
+    year: 2025,
+    authors: "심정보, 강용태",
+    title: "R1233zd(E)를 사용하는 유하박막 증발 전열 촉진관의 열전달 성능 평가",
+    conference: "대한설비공학회 2025년도 하계학술발표대회",
+    location: "평창, 대한민국"
+  },
+  {
+    year: 2025,
+    authors: "김성현, 강용태",
+    title: "태양 에너지 활용을 위한 투과 방식의 상은 이하 복사 액체 냉각 시스템",
+    conference: "대한설비공학회 2025년도 하계학술발표대회",
+    location: "평창, 대한민국"
+  },
+  {
+    year: 2025,
+    authors: "신재현, 강용태",
+    title: "쌍극자 칼로리 효과를 활용한 냉동 사이클",
+    conference: "춘계기계학회",
+    location: "제주도, 대한민국"
+  },
+  {
+    year: 2025,
+    authors: "신주영, 강용태",
+    title: "폐열 활용 실내 CO2 포집용 DLP 3D 프린팅 HTAM 구조 모노리스",
+    conference: "춘계기계학회",
+    location: "제주도, 대한민국"
+  },
 
-  { year: 2026, authors: "M. Khoshvaght-Aliabadi, P. Ghodrati, M. Bahmanyan, Yong Tae Kang",
-    title: "Novel Design of Heat Sinks for Enhanced Chip-Level Cooling in Data Center Servers",
-    journal: "Energy (IF=9.4, TOP 3.2%)", status: "Under Review" },
+  // ----------------------------------------------------------
+  // 2024년
+  // ----------------------------------------------------------
+  {
+    year: 2024,
+    authors: "구자룡, 최형원, 강용태",
+    title: "가정용 보일러 대체 옵션 열배터리 온수기의 초기 조건 설정 및 성능 분석",
+    conference: "동계설비공학회",
+    location: "서울"
+  },
+  {
+    year: 2024,
+    authors: "이제형, 정길, 최형원, 박희웅, 김현종, 서범수, 강용태",
+    title: "과도상태에서의 R290 히트펌프 시스템 오일 잔류량 측정 및 인공지능 기반 예측 모델링",
+    conference: "동계설비공학회",
+    location: "서울"
+  },
+  {
+    year: 2024,
+    authors: "신재현, 정길, 김성곤, 강용태",
+    title: "쌍극자칼로리 효과를 이용한 냉동사이클",
+    conference: "동계설비공학회",
+    location: "서울"
+  },
+  {
+    year: 2024,
+    authors: "민재홍, 신재현, 강용태",
+    title: "터보 히트펌프 전열관 내측 마찰 및 열전달 계수 성능평가",
+    conference: "대한기계학회 학술대회",
+    location: "제주"
+  },
+  {
+    year: 2024,
+    authors: "강용태, 정길, 이제형",
+    title: "딥러닝 기반 R290 히트펌프 시스템의 오일 역류 예측 및 반환 개선 방법 연구",
+    conference: "대한기계학회 학술대회",
+    location: "제주"
+  },
+  {
+    year: 2024,
+    authors: "고윤모, 이성훈, 강용태",
+    title: "저온 열원 구동 구리 착화반응 기반 열-전기 변환 연구",
+    conference: "대한설비공학회 하계학술발표대회",
+    location: "용평"
+  },
+  {
+    year: 2024,
+    authors: "구자룡, 최형원, 강용태",
+    title: "히트펌프 적용 옵션 열배터리 온수기의 운전 특성 최적화",
+    conference: "대한설비공학회 하계학술발표대회",
+    location: "용평"
+  },
+  {
+    year: 2024,
+    authors: "옥정수, 곽태희, 박내현, 강용태",
+    title: "인공지능과 CFD를 활용한 다양한 표면 형상에 대한 젖음성 및 열전달 분석과 흡수 냉각 열교환기의 효율 향상",
+    conference: "대한설비공학회 하계학술발표대회",
+    location: "용평"
+  },
+  {
+    year: 2024,
+    authors: "김현수, 김성곤, 서영환, 김민재, 강용태",
+    title: "저온 부분재생 기법을 적용한 실내 CO2 포집 성능향상",
+    conference: "대한기계학회 열공학부문 춘계학술대회",
+    location: "제주"
+  },
+  {
+    year: 2024,
+    authors: "김성헌, 김성곤, 강용태",
+    title: "페로브스카이트/실리콘 텐덤 태양전지 광/열 발전 시스템 제안",
+    conference: "대한기계학회 열공학부문 춘계학술대회",
+    location: "제주"
+  },
+  {
+    year: 2024,
+    authors: "신주영, 윤도성, 김현수, 강용태",
+    title: "MXene 촉매 기반 제습 및 CO2 포집 All-in-one 공조시스템",
+    conference: "대한기계학회 열공학부문 춘계학술대회",
+    location: "제주"
+  },
 
-  { year: 2026, authors: "Seonggon Kim, Jae Hyeon Shin, Gil Jeong, Dae Young Jung, Jiachen Li, Zhenyuan Xu, Ruzhu Wang, Yong Tae Kang",
-    title: "Liquid-state dipolarcaloric refrigeration cycle with nitrate based salts",
-    journal: "Science 390, eadz7967 (IF=46.6, TOP 1.9%)", status: "Published" },
+  // ----------------------------------------------------------
+  // 2023년
+  // ----------------------------------------------------------
+  {
+    year: 2023,
+    authors: "두현진, 강용태",
+    title: "흡수식 냉동기 증발기/흡수기용 전열관 성능특성 연구",
+    conference: "대한설비공학회 동계학술발표대회",
+    location: "서울"
+  },
+  {
+    year: 2023,
+    authors: "서영환, 김현수, 강용태",
+    title: "이산화탄소 포집 성능 향상을 위한 아민-개질화 CNT@ZIF-8 복합체 개발연구 (Polyethylenimine Impregnated Sorbents for CO2 capture: A Composite of Multi-walled Carbon Nanotubes and Zeolitic imidazolate Frameworks)",
+    conference: "대한설비공학회 동계학술발표대회",
+    location: "서울"
+  },
+  {
+    year: 2023,
+    authors: "최형원, 강용태",
+    title: "옵션 열배터리 적용을 위한 태양열 구동 흡수식 연속 냉방 시스템",
+    conference: "대한설비공학회 동계학술발표대회",
+    location: "서울"
+  },
+  {
+    year: 2023,
+    authors: "옥정수, 이영채, 안근묵, 이호성, 강용태",
+    title: "주거 및 상업용 지열 냉난방 시스템의 성능 최적화 및 특성에 관한 연구",
+    conference: "대한설비공학회 하계학술발표대회",
+    location: "용평"
+  },
+  {
+    year: 2023,
+    authors: "이성훈, 고윤모, 이재원, 강용태",
+    title: "구리 착화 반응 기반 저온 열원 구동 열-전기 변환/저장 연구",
+    conference: "대한설비공학회 하계학술발표대회",
+    location: "용평"
+  },
+  {
+    year: 2023,
+    authors: "윤도성, 최형원, 조현욱, 이남수, 이재원, 강용태",
+    title: "이온성 액체를 사용한 동시 냉난방 흡수식 사이클의 성능평가",
+    conference: "대한설비공학회 하계학술발표대회",
+    location: "용평"
+  },
+  {
+    year: 2023,
+    authors: "신주영, 김성곤, 최형원, 이재원, 강용태",
+    title: "Mxene/Salt-Hydrate 복합흡착제의 열 에너지 저장 시스템에 대한 응용",
+    conference: "대한설비공학회 하계학술발표대회",
+    location: "용평"
+  },
+  {
+    year: 2023,
+    authors: "고윤모, 이성훈, 이재원, 강용태",
+    title: "저온 열원 구동 구리/암모니아 기반 열-전기 저장/변환 연구",
+    conference: "대한기계학회 열공학부문 춘계학술대회",
+    location: "부산"
+  },
+  {
+    year: 2023,
+    authors: "김민재, 김성곤, 김현수, 이재원, 강용태",
+    title: "수분 저항성 개질 MOFs (HKUST-1)의 이산화탄소 흡착 성능 평가",
+    conference: "대한기계학회 춘계학술대회",
+    location: "부산"
+  },
+  {
+    year: 2023,
+    authors: "안형섭, 김성곤, 이재원, 강용태",
+    title: "CO2 포집 성능 향상을 위한 SBA-15@MOF 기반의 흡착제 개발 연구",
+    conference: "대한기계학회 춘계학술대회",
+    location: "부산"
+  },
 
-  { year: 2026, authors: "Hyung Won Choi, Ja Ryong Koo, Yong Tae Kang",
-    title: "Optimization of sorption thermal battery integrated with heat pump for plus energy building applications",
-    journal: "Energy Conversion and Management (알키미스트, 대온도차, IF=9.9, TOP 1.6%)", status: "Published" },
+  // ----------------------------------------------------------
+  // 2022년
+  // ----------------------------------------------------------
+  {
+    year: 2022,
+    authors: "옥정수, 임환석, 강용태",
+    title: "후판 클래드 열간압연 열특성평가 및 정밀 가속 제어 냉각과정 최적화",
+    conference: "한국소성가공학회 추계학술발표대회",
+    location: "제주"
+  },
+  {
+    year: 2022,
+    authors: "옥정수, 임환석, 강용태",
+    title: "클래드 후판압연 정밀 가속 제어냉각 열전달 특성 성능평가",
+    conference: "대한설비공학회 동계학술발표대회",
+    location: "서울"
+  },
+  {
+    year: 2022,
+    authors: "최형원, 정진희, 강용태",
+    title: "저온 열원 구동 옵션 열배터리의 동적 모델링 기반 에너지 저장밀도 최적화",
+    conference: "대한설비공학회 동계학술발표대회",
+    location: "서울"
+  },
+  {
+    year: 2022,
+    authors: "고윤모, 강용태",
+    title: "저온열원 구동 구리 착화반응 기반 열-전기 저장/변환 시스템 개발",
+    conference: "대한기계학회 2022년도 학술대회",
+    location: "제주"
+  },
+  {
+    year: 2022,
+    authors: "최형원, 정재희, 강용태",
+    title: "용액 저장 탱크가 결합된 태양열 구동 흡수식 칠러의 건물 냉방부하별 성능 특성 분석",
+    conference: "대한설비공학회 하계학술발표대회",
+    location: "평창"
+  },
+  {
+    year: 2022,
+    authors: "서영환, 김성곤, 안형섭, 이재원, 강용태",
+    title: "이산화탄소 포집성능 향상을 위한 아민개질화 CNT/ZIF-8 복합체 개발",
+    conference: "대한기계학회 열공학부문 춘계학술대회",
+    location: "경주"
+  },
+  {
+    year: 2022,
+    authors: "정대영, 최형원, 강용태",
+    title: "저온열원구동 옵션열배터리 시스템 동적 모델링 해석 및 거동특성 평가",
+    conference: "대한기계학회 춘계학술대회",
+    location: "부산"
+  },
 
-  { year: 2026, authors: "A review on passive/active technologies — Hyung Won Choi, Dae Young Jung, Seonggon Kim, Ja Ryong Koo, Yeonsook Heo, Bu Won Song, Yong Tae Kang",
-    title: "A review on passive/active technologies towards plus energy building in high density urban area",
-    journal: "Renewable and Sustainable Energy Reviews (IF=16.3, TOP 2.4%)", status: "Published" },
+  // ----------------------------------------------------------
+  // 2021년
+  // ----------------------------------------------------------
+  {
+    year: 2021,
+    authors: "안형섭, 서영환, 김성곤, 이재원, 강용태",
+    title: "아민 기능화 금속 유기 골격체를 이용한 연소 후 CO2 포집 성능 향상",
+    conference: "대한기계학회 2021년 학술대회",
+    location: "광주"
+  },
+  {
+    year: 2021,
+    authors: "류승걸, 정한솔, 강용태",
+    title: "태안 석탄화력발전소의 대기오염저감과 CO2 포집에 대한 전과정평가 연구",
+    conference: "대한기계학회 2021년 학술대회",
+    location: "광주"
+  },
+  {
+    year: 2021,
+    authors: "이근정, 김성곤, 이재원, 강용태",
+    title: "플러스에너지 빌딩 적용 CO2 열배터리 시스템",
+    conference: "2021년도 대한설비공학회 동계학술발표대회",
+    location: "서울"
+  },
+  {
+    year: 2021,
+    authors: "송민수, 정한솔, 이재원, 강용태",
+    title: "오일 필터를 이용한 태양광 패널 냉각 시스템 개발",
+    conference: "2021년도 대한설비공학회 동계학술발표대회",
+    location: "서울"
+  },
+  {
+    year: 2021,
+    authors: "김민재, 김성곤, 강용태, 이재원",
+    title: "수분 저항성 개질 제올라이트의 실내환경 저농도 CO2 흡착 연구",
+    conference: "2021년도 대한설비공학회 하계학술발표대회",
+    location: "평창"
+  },
+  {
+    year: 2021,
+    authors: "박세준, 최형원, 이재원, 강용태, 조현욱, 이남수",
+    title: "이온성 액체를 포함한 대체 작동 유체 적용 동시냉난방 흡수식 시스템",
+    conference: "2021년도 대한설비공학회 하계학술발표대회",
+    location: "평창"
+  },
+  {
+    year: 2021,
+    authors: "이동찬, 양재완, 강용태, 김용찬, 임성균",
+    title: "판형열교환기에서 이상냉매의 유동패턴과 열전달성능",
+    conference: "2021년도 대한설비공학회 하계학술발표대회",
+    location: "평창"
+  },
+  {
+    year: 2021,
+    authors: "송주영, 고윤모, 강용태, 김용찬, 임성균",
+    title: "판형 열교환기 내 Low-GWP 냉매의 응축열전달 및 압력강하 특성",
+    conference: "2021년도 대한설비공학회 하계학술발표대회",
+    location: "평창"
+  },
+  {
+    year: 2021,
+    authors: "박준호, 박정준, 강용태",
+    title: "혼합첨가제를 활용한 CO2 하이드레이트의 생성 및 냉열 수송 성능 평가",
+    conference: "2021년도 대한설비공학회 하계학술발표대회",
+    location: "평창"
+  },
+  {
+    year: 2021,
+    authors: "민하예, 최형원, 강용태",
+    title: "H2O-LiBr를 작동유체로 한 건물 냉난방용 열배터리 시뮬레이션 연구",
+    conference: "2021년도 대한설비공학회 하계학술발표대회",
+    location: "평창"
+  },
+  {
+    year: 2021,
+    authors: "정재희, 최형원, 강용태",
+    title: "열에너지 저장 시스템과 결합된 태양열 보조 리튬 브로마이드-물 단일 효용 흡수식 냉각기의 성능 평가",
+    conference: "대한기계학회 2021년 학술대회",
+    location: "제주"
+  },
+  {
+    year: 2021,
+    authors: "고윤모, 정재훈, 강용태",
+    title: "판형 열교환기에서의 Low GWP 냉매를 적용한 응축 열전달 평가 및 통합상관식 개발",
+    conference: "대한기계학회 2021년 학술대회",
+    location: "제주"
+  },
+  {
+    year: 2021,
+    authors: "김성곤, 최형원, 서영환, 이재원, 강용태",
+    title: "플러스에너지빌딩 적용 CO2 포집으로 구동되는 열에너지 저장시스템",
+    conference: "대한기계학회 2021년 학술대회",
+    location: "제주"
+  },
 
-  // ===== 2025 =====
-  { year: 2025, authors: "Jehyung Lee, Gil Jeong, Hyungwon Choi, Hyunjong Kim, Eunjun Cho, Beomsoo Seo, Simon Chin, Yong Tae Kang",
-    title: "Oil Circulation Rate prediction by transformer based deep learning model in R290 heat pump systems",
-    journal: "Energy 337, 138652 (ERC, IF=9.0, TOP 3.2%)", status: "Published" },
+  // ----------------------------------------------------------
+  // 2020년
+  // ----------------------------------------------------------
+  {
+    year: 2020,
+    authors: "옥정수, 임환석, 김성곤, 강용태",
+    title: "클래드 압연 공정을 위한 내부식성소재(STS316L, UNS08825)의 인공신경망방법에 의한 유동응력 분석",
+    conference: "한국소성가공학회 추계학술발표대회",
+    location: "제주"
+  },
+  {
+    year: 2020,
+    authors: "정한솔, 류승걸, 강용태",
+    title: "광촉매를 이용한 가시광선 영역에서의 CO2 광전환 성능 평가",
+    conference: "대한기계학회 2020년 학술대회 (온라인)",
+    location: "온라인"
+  },
+  {
+    year: 2020,
+    authors: "박종하, 김성곤, 강용태",
+    title: "CO2 흡수 향상을 위한 AA-Fe3O4/MeOH 나노흡수제 개발 및 평가",
+    conference: "대한기계학회 2020년 학술대회 (온라인)",
+    location: "온라인"
+  },
+  {
+    year: 2020,
+    authors: "박정준, 박준호, 강용태",
+    title: "TBAB를 첨가한 하이드레이트의 CO2 포집 및 표면 현상 평가",
+    conference: "2020년도 대한설비공학회 동계학술발표대회",
+    location: "서울"
+  },
+  {
+    year: 2020,
+    authors: "이가원, 최형원, 강용태",
+    title: "수학적 모델 기반 Low GWP 냉매 적용 확산형 흡수식 냉동 사이클 성능 분석 연구",
+    conference: "2020년도 대한설비공학회 동계학술발표대회",
+    location: "서울"
+  },
+  {
+    year: 2020,
+    authors: "박정준, 박준호, 김성곤, 강용태",
+    title: "다양한 촉진제를 활용한 CO2 하이드레이트 생성 성능 평가",
+    conference: "2020년도 대한설비공학회 하계학술발표대회",
+    location: "평창"
+  },
+  {
+    year: 2020,
+    authors: "최형원, 이가원, 강용태",
+    title: "기포펌프 형상조건에 따른 확산형 흡수식 냉동기의 운전특성에 관한 연구",
+    conference: "2020년도 대한설비공학회 하계학술발표대회",
+    location: "평창"
+  },
+  {
+    year: 2020,
+    authors: "류승걸, 김민재, 정한솔, 강용태",
+    title: "CO2-메탄올 전환공정에 대한 LCA분석",
+    conference: "2020년도 하계학술발표대회",
+    location: "평창"
+  },
+  {
+    year: 2020,
+    authors: "고윤모, 정재훈, 강용태",
+    title: "판형 열교환기에서의 R-1234ze(E)를 사용한 응축열전달 및 마찰압력강하 실험적 연구",
+    conference: "2020년도 대한설비공학회 하계학술발표대회",
+    location: "평창"
+  },
 
-  { year: 2025, authors: "M. Khoshvaght-Aliabadi, P. Ghodrati, J.Y. Shin, Y.T. Kang",
-    title: "Impact of coolant distribution design on server-level thermal management in data centers",
-    journal: "Energy (ERC, 브레인풀, IF=9.4, TOP 3.2%)", status: "Published" },
+  // ----------------------------------------------------------
+  // 2019년
+  // ----------------------------------------------------------
+  {
+    year: 2019,
+    authors: "김갑용, 정한솔, 강용태",
+    title: "R32/DMAC 쌍 적용 1, 2종 결합 흡착 옵션 열펌프 성능분석",
+    conference: "2019년도 대한설비공학회 동계학술발표대회",
+    location: "서울"
+  },
+  {
+    year: 2019,
+    authors: "김민재, 정한솔, 류승걸, 강용태",
+    title: "이산화탄소의 연료화 공정에 대한 LCA 분석",
+    conference: "2019년도 대한설비공학회 동계학술발표대회",
+    location: "서울"
+  },
+  {
+    year: 2019,
+    authors: "옥정수, 임환석, 강용태",
+    title: "인입위치제어를 통한 태양열 지중계간축열의 성능향상 연구",
+    conference: "2019년도 대한설비공학회 동계학술발표대회",
+    location: "서울"
+  },
+  {
+    year: 2019,
+    authors: "서영환, 김성곤, 이원혁, 강용태",
+    title: "슐리렌 가시화 기법을 이용한 메탄을 기반 나노흡수제의 CO2 흡수 성능 평가",
+    conference: "대한기계학회 2019년 학술대회",
+    location: "제주"
+  },
+  {
+    year: 2019,
+    authors: "정재훈, 고윤모, 강용태",
+    title: "판형 열교환기에서 Low GWP 냉매를 이용한 응축 열전달 및 압력강하 특성 연구",
+    conference: "대한기계학회 2019년 학술대회",
+    location: "제주"
+  },
+  {
+    year: 2019,
+    authors: "송주영, 박준호, 강용태",
+    title: "물-리튬브로마이드 흡수식 냉동기용 판형 용액 열교환기 성능 평가",
+    conference: "2019년도 대한설비공학회 하계학술발표대회",
+    location: "용평"
+  },
+  {
+    year: 2019,
+    authors: "이가원, 강용태",
+    title: "기포펌프 형상조건에 따른 확산형 흡수식 냉동기의 운전특성에 관한 연구",
+    conference: "2019년도 대한설비공학회 하계학술발표대회",
+    location: "용평"
+  },
+  {
+    year: 2019,
+    authors: "옥정수, 임환석, 강용태",
+    title: "태양열을 이용한 고성능 지중 계간축열 시스템 성능평가",
+    conference: "2019년도 대한설비공학회 하계학술발표대회",
+    location: "용평"
+  },
+  {
+    year: 2019,
+    authors: "정재훈, 권오진, 강용태",
+    title: "판형 열교환기에서 Low GWP 냉매의 응축 열전달 및 마찰 압력강하 특성",
+    conference: "2019년도 대한설비공학회 하계학술발표대회",
+    location: "용평"
+  },
+  {
+    year: 2019,
+    authors: "권오진, 정재훈, 강용태",
+    title: "Low GWP 냉매(R-1233zd(E))를 작동유체로 하는 판형 열교환기에서의 응축 열전달 및 마찰 압력 강하 특성에 관한 실험적 연구",
+    conference: "대한기계학회 열공학부문 2019년도 춘계학술대회",
+    location: "부산"
+  },
+  {
+    year: 2019,
+    authors: "김성곤, 서영환, 이원혁, 강용태",
+    title: "CO2 포집을 위한 하이브리드 더블에멀젼 흡수제 개발",
+    conference: "대한기계학회 열공학부문",
+    location: "부산"
+  },
 
-  { year: 2025, authors: "Yun Mo Ko, Sunghun Lee, Seonggon Kim, Yong Tae Kang",
-    title: "Enhancing thermally regenerative battery performance by mitigating ammonia crossover",
-    journal: "Applied Energy (ERC, 중견, IF=10.1, TOP 6.2%)", status: "Published" },
+  // ----------------------------------------------------------
+  // 2018년
+  // ----------------------------------------------------------
+  {
+    year: 2018,
+    authors: "이원혁, 강용태",
+    title: "나노에멀젼 흡수제를 이용한 CO2 흡수 및 재생 성능 평가",
+    conference: "대한기계학회 2018년도 학술대회(본부)",
+    location: "정선"
+  },
+  {
+    year: 2018,
+    authors: "김갑용, 정한솔, 강용태",
+    title: "연료전지자동차용 옵션 열펌프 성능분석",
+    conference: "대한기계학회 2018년도 학술대회(본부)",
+    location: "정선"
+  },
+  {
+    year: 2018,
+    authors: "김병수, 정한솔, 강용태, 김용찬",
+    title: "미연성 냉매를 적용한 공조시스템의 설계 및 설치 가이드",
+    conference: "2018 대한설비공학회 동계학술대회",
+    location: "서울"
+  },
+  {
+    year: 2018,
+    authors: "김가형, 강용태",
+    title: "Low gwp 대체냉매적용 확산형 흡수식 냉동기 운전특성 에 관한 연구",
+    conference: "2018 대한설비공학회 동계학술대회",
+    location: "서울"
+  },
+  {
+    year: 2018,
+    authors: "정재훈, 권오진, 강용태",
+    title: "R-1233zd(E)를 사용한 High Theta 브레이징 판형 열교환기에서의 응축열전달 및 압력강하 특성",
+    conference: "2018 대한설비공학회 동계학술대회",
+    location: "서울"
+  },
+  {
+    year: 2018,
+    authors: "서영환, 김성곤, 강용태",
+    title: "나노에멀젼(도데케인/메탄올) 흡수제의 이산화탄소 흡수 성능 평가 및 흡수 가시화",
+    conference: "2018 대한설비공학회 동계학술대회",
+    location: "서울"
+  },
+  {
+    year: 2018,
+    authors: "오선희, 장재철, 조종표, 강용태, 박성룡",
+    title: "고온 스팀생산을 위한 원통형 과열기의 변수변화에 따른 실험적 연구",
+    conference: "2018 한국 수소 및 신에너지학회 추계 학술대회",
+    location: "창원"
+  },
+  {
+    year: 2018,
+    authors: "오선희, 장재철, 조종표, 강용태, 박성룡",
+    title: "An Experimental Study on the Superheater for High-Temperature Generation according to Dimensionless Number",
+    conference: "2018 한국 수소 및 신에너지학회 춘계 학술대회",
+    location: "송도"
+  },
+  {
+    year: 2018,
+    authors: "오선희, 박성룡, 장재철, 조종표, 김정근, 방유마, 강용태",
+    title: "폐기물에너지를 활용한 과열증기 발생장치에 관한 연구",
+    conference: "2018년도 대한설비공학회 하계학술발표대회",
+    location: "용평"
+  },
+  {
+    year: 2018,
+    authors: "정한솔, 김민재, 강용태",
+    title: "이산화탄소 광전환 기술에 대한 LCA 분석",
+    conference: "2018년도 대한설비공학회 하계학술발표대회",
+    location: "용평"
+  },
+  {
+    year: 2018,
+    authors: "김가형, 정한솔, 강용태",
+    title: "확산형 흡수식 냉동기용 Low GWP 냉매 선정 및 성능 평가",
+    conference: "2018년도 대한설비공학회 하계학술발표대회",
+    location: "용평"
+  },
+  {
+    year: 2018,
+    authors: "임환석, 최성, 강용태",
+    title: "계간축열시스템의 열원공급 위치제어에 의한 축열성능향상 연구",
+    conference: "대한기계학회 플랜트부문 2018년도 춘계학술강연회",
+    location: "서울"
+  },
+  {
+    year: 2018,
+    authors: "권오진, 정재훈, 강용태",
+    title: "R-1233zd(E)냉매를 작동유체로 하는 쉘-플레이트 타입 열교환기에서의 응축 성능 및 마찰 압력 강하",
+    conference: "대한기계학회 열공학부문 2018년도 춘계학술대회",
+    location: "제주"
+  },
+  {
+    year: 2018,
+    authors: "Lirong Li, 강용태",
+    title: "Three-dimensional VOF simulation of bubble behavior and mass transfer for CO2 absorption in nanoabsorbents",
+    conference: "대한기계학회 열공학부문 2018년도 춘계학술대회",
+    location: "제주"
+  },
+  {
+    year: 2018,
+    authors: "송주영, 이수경, 강용태",
+    title: "삼중 열병합발전 시스템의 흡수식 냉동기용 재생기 최적설계",
+    conference: "대한기계학회 열공학부문 2018년도 춘계학술대회",
+    location: "제주"
+  },
+  {
+    year: 2018,
+    authors: "오선희, 장재철, 조종표, 강용태, 박성룡",
+    title: "폐기물 에너지화를 위한 고온 스팀생산 장치의 가능성 연구",
+    conference: "대한기계학회 열공학부문 2018년도 춘계학술대회",
+    location: "제주"
+  },
 
-  { year: 2025, authors: "Hyung Won Choi, Jinhee Jeong, Ja Ryong Koo, Young Kim, Yong Tae Kang",
-    title: "Proof of concept for unsteady dynamic model of sorption thermal battery with H2O/LiBr and universal methodology to optimize energy storage density",
-    journal: "Energy (알키미스트, 대온도차, IF=9.0, TOP 3.2%)", status: "Published" },
+  // ----------------------------------------------------------
+  // 2017년
+  // ----------------------------------------------------------
+  {
+    year: 2017,
+    authors: "이승주, 권오진, 강상우, 강용태",
+    title: "유연재질의 태양열 집열기를 이용한 R1233zd(E) 적용 히트펌프 성능 평가",
+    conference: "2017년도 대한설비공학회 동계학술발표대회",
+    location: "서울"
+  },
+  {
+    year: 2017,
+    authors: "송주영, 김갑용, 강용태",
+    title: "물-리튬브로마이드 판형 용액 열교환기의 실험적 성능평가",
+    conference: "2017년도 대한설비공학회 동계학술발표대회",
+    location: "서울"
+  },
+  {
+    year: 2017,
+    authors: "이수경, 정진택, 강용태",
+    title: "삼중 열병합발전 시스템의 다중 열원 흡수식 냉동기용 재생기 최적설계",
+    conference: "2017년도 대한설비공학회 동계학술발표대회",
+    location: "서울"
+  },
+  {
+    year: 2017,
+    authors: "주진환, 정한솔, 강용태, 이광렬",
+    title: "Photocatalytic CO2 Conversion on Highly Ordered Mesorous Materials",
+    conference: "제120회 대한화학회 추계 학술발표대회",
+    location: "대구"
+  },
+  {
+    year: 2017,
+    authors: "정한솔, 박정준, 이원혁, 강용태",
+    title: "광촉매를 이용한 이산화탄소 전환을 위한 규칙성 메조다공성 물질에 대한 연구",
+    conference: "대한기계학회 2017년도 학술대회(본부)",
+    location: "제주"
+  },
+  {
+    year: 2017,
+    authors: "권오진, 손병훈, 정재훈, 강용태",
+    title: "브레이징 판형 열교환기에서의 Low GWP 냉매의 응축열전달 및 압력강하 특성",
+    conference: "대한기계학회 2017년도 학술대회(본부)",
+    location: "제주"
+  },
+  {
+    year: 2017,
+    authors: "김성곤, 서영환, 강용태",
+    title: "나노에멀젼 흡수제를 이용한 이산화탄소 흡수성능 향상에 관한 연구",
+    conference: "대한기계학회 2017년도 학술대회(본부)",
+    location: "제주"
+  },
+  {
+    year: 2017,
+    authors: "송주영, 이수경, 강용태",
+    title: "물-리튬브로마이드 흡수식 냉동기용 판형 용액 열교환기의 성능평가",
+    conference: "2017년도 대한설비공학회 하계학술발표대회",
+    location: "용평"
+  },
+  {
+    year: 2017,
+    authors: "최성, 김솔, 최창경, 강용태",
+    title: "CO2 하이드레이트를 이용한 냉방 시스템의 냉방 성능에 관한 실험적 연구",
+    conference: "2017년도 대한설비공학회 하계학술발표대회",
+    location: "용평"
+  },
+  {
+    year: 2017,
+    authors: "임환석, 강용태",
+    title: "고온 후판재의 역열전달 분석을 위한 초기온도분포 평가",
+    conference: "2017년도 대한설비공학회 하계학술발표대회",
+    location: "용평"
+  },
+  {
+    year: 2017,
+    authors: "김성곤, 이재원, 최창경, 김솔, 이스라엘 토레스 피네다, 최성, 강용태",
+    title: "나노에멀젼 이산화탄소 흡수제의 열물성 및 분산안정성 평가",
+    conference: "2017년도 대한설비공학회 하계학술발표대회",
+    location: "용평"
+  },
+  {
+    year: 2017,
+    authors: "이승주, 손병훈, 김솔, 강용태",
+    title: "R134a 및 R1233zd를 적용한 히트펌프의 성능 비교",
+    conference: "대한기계학회 열공학부문 2017년도 춘계학술대회",
+    location: "부산"
+  },
+  {
+    year: 2017,
+    authors: "이수경, 정진택, 최창경, 강용태",
+    title: "흡수식 냉동기용 재생기 모델링 및 최적 설계",
+    conference: "대한기계학회 열공학부문 2017년도 춘계학술대회",
+    location: "부산"
+  },
+  {
+    year: 2017,
+    authors: "김솔, 최성, 강용태",
+    title: "지역냉방 적용을 위한 CO2 하이드레이트 생성 및 해리 성능 평가",
+    conference: "제9회 한국냉동공학학술대회",
+    location: "일산"
+  },
+  {
+    year: 2017,
+    authors: "손병훈, 권오진, 강용태",
+    title: "R-1233zd(E)를 적용한 판형 열교환기 내 응축 열전달 특성",
+    conference: "제9회 한국냉동공학학술대회",
+    location: "일산"
+  },
 
-  { year: 2025, authors: "Shokoufeh Mizani, Morteza Khoshvaght-Aliabadi, Yong Tae Kang",
-    title: "Enhancing thermal management in concentrated photovoltaic cells using supercritical carbon dioxide",
-    journal: "Applied Thermal Engineering (브레인풀, IF=6.1, TOP 5.2%)", status: "Published" },
+  // ----------------------------------------------------------
+  // 2016년
+  // ----------------------------------------------------------
+  {
+    year: 2016,
+    authors: "정명환, 이재원, 이승주, 강용태",
+    title: "CO2 흡수과정에서의 물질전달 향상을 위한 나노에멀젼 흡수제 개발",
+    conference: "2016년도 대한설비공학회 동계학술발표대회",
+    location: "서울"
+  },
+  {
+    year: 2016,
+    authors: "손병훈, 김동우, 정청우, 이동찬, 강용태, 김용찬",
+    title: "판형열교환기에서의 Low GWP 냉매 증발 및 응축 특성 연구",
+    conference: "2016년도 대한설비공학회 동계학술발표대회",
+    location: "서울"
+  },
+  {
+    year: 2016,
+    authors: "김솔, 이승주, 이재원, 강용태",
+    title: "지역 냉방 적용을 위한 이산화탄소 하이드레이트 생성/해리 성능 평가",
+    conference: "2016년도 대한설비공학회 동계학술발표대회",
+    location: "서울"
+  },
+  {
+    year: 2016,
+    authors: "이승주, 송주영, 김성수, 김윤정, 강용태",
+    title: "유연 재질의 태양열 집열 시스템의 성능 평가",
+    conference: "2016년도 대한설비공학회 하계학술발표대회",
+    location: "용평"
+  },
+  {
+    year: 2016,
+    authors: "손병훈, 강용태",
+    title: "열교환기 내 Low GWP 냉매의 응축열전달 및 압력 강하 특성",
+    conference: "2016년도 대한설비공학회 하계학술발표대회",
+    location: "용평"
+  },
+  {
+    year: 2016,
+    authors: "이수경, 송주영, 강용태, 김효상, 우성민",
+    title: "흡수식 냉동기용 판형 용액열교환기 해석 및 설계",
+    conference: "2016년도 대한설비공학회 하계학술발표대회",
+    location: "용평"
+  },
+  {
+    year: 2016,
+    authors: "이승주, 송주영, 김윤정, 김성수, 강용태",
+    title: "유연재질의 태양열 집열 시스템을 이용한 히트펌프 성능 평가",
+    conference: "대한기계학회 열공학부문 2016년도 춘계학술대회",
+    location: "여수"
+  },
+  {
+    year: 2016,
+    authors: "김솔, Qibei Sun, 이재원, 정명환, 강용태",
+    title: "LCCA를 이용한 CO2 하이드레이트 냉방시스템 경제성 평가",
+    conference: "대한기계학회 열공학부문 2016년도 춘계학술대회",
+    location: "여수"
+  },
 
-  { year: 2025, authors: "Ronghuan Xu, Seonggon Kim, Hyungseop Ahn, Seongheon Kim, Hyoun Soo Kim, Yong Tae Kang",
-    title: "Carbon nanotube-assisted self-assembly of CO2 adsorbent pellets: Evaluating the optimum pellet diameter for enhanced mass transfer",
-    journal: "Chemical Engineering Journal (중견, IF=13.4, TOP 3.1%)", status: "Published" }
+  // ----------------------------------------------------------
+  // 2015년
+  // ----------------------------------------------------------
+  {
+    year: 2015,
+    authors: "정명환, 이재원, 이승주, 강용태",
+    title: "O/W 나노에멀젼 CO2 흡수제의 분산안정성 평가 및 유동가시화",
+    conference: "2015년도 대한설비공학회 동계학술발표대회",
+    location: "서울"
+  },
+  {
+    year: 2015,
+    authors: "손병훈, 강용태",
+    title: "Low GWP 냉매의 응축열전달 및 압력강하 특성",
+    conference: "2015년도 대한설비공학회 동계학술발표대회",
+    location: "서울"
+  },
+  {
+    year: 2015,
+    authors: "이재원, 정청우, 강용태, 김선창, 김영률",
+    title: "판형 제습 열교환기에서의 제습 성능 특성 평가",
+    conference: "2015년도 대한설비공학회 동계학술발표대회",
+    location: "서울"
+  },
+  {
+    year: 2015,
+    authors: "김솔, 최재우, 이재원, Qibei Sun, 강용태",
+    title: "하이드레이트를 이용한 CO2 포집 향상에 관한 연구",
+    conference: "2015년도 대한설비공학회 하계학술발표대회",
+    location: "용평"
+  },
+  {
+    year: 2015,
+    authors: "강문구, 이윤연, 강용태",
+    title: "유로 표면의 젖음성 조절을 통한 기포펌프 성능 향상",
+    conference: "2015년도 대한설비공학회 하계학술발표대회",
+    location: "용평"
+  },
+  {
+    year: 2015,
+    authors: "양미나, 정청우, 강용태",
+    title: "다중열원을 이용한 삼중발전 시스템용 고효율 이중흡수식 사이클 개발",
+    conference: "2015년도 대한설비공학회 하계학술발표대회",
+    location: "용평"
+  },
+  {
+    year: 2015,
+    authors: "이윤연, 이재원, 최재우, 정명환, 강용태",
+    title: "나노다공성 금속 산화물 및 화합물 반도체 물질을 이용한 광촉매적 이산화탄소 환원 반응",
+    conference: "대한기계학회 열공학부문 2015년도 춘계학술대회",
+    location: "부산"
+  },
+  {
+    year: 2015,
+    authors: "치베이, 강용태",
+    title: "kinetic study on CO2 hydrate formation with THF",
+    conference: "대한기계학회 열공학부문 2015년도 춘계학술대회",
+    location: "부산"
+  },
+  {
+    year: 2015,
+    authors: "이정훈, 이재원, 이스라엘, 이종성, 강용태",
+    title: "Evaluation of CO2 absorption/regeneration performance",
+    conference: "제8회 한국냉동공학학술대회",
+    location: "일산"
+  },
+  {
+    year: 2015,
+    authors: "최재우, 김솔, 강용태",
+    title: "LCC(Life cycle cost) 분석을 통한 CO2 하이드레이트 시스템의 경제성 평가",
+    conference: "제8회 한국냉동공학학술대회",
+    location: "일산"
+  },
 
+  // ----------------------------------------------------------
+  // 2014년
+  // ----------------------------------------------------------
+  {
+    year: 2014,
+    authors: "강문구, 강용태",
+    title: "액적 충돌 현상을 이용한 저온에서의 Anti-icing 표면 성능평가",
+    conference: "2014년도 대한설비공학회 동계학술발표대회",
+    location: "서울"
+  },
+  {
+    year: 2014,
+    authors: "양미나, 정청우, 강용태",
+    title: "가정용 냉장고 적용을 위한 고효율 사이클 개발",
+    conference: "2014년도 대한설비공학회 동계학술발표대회",
+    location: "서울"
+  },
+  {
+    year: 2014,
+    authors: "최재우, 이윤연, 강용태",
+    title: "상압에서의 하이드레이트를 이용한 고효율 CO2 포집 연구",
+    conference: "대한기계학회 열공학부문 2014년도 추계학술대회",
+    location: "광주"
+  },
+  {
+    year: 2014,
+    authors: "이재원, 정청우, 김선창, 김영률, 강용태",
+    title: "LiCl 용액의 제습과정 중 열 및 물질전달 특성 연구",
+    conference: "2014년도 대한설비공학회 하계학술발표대회",
+    location: "용평"
+  },
+  {
+    year: 2014,
+    authors: "정청우, 강용태",
+    title: "삼중효용 흡수식 시스템 기술개발 현황",
+    conference: "2014년도 대한설비공학회 하계학술발표대회",
+    location: "용평"
+  },
+  {
+    year: 2014,
+    authors: "정청우, 안승선, 강용태",
+    title: "압축/흡수 하이브리드 히트펌프용 암모니아/물 판형 흡수기 성능 평가",
+    conference: "대한기계학회 열공학부문 2014년도 춘계학술대회",
+    location: "제주도"
+  },
+  {
+    year: 2014,
+    authors: "최재우, 정청우, 강용태",
+    title: "하이드레이트를 이용한 고효율 CO2 포집 연구",
+    conference: "대한기계학회 열공학부문 2014년도 춘계학술대회",
+    location: "제주도"
+  }
 ];
