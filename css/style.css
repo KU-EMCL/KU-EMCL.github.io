@@ -130,7 +130,7 @@ h1,h2,h3,h4 { font-weight: 600; line-height: 1.12; letter-spacing: -.01em; color
 .brand .meta .en { font-family: var(--font-mono); font-size: 9.5px; letter-spacing: .14em; color: var(--ink-3); text-transform: uppercase; }
 
 /* 고려대 로고 + 글자 */
-.brand .ku-logo { height: 40px; width: auto; }
+.brand .ku-logo { height: 36px; width: auto; }
 .brand .ku-name { display: flex; flex-direction: column; line-height: 1.15; }
 .brand .ku-name b { font-size: 18px; font-weight: 900; color: var(--ink); letter-spacing: .11em; }
 .brand .ku-name i { font-size: 9.5px; letter-spacing: .06em; color: var(--ink-3); }
