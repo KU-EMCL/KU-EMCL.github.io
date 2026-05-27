@@ -111,7 +111,7 @@
           '<address>에너지물질순환연구실 (Energy Materials Circulation Laboratory)<br>' +
           '고려대학교 공과대학 기계공학부<br>' +
           '서울특별시 성북구 안암로 145 (02841)<br>' +
-          'Innovation Hall 309 · ytkang@korea.ac.kr</address></div>' +
+          '창의관 616, 623A · ytkang@korea.ac.kr</address></div>' +
         '<div class="fcol"><h4>Navigate</h4>' +
           '<a href="' + abs("pages/introduction.html") + '">연구실 소개</a>' +
           '<a href="' + abs("pages/professor.html") + '">교수 소개</a>' +
