@@ -6,11 +6,67 @@
   <title>Gallery · EMCL 고려대학교 에너지물질순환연구실</title>
   <meta name="description" content="에너지물질순환연구실(EMCL) 갤러리 — 연구 활동과 일상의 기록." />
   <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .gal-toolbar { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 30px; }
+    .gal-toolbar button {
+      font-family: var(--font-mono); font-size: 12px; letter-spacing: .04em;
+      padding: 8px 16px; border: 1px solid var(--line); background: #fff; color: var(--ink-2);
+      border-radius: 2px; transition: all .2s;
+    }
+    .gal-toolbar button.active, .gal-toolbar button:hover { background: var(--ink); color: #fff; border-color: var(--ink); }
+
+    .gal-year { font-family: var(--font-display); font-weight: 700; font-size: 22px; color: var(--crimson);
+      display: flex; align-items: center; gap: 12px; margin: 34px 0 18px; }
+    .gal-year::before { content: ""; width: 14px; height: 14px; background: var(--crimson); display: inline-block; }
+    .gal-year:first-of-type { margin-top: 0; }
+    .gal-year .yc { font-family: var(--font-mono); font-size: 14px; font-weight: 400; color: var(--ink-3); }
+
+    .gal-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; }
+    .gal-card { border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: #fff;
+      cursor: pointer; transition: all .3s var(--ease); display: flex; flex-direction: column; }
+    .gal-card:hover { box-shadow: var(--shadow); transform: translateY(-4px); border-color: var(--crimson); }
+    .gal-card .thumb { aspect-ratio: 4/3; overflow: hidden; position: relative; background: #f0ece3; }
+    .gal-card .thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s var(--ease); }
+    .gal-card:hover .thumb img { transform: scale(1.05); }
+    .gal-card .cnt { position: absolute; right: 8px; bottom: 8px; background: rgba(0,0,0,.65); color: #fff;
+      font-family: var(--font-mono); font-size: 11px; padding: 3px 8px; border-radius: 20px; }
+    .gal-card .cap { padding: 14px 16px; }
+    .gal-card .cap .t { font-size: 14px; font-weight: 700; color: var(--ink); line-height: 1.4;
+      display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+
+    .gal-pager { display: flex; justify-content: center; flex-wrap: wrap; gap: 6px; margin-top: 40px; }
+    .gal-pager button { font-family: var(--font-mono); font-size: 13px; min-width: 38px; height: 38px; padding: 0 10px;
+      border: 1px solid var(--line); background: #fff; color: var(--ink-2); border-radius: 2px; transition: all .2s; }
+    .gal-pager button.active, .gal-pager button:hover:not(:disabled) { background: var(--ink); color: #fff; border-color: var(--ink); }
+    .gal-pager button:disabled { opacity: .4; cursor: not-allowed; }
+
+    /* 라이트박스 (상세 보기) */
+    .gv { position: fixed; inset: 0; z-index: 600; background: rgba(15,13,11,.94);
+      display: none; align-items: center; justify-content: center; padding: 24px; }
+    .gv.open { display: flex; }
+    .gv-inner { max-width: 1000px; width: 100%; max-height: 90vh; display: flex; flex-direction: column; }
+    .gv-stage { position: relative; flex: 1; display: flex; align-items: center; justify-content: center; min-height: 0; }
+    .gv-stage img { max-width: 100%; max-height: 70vh; border-radius: var(--radius); object-fit: contain; }
+    .gv-nav { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,.15);
+      color: #fff; border: none; width: 48px; height: 48px; border-radius: 50%; font-size: 24px; transition: background .2s; }
+    .gv-nav:hover { background: rgba(255,255,255,.3); }
+    .gv-nav.prev { left: 0; } .gv-nav.next { right: 0; }
+    .gv-nav:disabled { opacity: .25; cursor: not-allowed; }
+    .gv-meta { color: #fff; padding: 18px 4px 4px; }
+    .gv-meta .t { font-family: var(--font-display); font-weight: 700; font-size: 20px; margin-bottom: 8px; }
+    .gv-meta .c { font-size: 14px; line-height: 1.7; color: rgba(255,255,255,.8); white-space: pre-wrap; }
+    .gv-meta .idx { font-family: var(--font-mono); font-size: 12px; color: rgba(255,255,255,.55); margin-top: 10px; }
+    .gv-close { position: absolute; top: 18px; right: 22px; background: none; border: none; color: #fff; font-size: 34px; line-height: 1; }
+    .gv-thumbs { display: flex; gap: 8px; overflow-x: auto; padding: 14px 0 2px; }
+    .gv-thumbs img { width: 60px; height: 46px; object-fit: cover; border-radius: 3px; opacity: .5; cursor: pointer; border: 2px solid transparent; flex-shrink: 0; }
+    .gv-thumbs img.on { opacity: 1; border-color: #fff; }
+
+    @media (max-width: 560px) { .gal-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; } }
+  </style>
 </head>
 <body data-page="gallery" data-depth="1">
 <div id="app">
   <div class="header-spacer"></div>
-
   <section class="page-hero"><div class="wrap">
     <nav class="breadcrumb"><a href="../index.html">Home</a><span class="sep">/</span><a href="community.html">Community</a><span class="sep">/</span><span>Gallery</span></nav>
     <span class="kicker">Gallery</span>
@@ -18,14 +74,160 @@
     <div class="sub">연구 활동과 일상의 기록</div>
     <div class="ghost-no">album</div>
   </div></section>
-
   <section class="page-body"><div class="wrap">
-    <div id="gallery-board"></div>
+    <div class="gal-toolbar" id="gal-years"></div>
+    <div id="gal-board"></div>
+    <div class="gal-pager" id="gal-pager"></div>
   </div></section>
-
 </div>
-<script src="../js/seed-posts.js"></script>
-<script src="../js/board.js"></script>
+
+<!-- 상세 보기 라이트박스 -->
+<div class="gv" id="gv">
+  <button class="gv-close" id="gv-close">&times;</button>
+  <div class="gv-inner">
+    <div class="gv-stage">
+      <button class="gv-nav prev" id="gv-prev">&#8249;</button>
+      <img id="gv-img" src="" alt="" />
+      <button class="gv-nav next" id="gv-next">&#8250;</button>
+    </div>
+    <div class="gv-thumbs" id="gv-thumbs"></div>
+    <div class="gv-meta">
+      <div class="t" id="gv-title"></div>
+      <div class="c" id="gv-content"></div>
+      <div class="idx" id="gv-idx"></div>
+    </div>
+  </div>
+</div>
+
+<script src="../js/gallery-data.js"></script>
 <script src="../js/main.js"></script>
+<script>
+(function () {
+  var IMG_BASE = "../images/";
+  var PER_PAGE = 12;
+  var all = (window.EMCL_GALLERY || []).slice();
+  var filter = "all";
+  var page = 1;
+
+  var years = [];
+  all.forEach(function (p) { if (p.year && years.indexOf(p.year) < 0) years.push(p.year); });
+  years.sort(function (a, b) { return b - a; });
+
+  // 연도 필터 버튼
+  var yp = document.getElementById("gal-years");
+  yp.innerHTML = '<button class="active" data-y="all">전체</button>' +
+    years.map(function (y) { return '<button data-y="' + y + '">' + y + '</button>'; }).join("");
+  yp.querySelectorAll("button").forEach(function (b) {
+    b.addEventListener("click", function () {
+      yp.querySelectorAll("button").forEach(function (x) { x.classList.remove("active"); });
+      b.classList.add("active");
+      filter = b.getAttribute("data-y");
+      page = 1;
+      render();
+    });
+  });
+
+  function filtered() {
+    if (filter === "all") return all;
+    return all.filter(function (p) { return String(p.year) === String(filter); });
+  }
+
+  function render() {
+    var list = filtered();
+    var pages = Math.max(1, Math.ceil(list.length / PER_PAGE));
+    if (page > pages) page = pages;
+    var slice = list.slice((page - 1) * PER_PAGE, page * PER_PAGE);
+
+    var html = "", curYear = null;
+    slice.forEach(function (p, i) {
+      var globalIdx = all.indexOf(p);
+      if (p.year !== curYear) {
+        curYear = p.year;
+        var label = curYear || "기타";
+        html += '<div class="gal-year">' + label + '</div>';
+        html += '<div class="gal-grid">';
+      }
+      html += '<div class="gal-card" data-i="' + globalIdx + '">' +
+        '<div class="thumb"><img loading="lazy" src="' + IMG_BASE + p.images[0] + '" alt="' + esc(p.title) + '">' +
+        (p.images.length > 1 ? '<span class="cnt">' + p.images.length + '장</span>' : '') +
+        '</div><div class="cap"><div class="t">' + esc(p.title) + '</div></div></div>';
+      // 다음 카드의 연도가 다르면 그리드 닫기
+      var next = slice[i + 1];
+      if (!next || next.year !== curYear) html += '</div>';
+    });
+    document.getElementById("gal-board").innerHTML = html;
+
+    document.querySelectorAll(".gal-card").forEach(function (c) {
+      c.addEventListener("click", function () { openViewer(parseInt(c.getAttribute("data-i"), 10)); });
+    });
+
+    renderPager(pages);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  function renderPager(pages) {
+    var el = document.getElementById("gal-pager");
+    if (pages <= 1) { el.innerHTML = ""; return; }
+    var h = '<button ' + (page === 1 ? 'disabled' : '') + ' data-go="prev">&#8249;</button>';
+    for (var i = 1; i <= pages; i++) h += '<button class="' + (i === page ? 'active' : '') + '" data-go="' + i + '">' + i + '</button>';
+    h += '<button ' + (page === pages ? 'disabled' : '') + ' data-go="next">&#8250;</button>';
+    el.innerHTML = h;
+    el.querySelectorAll("button").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var g = b.getAttribute("data-go");
+        if (g === "prev") page = Math.max(1, page - 1);
+        else if (g === "next") page = page + 1;
+        else page = parseInt(g, 10);
+        render();
+      });
+    });
+  }
+
+  // ---- 상세 보기 ----
+  var gv = document.getElementById("gv"), gvImg = document.getElementById("gv-img");
+  var curPost = null, curImg = 0;
+
+  function openViewer(idx) {
+    curPost = all[idx]; curImg = 0;
+    document.getElementById("gv-title").textContent = curPost.title;
+    document.getElementById("gv-content").textContent = curPost.content || "";
+    var th = document.getElementById("gv-thumbs");
+    th.innerHTML = curPost.images.map(function (im, k) {
+      return '<img src="' + IMG_BASE + im + '" data-k="' + k + '" class="' + (k === 0 ? 'on' : '') + '">';
+    }).join("");
+    th.querySelectorAll("img").forEach(function (t) {
+      t.addEventListener("click", function () { showImg(parseInt(t.getAttribute("data-k"), 10)); });
+    });
+    th.style.display = curPost.images.length > 1 ? "flex" : "none";
+    showImg(0);
+    gv.classList.add("open");
+    document.body.style.overflow = "hidden";
+  }
+  function showImg(k) {
+    curImg = k;
+    gvImg.src = IMG_BASE + curPost.images[k];
+    document.getElementById("gv-idx").textContent = (k + 1) + " / " + curPost.images.length;
+    document.getElementById("gv-prev").disabled = (k === 0);
+    document.getElementById("gv-next").disabled = (k === curPost.images.length - 1);
+    document.querySelectorAll("#gv-thumbs img").forEach(function (t, i) { t.classList.toggle("on", i === k); });
+  }
+  function closeViewer() { gv.classList.remove("open"); document.body.style.overflow = ""; }
+
+  document.getElementById("gv-prev").addEventListener("click", function () { if (curImg > 0) showImg(curImg - 1); });
+  document.getElementById("gv-next").addEventListener("click", function () { if (curImg < curPost.images.length - 1) showImg(curImg + 1); });
+  document.getElementById("gv-close").addEventListener("click", closeViewer);
+  gv.addEventListener("click", function (e) { if (e.target === gv) closeViewer(); });
+  document.addEventListener("keydown", function (e) {
+    if (!gv.classList.contains("open")) return;
+    if (e.key === "Escape") closeViewer();
+    else if (e.key === "ArrowLeft" && curImg > 0) showImg(curImg - 1);
+    else if (e.key === "ArrowRight" && curImg < curPost.images.length - 1) showImg(curImg + 1);
+  });
+
+  function esc(s) { return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;"); }
+
+  render();
+})();
+</script>
 </body>
 </html>
