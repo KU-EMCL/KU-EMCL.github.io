@@ -336,8 +336,6 @@ window.EMCL_GALLERY = [
   "content": "주최: 대한기계학회, LG전자\n일시: 2023년 11월 2일(목)\n장소: 인천 송도컨벤시아",
   "year": 2023,
   "images": [
-   "g0123.png",
-   "g0124.png",
    "g0125.jpg"
   ]
  },
@@ -495,14 +493,6 @@ window.EMCL_GALLERY = [
   ]
  },
  {
-  "title": "2022년 스승의 날 OB 모임",
-  "content": "2022년 5월 16일\n교수님과 OB 졸업생들(LG전자 오민규 책임, 정청우 책임,\n설혜연 책임, 이정훈 선임, 고려대 이재원 연구교수)이 모여 축하 파티를 하였습니다.",
-  "year": 2022,
-  "images": [
-   "g0167.png"
-  ]
- },
- {
   "title": "2021 대한기계학회 열공학부문 춘계학술대회 우수학위논문상 수상",
   "content": "2021년 5월 26일 2021년도 대한기계학회 열공학부문 춘계학술대회에서 임환석 박사(지도교수 강용태)가 우수학위논문상 수상을 수상했다.",
   "year": 2021,
@@ -657,17 +647,6 @@ window.EMCL_GALLERY = [
    "g0204.jpg",
    "g0205.jpg",
    "g0206.jpg"
-  ]
- },
- {
-  "title": "16th International Conference on Carbon Dioxide Utilization, 1st IIR conference on the Application o",
-  "content": "16th International Conference on Carbon Dioxide Utilization (ICCDU XVI)\nBrazil, Rio de Janeiro\n1st IIR conference on the Application of HFO Refrigerants\nUK, Birmingham\n강용태, 정한솔\nAug.27 - 30 , 2018\nSep.2 - 5, 2018",
-  "year": 2018,
-  "images": [
-   "g0207",
-   "g0208",
-   "g0209",
-   "g0210"
   ]
  },
  {
@@ -884,14 +863,6 @@ window.EMCL_GALLERY = [
   "images": [
    "g0281.jpg",
    "g0282.jpg"
-  ]
- },
- {
-  "title": "2015년 동계설비공학회(정명환, 손병훈, 이재현)",
-  "content": "학회명\n동계설비공학회\n일정\n2015.11.27\n장소\n서울",
-  "year": 2015,
-  "images": [
-   "g0283.png"
   ]
  },
  {
