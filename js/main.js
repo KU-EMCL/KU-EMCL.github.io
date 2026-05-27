@@ -42,6 +42,8 @@
     { key: "community",label: "Community",    href: "pages/community.html", sub: [
       { label: "News & Notice",   href: "pages/community.html" },
       { label: "Gallery",   href: "pages/gallery.html" } ] }
+    { key: "contact",  label: "Contact",      href: "pages/contact.html", sub: [
+      { label: "Visit Us", href: "pages/contact.html" } ] }
   ];
 
   function abs(h) { return P + h; }
@@ -62,7 +64,6 @@
         '<span>Korea University · School of Mechanical Engineering</span>' +
         '<span class="util">' +
           '<a href="' + abs("index.html") + '">HOME</a>' +
-          '<a href="' + abs("pages/contact.html") + '">CONTACT</a>' +
           '<a href="mailto:ytkang@korea.ac.kr">EMAIL</a>' +
         '</span>' +
       '</div></div>' +
