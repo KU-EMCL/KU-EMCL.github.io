@@ -41,7 +41,7 @@
       { label: "Completed", href: "pages/project.html#completed" } ] },
     { key: "community",label: "Community",    href: "pages/community.html", sub: [
       { label: "News & Notice",   href: "pages/community.html" },
-      { label: "Gallery",   href: "pages/gallery.html" } ] }
+      { label: "Gallery",   href: "pages/gallery.html" } ] },
     { key: "contact",  label: "Contact",      href: "pages/contact.html", sub: [
       { label: "Visit Us", href: "pages/contact.html" } ] }
   ];
