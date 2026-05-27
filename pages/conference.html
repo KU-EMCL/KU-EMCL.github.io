@@ -1,127 +1,127 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Conference · EMCL 고려대학교 에너지물질순환연구실</title>
-  <meta name="description" content="에너지물질순환연구실(EMCL)의 학술대회 논문 발표 목록." />
-  <link rel="stylesheet" href="../css/style.css" />
-  <style>
-    /* 학술대회 목록 전용 스타일 (정치형/페이징 연동) */
-    .pub-year { font-family: var(--font-display); font-weight: 700; font-size: 22px; color: var(--crimson);
-      display: flex; align-items: center; gap: 12px; margin: 36px 0 14px; }
-    .pub-year::before { content: ""; width: 14px; height: 14px; background: var(--crimson); display: inline-block; }
-    .pub-year:first-of-type { margin-top: 0; }
-    .paper { display: grid; grid-template-columns: 44px 1fr; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--line); }
-    .paper .pno { font-family: var(--font-mono); font-size: 15px; font-weight: 700; color: var(--crimson); text-align: right; padding-top: 2px; }
-    .paper .pbody { font-size: 14.5px; line-height: 1.6; color: var(--ink-2); }
-    .paper .pttl { font-weight: 700; color: var(--ink); }
-    .paper .pjn { color: var(--accent); font-weight: 500; }
-    .paper .ploc { color: var(--gold); font-style: normal; font-family: var(--font-mono); font-size: 13px; }
-    .pub-pager { display: flex; justify-content: center; flex-wrap: wrap; gap: 6px; margin-top: 40px; }
-    .pub-pager button { font-family: var(--font-mono); font-size: 13px; min-width: 38px; height: 38px; padding: 0 10px;
-      border: 1px solid var(--line); background: #fff; color: var(--ink-2); border-radius: 2px; transition: all .2s; }
-    .pub-pager button.active, .pub-pager button:hover:not(:disabled) { background: var(--ink); color: #fff; border-color: var(--ink); }
-    .pub-pager button:disabled { opacity: .4; cursor: not-allowed; }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Conference · EMCL 고려대학교 에너지물질순환연구실</title>
+  <meta name="description" content="에너지물질순환연구실(EMCL)의 학술대회 논문 발표 목록." />
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    /* 학술대회 목록 전용 스타일 (정치형/페이징 연동) */
+    .pub-year { font-family: var(--font-display); font-weight: 700; font-size: 22px; color: var(--crimson);
+      display: flex; align-items: center; gap: 12px; margin: 36px 0 14px; }
+    .pub-year::before { content: ""; width: 14px; height: 14px; background: var(--crimson); display: inline-block; }
+    .pub-year:first-of-type { margin-top: 0; }
+    .paper { display: grid; grid-template-columns: 44px 1fr; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--line); }
+    .paper .pno { font-family: var(--font-mono); font-size: 15px; font-weight: 700; color: var(--crimson); text-align: right; padding-top: 2px; }
+    .paper .pbody { font-size: 14.5px; line-height: 1.6; color: var(--ink-2); }
+    .paper .pttl { font-weight: 700; color: var(--ink); }
+    .paper .pjn { color: var(--accent); font-weight: 500; }
+    .paper .ploc { color: var(--gold); font-style: normal; font-family: var(--font-mono); font-size: 13px; }
+    .pub-pager { display: flex; justify-content: center; flex-wrap: wrap; gap: 6px; margin-top: 40px; }
+    .pub-pager button { font-family: var(--font-mono); font-size: 13px; min-width: 38px; height: 38px; padding: 0 10px;
+      border: 1px solid var(--line); background: #fff; color: var(--ink-2); border-radius: 2px; transition: all .2s; }
+    .pub-pager button.active, .pub-pager button:hover:not(:disabled) { background: var(--ink); color: #fff; border-color: var(--ink); }
+    .pub-pager button:disabled { opacity: .4; cursor: not-allowed; }
+  </style>
 </head>
 <body data-page="conference" data-depth="1">
 <div id="app">
-  <div class="header-spacer"></div>
-  
-  <section class="page-hero"><div class="wrap">
-    <nav class="breadcrumb"><a href="../index.html">Home</a><span class="sep">/</span><span>Publications</span></nav>
-    <span class="kicker">Research Output</span>
-    <h1 class="serif">Conference</h1>
-    <div class="sub">Conference Proceedings &amp; Presentations</div>
-    <div class="ghost-no">演</div>
-  </div></section>
+  <div class="header-spacer"></div>
+  
+  <section class="page-hero"><div class="wrap">
+    <nav class="breadcrumb"><a href="../index.html">Home</a><span class="sep">/</span><span>Publications</span></nav>
+    <span class="kicker">Research Output</span>
+    <h1 class="serif">Conference</h1>
+    <div class="sub">Conference Proceedings &amp; Presentations</div>
+    <div class="ghost-no">演</div>
+  </div></section>
 
-  <section class="page-body"><div class="wrap">
-    <div id="conference-list"></div>
-    <div class="pub-pager" id="conference-pager"></div>
-  </div></section>
+  <section class="page-body"><div class="wrap">
+    <div id="conference-list"></div>
+    <div class="pub-pager" id="conference-pager"></div>
+  </div></section>
 </div>
 
 <script src="../js/conference.js"></script>
 <script src="../js/main.js"></script>
 <script>
 (function () {
-  var PER_PAGE = 15;
-  
-  // window 객체에 선언된 배열을 가져옵니다. (없으면 빈 배열)
-  var conferences = (window.EMCL_CONFERENCES || []).slice();
+  var PER_PAGE = 15;
+  
+  // window 객체에 선언된 배열을 가져옵니다. (없으면 빈 배열)
+  var conferences = (window.EMCL_CONFERENCES || []).slice();
 
-  // 연도 내림차순 정렬
-  conferences.sort(function (a, b) { return b.year - a.year; });
+  // 연도 내림차순 정렬
+  conferences.sort(function (a, b) { return b.year - a.year; });
 
-  var total = conferences.length;
+  var total = conferences.length;
 
-  // 연도별 개수 카운트
-  var yearCount = {};
-  conferences.forEach(function (p) { yearCount[p.year] = (yearCount[p.year] || 0) + 1; });
+  // 연도별 개수 카운트
+  var yearCount = {};
+  conferences.forEach(function (p) { yearCount[p.year] = (yearCount[p.year] || 0) + 1; });
 
-  // 연도 내부에서의 순번 부여
-  var seen = {};
-  conferences.forEach(function (p) {
-    seen[p.year] = (seen[p.year] || 0) + 1;
-    p._no = yearCount[p.year] - seen[p.year] + 1;
-  });
+  // 연도 내부에서의 순번 부여
+  var seen = {};
+  conferences.forEach(function (p) {
+    seen[p.year] = (seen[p.year] || 0) + 1;
+    p._no = yearCount[p.year] - seen[p.year] + 1;
+  });
 
-  var page = 1;
-  var pages = Math.max(1, Math.ceil(total / PER_PAGE));
+  var page = 1;
+  var pages = Math.max(1, Math.ceil(total / PER_PAGE));
 
-  // 연구실 구성원 및 교수님 성함 강조 규칙
-  function boldNames(authors) {
-    return authors.replace(/(Yong Tae Kang|Y\.T\. Kang|YT Kang|강용태|Soohwan Lim|S\. Lim|임수환)/g, "<b>$1</b>");
-  }
+  // 연구실 구성원 및 교수님 성함 강조 규칙
+  function boldNames(authors) {
+    return authors.replace(/(Yong Tae Kang|Y\.T\. Kang|YT Kang|강용태|Soohwan Lim|S\. Lim|임수환)/g, "<b>$1</b>");
+  }
 
-  function render() {
-    var start = (page - 1) * PER_PAGE;
-    var slice = conferences.slice(start, start + PER_PAGE);
-    var html = "";
-    var curYear = null;
-    
-    slice.forEach(function (p) {
-      if (p.year !== curYear) {
-        curYear = p.year;
-        html += '<div class="pub-year">' + curYear + '</div>';
-      }
-      html += '<div class="paper"><div class="pno">' + p._no + '</div>' +
-        '<div class="pbody">' + boldNames(p.authors) +
-        ' <span class="pttl">"' + p.title + '"</span>, ' +
-        '<span class="pjn">' + p.conference + '</span>, ' +
-        '<span class="ploc">' + p.location + '</span>, ' + p.year +
-        '</div></div>';
-    });
-    
-    document.getElementById("conference-list").innerHTML = html;
-    renderPager();
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }
+  function render() {
+    var start = (page - 1) * PER_PAGE;
+    var slice = conferences.slice(start, start + PER_PAGE);
+    var html = "";
+    var curYear = null;
+    
+    slice.forEach(function (p) {
+      if (p.year !== curYear) {
+        curYear = p.year;
+        html += '<div class="pub-year">' + curYear + '</div>';
+      }
+      html += '<div class="paper"><div class="pno">' + p._no + '</div>' +
+        '<div class="pbody">' + boldNames(p.authors) +
+        ' <span class="pttl">"' + p.title + '"</span>, ' +
+        '<span class="pjn">' + p.conference + '</span>, ' +
+        '<span class="ploc">' + p.location + '</span>, ' + p.year +
+        '</div></div>';
+    });
+    
+    document.getElementById("conference-list").innerHTML = html;
+    renderPager();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
 
-  function renderPager() {
-    if (pages <= 1) { document.getElementById("conference-pager").innerHTML = ""; return; }
-    var h = '<button ' + (page === 1 ? 'disabled' : '') + ' data-go="prev">‹</button>';
-    for (var i = 1; i <= pages; i++) {
-      h += '<button class="' + (i === page ? 'active' : '') + '" data-go="' + i + '">' + i + '</button>';
-    }
-    h += '<button ' + (page === pages ? 'disabled' : '') + ' data-go="next">›</button>';
-    
-    var el = document.getElementById("conference-pager");
-    el.innerHTML = h;
-    el.querySelectorAll("button").forEach(function (b) {
-      b.addEventListener("click", function () {
-        var g = b.getAttribute("data-go");
-        if (g === "prev") page = Math.max(1, page - 1);
-        else if (g === "next") page = Math.min(pages, page + 1);
-        else page = parseInt(g, 10);
-        render();
-      });
-    });
-  }
+  function renderPager() {
+    if (pages <= 1) { document.getElementById("conference-pager").innerHTML = ""; return; }
+    var h = '<button ' + (page === 1 ? 'disabled' : '') + ' data-go="prev">‹</button>';
+    for (var i = 1; i <= pages; i++) {
+      h += '<button class="' + (i === page ? 'active' : '') + '" data-go="' + i + '">' + i + '</button>';
+    }
+    h += '<button ' + (page === pages ? 'disabled' : '') + ' data-go="next">›</button>';
+    
+    var el = document.getElementById("conference-pager");
+    el.innerHTML = h;
+    el.querySelectorAll("button").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var g = b.getAttribute("data-go");
+        if (g === "prev") page = Math.max(1, page - 1);
+        else if (g === "next") page = Math.min(pages, page + 1);
+        else page = parseInt(g, 10);
+        render();
+      });
+    });
+  }
 
-  render();
+  render();
 })();
 </script>
 </body>
