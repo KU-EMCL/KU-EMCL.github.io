@@ -1,64 +1,345 @@
 /* ============================================================
-   EMCL 논문 목록 데이터
-   ------------------------------------------------------------
-   ▶ 새 논문 추가법: 아래 목록 맨 위에 한 줄(블록)을 복사해 추가하세요.
-     - year:    연도 (숫자)
-     - authors: 저자 (Yong Tae Kang은 자동으로 굵게 표시됩니다)
-     - title:   논문 제목
-     - journal: 저널명 + 부가정보 (IF, TOP %, ERC 등)
-     - status:  "Published" / "Under Review" / "In Revision" 등
-   ▶ 순서는 신경 쓰지 않아도 됩니다. 연도별로 자동 정렬·묶음·페이지 분할됩니다.
+   EMCL Patent Data
    ============================================================ */
-window.EMCL_PAPERS = [
 
-  // ===== 2026 =====
-  { year: 2026, authors: "Joo Young Shin, Jin Un Byun, Seung Hwa Ryu, Hyun Soo Kim, Ronghuan Xu, Yong Tae Kang",
-    title: "Low waste heat driven indoor CO2 capture via 3D-printed hybrid TPMS monoliths",
-    journal: "Nature Communications (IF=16.7, TOP 4.78%)", status: "Under Review" },
+window.EMCL_PATENTS = [
+  // ----------------------------------------------------------
+  // 2025년
+  // ----------------------------------------------------------
+  {
+    title: "흡열 반응과 이중 단열 온도 감소를 이용한 매체 순환 시스템, 매체 혼합 및 분리 시스템, 열 및 에너지 관리 시스템",
+    number: "10-2025-0029425",
+    date: "2025.03.07",
+    status: "출원"
+  },
+  {
+    title: "이중 단열 온도 감소를 이용한 매체 순환 시스템, 매체 혼합 및 분리 시스템, 열 및 에너지 관리 시스템",
+    number: "10-2025-0029421",
+    date: "2025.03.07",
+    status: "출원"
+  },
+  {
+    title: "흡열 반응을 이용한 매체 순환 시스템, 매체 혼합 및 분리 시스템, 열 교환 장치, 열 및 에너지 관리 시스템",
+    number: "10-2025-0029418",
+    date: "2025.03.07",
+    status: "출원"
+  },
 
-  { year: 2026, authors: "Yun Mo Ko, Sunghun Lee, Seonggon Kim, Yong Tae Kang",
-    title: "Ammonia-based thermally regenerative batteries enable waste-heat-powered defrosting",
-    journal: "Nature Communications (ERC, 중견, IF=16.7, TOP 4.78%)", status: "Under Review" },
+  // ----------------------------------------------------------
+  // 2024년
+  // ----------------------------------------------------------
+  {
+    title: "이산화탄소 포집 및 발전 시스템",
+    number: "10-2024-0043142",
+    date: "2024.03.29",
+    status: "출원"
+  },
+  {
+    title: "패시브 동온 필름",
+    number: "10-2024-0029460",
+    date: "2024.02.29",
+    status: "출원"
+  },
 
-  { year: 2026, authors: "M. Khoshvaght-Aliabadi, P. Ghodrati, M. Bahmanyan, Yong Tae Kang",
-    title: "Novel Design of Heat Sinks for Enhanced Chip-Level Cooling in Data Center Servers",
-    journal: "Energy (IF=9.4, TOP 3.2%)", status: "Under Review" },
+  // ----------------------------------------------------------
+  // 2023년
+  // ----------------------------------------------------------
+  {
+    title: "흡수식 에너지 저장 및 냉난방 동시구동 시스템",
+    number: "10-2021-0126339",
+    date: "2023.04.18",
+    status: "등록"
+  },
+  {
+    title: "이산화탄소 포집을 위한 액체 흡착제 및 그 제조 방법",
+    number: "10-2021-0004367",
+    date: "2023.04.05",
+    status: "등록"
+  },
+  {
+    title: "패시브 냉각 장치를 포함하는 태양광 패널",
+    number: "10-2023-0006446",
+    date: "2023.01.17",
+    status: "출원"
+  },
 
-  { year: 2026, authors: "Seonggon Kim, Jae Hyeon Shin, Gil Jeong, Dae Young Jung, Jiachen Li, Zhenyuan Xu, Ruzhu Wang, Yong Tae Kang",
-    title: "Liquid-state dipolarcaloric refrigeration cycle with nitrate based salts",
-    journal: "Science 390, eadz7967 (IF=46.6, TOP 1.9%)", status: "Published" },
+  // ----------------------------------------------------------
+  // 2022년
+  // ----------------------------------------------------------
+  {
+    title: "피커링 에멀젼 상태로 제공되는 이산화탄소 화학적 흡수제들을 이용한 이산화탄소 포집제 및 그 제조 방법",
+    number: "10-2020-0060717",
+    date: "2022.12.01",
+    status: "등록"
+  },
+  {
+    title: "가스 하이드레이트 치환 기반의 열교환 시스템",
+    number: "10-2021-0070981",
+    date: "2022.12.01",
+    status: "등록"
+  },
+  {
+    title: "열 및 전기 에너지 동시 저장 이산화탄소 배터리 시스템",
+    number: "10-2022-0132260",
+    date: "2022.10.14",
+    status: "출원"
+  },
+  {
+    title: "저온열원 구동 하이브리드 열에너지 및 전기에너지 관리 시스템",
+    number: "10-2022-011251",
+    date: "2022.09.06",
+    status: "출원"
+  },
+  {
+    title: "확산형 흡수식 냉각장치 및 냉각방법",
+    number: "10-2429249",
+    date: "2022.08.01",
+    status: "등록"
+  },
+  {
+    title: "Hybrid Absorption Heat Pump System using Renewable Heat",
+    number: "JP2020134884A",
+    date: "2022.03.11",
+    status: "등록"
+  },
 
-  { year: 2026, authors: "Hyung Won Choi, Ja Ryong Koo, Yong Tae Kang",
-    title: "Optimization of sorption thermal battery integrated with heat pump for plus energy building applications",
-    journal: "Energy Conversion and Management (알키미스트, 대온도차, IF=9.9, TOP 1.6%)", status: "Published" },
+  // ----------------------------------------------------------
+  // 2021년
+  // ----------------------------------------------------------
+  {
+    title: "이중 층을 포함하는 철 산화물 복합체 및 이의 제조 방법",
+    number: "10-2021-0129652",
+    date: "2021.09.30",
+    status: "출원"
+  },
+  {
+    title: "재생열원구동 하이브리드 흡수식 열펌프 시스템",
+    number: "10-2020-0029323",
+    date: "2021.08.17",
+    status: "등록"
+  },
+  {
+    title: "태양광 패널에 적용하기 위한 냉각 유체 및 이의 용도",
+    number: "10-2021-0107474",
+    date: "2021.08.13",
+    status: "출원"
+  },
+  {
+    title: "이산화탄소로 유도되는 고밀도 에멀전이 발생 가능한 이산화탄소 흡수제",
+    number: "10-2021-0004040",
+    date: "2021.07.19",
+    status: "등록"
+  },
+  {
+    title: "습기 제거를 위한 에멀션 타입의 제습제 및 그 제조 방법",
+    number: "10-2021-0092804",
+    date: "2021.07.15",
+    status: "출원"
+  },
+  {
+    title: "이산화탄소 광전환 반응기 및 그 제조 방법",
+    number: "10-2019-0038766",
+    date: "2021.04.01",
+    status: "출원"
+  },
 
-  { year: 2026, authors: "A review on passive/active technologies — Hyung Won Choi, Dae Young Jung, Seonggon Kim, Ja Ryong Koo, Yeonsook Heo, Bu Won Song, Yong Tae Kang",
-    title: "A review on passive/active technologies towards plus energy building in high density urban area",
-    journal: "Renewable and Sustainable Energy Reviews (IF=16.3, TOP 2.4%)", status: "Published" },
+  // ----------------------------------------------------------
+  // 2020년
+  // ----------------------------------------------------------
+  {
+    title: "냉동공조 실험장치",
+    number: "10-2019-0020773",
+    date: "2020.10.15",
+    status: "등록"
+  },
+  {
+    title: "Diffusion Absorption Refrigeration Apparatus and Refrigeration Method",
+    number: "PCT/KR2019/00027",
+    date: "2020.06.12",
+    status: "출원"
+  },
+  {
+    title: "Carbon Dioxide Photo-conversion Reactor",
+    number: "PCT/KR2020/00200",
+    date: "2020.02.13",
+    status: "출원"
+  },
 
-  // ===== 2025 =====
-  { year: 2025, authors: "Jehyung Lee, Gil Jeong, Hyungwon Choi, Hyunjong Kim, Eunjun Cho, Beomsoo Seo, Simon Chin, Yong Tae Kang",
-    title: "Oil Circulation Rate prediction by transformer based deep learning model in R290 heat pump systems",
-    journal: "Energy 337, 138652 (ERC, IF=9.0, TOP 3.2%)", status: "Published" },
+  // ----------------------------------------------------------
+  // 2019년
+  // ----------------------------------------------------------
+  {
+    title: "유로 제어형 계간 축열 시스템",
+    number: "10-2042034",
+    date: "2019.11.01",
+    status: "등록"
+  },
+  {
+    title: "이산화탄소 흡수제 및 그 제조 방법",
+    number: "10-1950579",
+    date: "2019.02.14",
+    status: "등록"
+  },
 
-  { year: 2025, authors: "M. Khoshvaght-Aliabadi, P. Ghodrati, J.Y. Shin, Y.T. Kang",
-    title: "Impact of coolant distribution design on server-level thermal management in data centers",
-    journal: "Energy (ERC, 브레인풀, IF=9.4, TOP 3.2%)", status: "Published" },
+  // ----------------------------------------------------------
+  // 2018년
+  // ----------------------------------------------------------
+  {
+    title: "연료전지 자동차용 흡수식 히트펌프",
+    number: "",
+    date: "2018.08.22",
+    status: "거절"
+  },
+  {
+    title: "태양열 난방 에어매트",
+    number: "20-0486308",
+    date: "2018.04.23",
+    status: "등록"
+  },
 
-  { year: 2025, authors: "Yun Mo Ko, Sunghun Lee, Seonggon Kim, Yong Tae Kang",
-    title: "Enhancing thermally regenerative battery performance by mitigating ammonia crossover",
-    journal: "Applied Energy (ERC, 중견, IF=10.1, TOP 6.2%)", status: "Published" },
+  // ----------------------------------------------------------
+  // 2017년
+  // ----------------------------------------------------------
+  {
+    title: "Heating Air Mat Using Solar Energy",
+    number: "",
+    date: "2017.07.28",
+    status: "Application(PCT)"
+  },
+  {
+    title: "기포 디퓨저",
+    number: "10-1745076",
+    date: "2017.06.01",
+    status: "등록"
+  },
 
-  { year: 2025, authors: "Hyung Won Choi, Jinhee Jeong, Ja Ryong Koo, Young Kim, Yong Tae Kang",
-    title: "Proof of concept for unsteady dynamic model of sorption thermal battery with H2O/LiBr and universal methodology to optimize energy storage density",
-    journal: "Energy (알키미스트, 대온도차, IF=9.0, TOP 3.2%)", status: "Published" },
+  // ----------------------------------------------------------
+  // 2016년
+  // ----------------------------------------------------------
+  {
+    title: "이중 직렬 증발기와 기액 분리기를 가지는 냉각시스템",
+    number: "10-1660123",
+    date: "2016.09.20",
+    status: "등록"
+  },
+  {
+    title: "이산화탄소 하이드레이트 지역냉방시스템",
+    number: "10-1637117",
+    date: "2016.06.30",
+    status: "등록"
+  },
 
-  { year: 2025, authors: "Shokoufeh Mizani, Morteza Khoshvaght-Aliabadi, Yong Tae Kang",
-    title: "Enhancing thermal management in concentrated photovoltaic cells using supercritical carbon dioxide",
-    journal: "Applied Thermal Engineering (브레인풀, IF=6.1, TOP 5.2%)", status: "Published" },
+  // ----------------------------------------------------------
+  // 2015년
+  // ----------------------------------------------------------
+  {
+    title: "고효율의 이산화탄소 하이드레이트를 상압에서 제조할 수 있는 이산화탄소 흡수제 및 이를 제조하는 방법",
+    number: "10-1522382",
+    date: "2015.05.15",
+    status: "등록"
+  },
 
-  { year: 2025, authors: "Ronghuan Xu, Seonggon Kim, Hyungseop Ahn, Seongheon Kim, Hyoun Soo Kim, Yong Tae Kang",
-    title: "Carbon nanotube-assisted self-assembly of CO2 adsorbent pellets: Evaluating the optimum pellet diameter for enhanced mass transfer",
-    journal: "Chemical Engineering Journal (중견, IF=13.4, TOP 3.1%)", status: "Published" }
+  // ----------------------------------------------------------
+  // 2014년
+  // ----------------------------------------------------------
+  {
+    title: "암모니아 흡수식 냉동기용 냉매 제조 및 충전장치",
+    number: "10-2014-0062339",
+    date: "2014.05.23",
+    status: "등록"
+  },
+  {
+    title: "테일러 유동을 이용한 가스 흡수장치",
+    number: "10-1390664",
+    date: "2014.04.24",
+    status: "등록"
+  },
 
+  // ----------------------------------------------------------
+  // 2013년
+  // ----------------------------------------------------------
+  {
+    title: "축열 시스템용 상변화물질",
+    number: "10-1335131",
+    date: "2013.11.25",
+    status: "등록"
+  },
+  {
+    title: "발열소자 방열장치 및 발열소자 패키지 모듈",
+    number: "10-1375070",
+    date: "2013.09.05",
+    status: "등록"
+  },
+  {
+    title: "나노입자를 포함하는 이산화탄소 흡수제",
+    number: "10-1296512",
+    date: "2013.08.07",
+    status: "등록"
+  },
+
+  // ----------------------------------------------------------
+  // 2012년
+  // ----------------------------------------------------------
+  {
+    title: "확산 흡수식 냉동장치의 제조방법",
+    number: "10-0110564",
+    date: "2012.10.10",
+    status: "등록"
+  },
+  {
+    title: "암모니아-물 흡수식 냉각 시스템의 흡수제 및 이의 제조방법",
+    number: "10-1110171",
+    date: "2012.01.19",
+    status: "등록"
+  },
+
+  // ----------------------------------------------------------
+  // 2011년
+  // ----------------------------------------------------------
+  {
+    title: "이온성 나노 유체 흡수액의 제조방법",
+    number: "10-1100644",
+    date: "2011.12.23",
+    status: "등록"
+  },
+  {
+    title: "확산 흡수식 냉동장치",
+    number: "20-0455695",
+    date: "2011.09.14",
+    status: "등록"
+  },
+  {
+    title: "확산 흡수식 냉동장치",
+    number: "20-0455525",
+    date: "2011.09.02",
+    status: "등록"
+  },
+  {
+    title: "확산 흡수식 냉동장치",
+    number: "20-0455524",
+    date: "2011.09.02",
+    status: "등록"
+  },
+  {
+    title: "확산 흡수식 냉동장치",
+    number: "20-0453795",
+    date: "2011.05.20",
+    status: "등록"
+  },
+
+  // ----------------------------------------------------------
+  // 2009년 및 이전
+  // ----------------------------------------------------------
+  {
+    title: "용접식 판형 열교환기",
+    number: "10-0911158",
+    date: "2009.07.31",
+    status: "등록"
+  },
+  {
+    title: "지에이엑스 암모니아 흡수식 냉난방기",
+    number: "10-0746273",
+    date: "2007.07.30",
+    status: "등록"
+  }
 ];
