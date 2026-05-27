@@ -3,52 +3,428 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Alumni · EMCL 고려대학교 에너지물질순환연구실</title>
-  <meta name="description" content="에너지물질순환연구실(EMCL) 졸업생 명단 — 학위, 졸업연도, 학위논문, 현 소속." />
+
+  <meta
+    name="description"
+    content="에너지물질순환연구실(EMCL) 졸업생 명단 — 학위, 졸업연도, 현 소속."
+  />
+
   <link rel="stylesheet" href="../css/style.css" />
+
+  <style>
+    /* =========================================================
+       Alumni tabs
+       ========================================================= */
+
+    .degree-filter{
+      margin-bottom: 34px;
+    }
+
+    .degree-filter button{
+      min-width: 180px;
+    }
+
+    .alumni-wrap{
+      display: none;
+    }
+
+    .alumni-wrap.active{
+      display: block;
+      animation: fadeIn .25s ease;
+    }
+
+    @keyframes fadeIn{
+      from{
+        opacity: 0;
+        transform: translateY(8px);
+      }
+      to{
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    /* =========================================================
+       Alumni table
+       ========================================================= */
+
+    .alumni-table{
+      width: 100%;
+      border-collapse: collapse;
+      border-top: 2px solid var(--ink);
+    }
+
+    .alumni-table thead th{
+      background: #faf8f3;
+
+      padding: 14px 18px;
+
+      border-bottom: 1px solid var(--line);
+
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+
+      color: var(--ink-3);
+
+      text-align: left;
+    }
+
+    .alumni-table tbody td{
+      padding: 18px;
+
+      border-bottom: 1px solid var(--line);
+
+      font-size: 14.5px;
+
+      color: var(--ink-2);
+
+      vertical-align: middle;
+    }
+
+    .alumni-table tbody tr:hover td{
+      background: #faf8f3;
+    }
+
+    .alumni-name{
+      font-weight: 700;
+      color: var(--ink);
+      font-size: 15.5px;
+    }
+
+    .alumni-year{
+      font-family: var(--font-mono);
+      color: var(--crimson);
+      font-weight: 700;
+    }
+
+    .alumni-aff{
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    @media (max-width: 860px){
+
+      .alumni-table{
+        display: block;
+        overflow-x: auto;
+      }
+
+      .degree-filter button{
+        min-width: auto;
+        flex: 1;
+      }
+    }
+  </style>
 </head>
+
 <body data-page="alumni" data-depth="1">
+
 <div id="app">
+
   <div class="header-spacer"></div>
 
-  <section class="page-hero"><div class="wrap">
-    <nav class="breadcrumb"><a href="../index.html">Home</a><span class="sep">/</span><a href="members.html">Members</a><span class="sep">/</span><span>Alumni</span></nav>
-    <span class="kicker">People</span>
-    <h1 class="serif">Alumni</h1>
-    <div class="sub">EMCL을 거쳐 간 연구자들</div>
-    <div class="ghost-no">卒</div>
-  </div></section>
+  <!-- HERO -->
+  <section class="page-hero">
+    <div class="wrap">
 
-  <section class="page-body"><div class="wrap">
+      <nav class="breadcrumb">
+        <a href="../index.html">Home</a>
+        <span class="sep">/</span>
 
-    <p class="prose reveal" style="margin-bottom:32px;">EMCL을 거쳐 간 졸업생들은 학계와 산업계 곳곳에서 활약하고 있습니다.</p>
+        <a href="members.html">Members</a>
+        <span class="sep">/</span>
 
-    <h2 class="lab-section-title reveal">학계 · Academia</h2>
-    <div class="tag-row reveal" style="margin-bottom:40px;">
-      <span>한국해양대학교 교수</span><span>성균관대학교 교수</span>
+        <span>Alumni</span>
+      </nav>
+
+      <span class="kicker">People</span>
+
+      <h1 class="serif">Alumni</h1>
+
+      <div class="sub">
+        EMCL을 거쳐 간 연구자들
+      </div>
+
+      <div class="ghost-no">卒</div>
+
     </div>
+  </section>
 
-    <h2 class="lab-section-title reveal">산업계 · Industry</h2>
-    <div class="tag-row reveal" style="margin-bottom:40px;">
-      <span>삼성전자</span><span>LG전자</span><span>현대자동차</span>
+  <!-- BODY -->
+  <section class="page-body">
+    <div class="wrap">
+
+      <p class="prose reveal" style="margin-bottom:34px;">
+        EMCL을 거쳐 간 졸업생들은 학계와 산업계 곳곳에서 활약하고 있습니다.
+      </p>
+
+      <!-- DEGREE FILTER -->
+      <div class="pub-filter degree-filter reveal">
+
+        <button class="active" data-tab="phd">
+          Ph. D. Degree
+        </button>
+
+        <button data-tab="ms">
+          M.S. Degree
+        </button>
+
+      </div>
+
+      <!-- =====================================================
+           PHD
+           ===================================================== -->
+
+      <div class="alumni-wrap active" id="tab-phd">
+
+        <h2 class="lab-section-title reveal">
+          Ph. D. Degree
+        </h2>
+
+        <table class="alumni-table reveal">
+
+          <thead>
+            <tr>
+              <th style="width:120px;">Year</th>
+              <th style="width:180px;">Name</th>
+              <th>Current Affiliation</th>
+            </tr>
+          </thead>
+
+          <tbody>
+
+            <tr>
+              <td class="alumni-year">2023</td>
+              <td class="alumni-name">김성곤</td>
+              <td class="alumni-aff">
+                성균관대학교 기계공학부 교수
+              </td>
+            </tr>
+
+            <tr>
+              <td class="alumni-year">2017</td>
+              <td class="alumni-name">이재원</td>
+              <td class="alumni-aff">
+                국립한국해양대학교 기계공학부 교수
+              </td>
+            </tr>
+
+            <tr>
+              <td class="alumni-year">2021</td>
+              <td class="alumni-name">Lirong Li</td>
+              <td class="alumni-aff">
+                Yangzhou University
+              </td>
+            </tr>
+
+            <tr>
+              <td class="alumni-year">2017</td>
+              <td class="alumni-name">
+                Israel Torres Pineda
+              </td>
+              <td class="alumni-aff">
+                한국기계연구원 (KIMM)
+              </td>
+            </tr>
+
+            <tr>
+              <td class="alumni-year">2016</td>
+              <td class="alumni-name">이진기</td>
+              <td class="alumni-aff">
+                생산기술연구원 (KITECH)
+              </td>
+            </tr>
+
+            <tr>
+              <td class="alumni-year">2015</td>
+              <td class="alumni-name">김영준</td>
+              <td class="alumni-aff">
+                생산기술연구원 (KITECH)
+              </td>
+            </tr>
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+      <!-- =====================================================
+           MS
+           ===================================================== -->
+
+      <div class="alumni-wrap" id="tab-ms">
+
+        <h2 class="lab-section-title reveal">
+          M.S. Degree
+        </h2>
+
+        <table class="alumni-table reveal">
+
+          <thead>
+            <tr>
+              <th style="width:120px;">Year</th>
+              <th style="width:180px;">Name</th>
+              <th>Current Affiliation</th>
+            </tr>
+          </thead>
+
+          <tbody>
+
+            <tr>
+              <td class="alumni-year">2026</td>
+              <td class="alumni-name">최형원</td>
+              <td class="alumni-aff">삼성전자</td>
+            </tr>
+
+            <tr>
+              <td class="alumni-year">2026</td>
+              <td class="alumni-name">이제형</td>
+              <td class="alumni-aff">삼성전자</td>
+            </tr>
+
+            <tr>
+              <td class="alumni-year">2026</td>
+              <td class="alumni-name">정길</td>
+              <td class="alumni-aff">현대자동차</td>
+            </tr>
+
+            <tr>
+              <td class="alumni-year">2026</td>
+              <td class="alumni-name">신재현</td>
+              <td class="alumni-aff">
+                Massachusetts Institute of Technology (MIT) 박사과정
+              </td>
+            </tr>
+
+            <tr>
+              <td class="alumni-year">2026</td>
+              <td class="alumni-name">신주영</td>
+              <td class="alumni-aff">
+                University of California, Berkeley 박사과정
+              </td>
+            </tr>
+
+            <tr>
+              <td class="alumni-year">2026</td>
+              <td class="alumni-name">김성헌</td>
+              <td class="alumni-aff">
+                University of California, Berkeley 박사과정
+              </td>
+            </tr>
+
+            <tr>
+              <td class="alumni-year">2025</td>
+              <td class="alumni-name">윤도성</td>
+              <td class="alumni-aff">LG전자</td>
+            </tr>
+
+            <tr>
+              <td class="alumni-year">2024</td>
+              <td class="alumni-name">민재홍</td>
+              <td class="alumni-aff">LG전자</td>
+            </tr>
+
+            <tr>
+              <td class="alumni-year">2024</td>
+              <td class="alumni-name">두현진</td>
+              <td class="alumni-aff">LG전자</td>
+            </tr>
+
+            <tr>
+              <td class="alumni-year">2024</td>
+              <td class="alumni-name">이근정</td>
+              <td class="alumni-aff">삼성전자</td>
+            </tr>
+
+            <tr>
+              <td class="alumni-year">2023</td>
+              <td class="alumni-name">송민수</td>
+              <td class="alumni-aff">LG전자</td>
+            </tr>
+
+            <tr>
+              <td class="alumni-year">2023</td>
+              <td class="alumni-name">정재희</td>
+              <td class="alumni-aff">
+                한국조선해양 미래기술연구원 (KSOE)
+              </td>
+            </tr>
+
+            <tr>
+              <td class="alumni-year">2023</td>
+              <td class="alumni-name">박세준</td>
+              <td class="alumni-aff">LG전자</td>
+            </tr>
+
+            <tr>
+              <td class="alumni-year">2023</td>
+              <td class="alumni-name">민하예</td>
+              <td class="alumni-aff">SK이노베이션</td>
+            </tr>
+
+            <tr>
+              <td class="alumni-year">2023</td>
+              <td class="alumni-name">김대혁</td>
+              <td class="alumni-aff">LG전자</td>
+            </tr>
+
+            <tr>
+              <td class="alumni-year">2022</td>
+              <td class="alumni-name">박종하</td>
+              <td class="alumni-aff">
+                University of California, Berkeley 박사과정
+              </td>
+            </tr>
+
+          </tbody>
+
+        </table>
+
+      </div>
+
     </div>
-
-    <h2 class="lab-section-title reveal">연구기관 · Research Institutes</h2>
-    <div class="tag-row reveal">
-      <span>정부출연연구소 등</span>
-    </div>
-
-    <!--
-      개별 졸업생 명단(이름·학위·졸업연도·논문·현 소속)을 표로 보여주려면 아래 형태를 사용하세요:
-      <table class="lab-table">
-        <thead><tr><th>이름</th><th class="center">학위</th><th class="center">졸업연도</th><th>현 소속</th></tr></thead>
-        <tbody><tr><td>홍길동</td><td class="center">박사</td><td class="center">2024</td><td>○○○</td></tr></tbody>
-      </table>
-    -->
-
-  </div></section>
+  </section>
 
 </div>
+
 <script src="../js/main.js"></script>
+
+<script>
+(function(){
+
+  var buttons =
+    document.querySelectorAll(".degree-filter button");
+
+  var tabs =
+    document.querySelectorAll(".alumni-wrap");
+
+  buttons.forEach(function(btn){
+
+    btn.addEventListener("click", function(){
+
+      buttons.forEach(function(b){
+        b.classList.remove("active");
+      });
+
+      btn.classList.add("active");
+
+      tabs.forEach(function(tab){
+        tab.classList.remove("active");
+      });
+
+      document
+        .getElementById("tab-" + btn.dataset.tab)
+        .classList.add("active");
+    });
+  });
+
+})();
+</script>
+
 </body>
 </html>
