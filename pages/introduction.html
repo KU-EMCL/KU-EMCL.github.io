@@ -3,58 +3,117 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Introduction · EMCL 고려대학교 에너지물질순환연구실</title>
-  <meta name="description" content="에너지물질순환연구실(EMCL) 소개 — 에너지 소재의 생산·활용·순환에 관한 핵심 기술을 연구합니다." />
-  <link rel="stylesheet" href="../css/style.css" />
+  <title>About us · EMCL 고려대학교 에너지물질순환연구실</title>
+  <style>
+    /* 기존 홈페이지 스타일에 맞춘 기본 CSS */
+    :root {
+      --ink: #333;
+      --crimson: #8a1538; /* 고려대학교 상징색 */
+      --line: #eee;
+      --radius: 8px;
+      --font-display: 'Pretendard', sans-serif;
+    }
+    body { font-family: var(--font-display); color: var(--ink); line-height: 1.6; margin: 0; padding: 0; }
+    .wrap { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+    .page-hero { background: #fcfcfc; padding: 60px 0; text-align: center; border-bottom: 1px solid var(--line); }
+    .page-hero h1 { color: var(--crimson); font-size: 2.5em; margin: 10px 0; }
+    .sub { font-size: 1.2em; color: #666; }
+    .prose p { margin-bottom: 20px; word-break: keep-all; }
+    .lab-section-title { color: var(--crimson); font-size: 1.5em; border-bottom: 2px solid var(--crimson); padding-bottom: 10px; margin-top: 60px; margin-bottom: 20px; }
+    .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+    .tile { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; box-shadow: 0 4px 6px rgba(0,0,0,0.02); transition: transform 0.2s; }
+    .tile:hover { transform: translateY(-5px); box-shadow: 0 6px 12px rgba(0,0,0,0.05); }
+    .tile h3 { color: var(--crimson); margin-top: 0; font-size: 1.2em; margin-bottom: 10px; }
+    .t-no { font-weight: 800; color: #f0f0f0; font-size: 2em; margin-bottom: 10px; line-height: 1; }
+    .list-wrap ul { list-style-type: none; padding-left: 0; }
+    .list-wrap li { margin-bottom: 12px; position: relative; padding-left: 15px; }
+    .list-wrap li::before { content: '▪'; color: var(--crimson); position: absolute; left: 0; font-size: 1.2em; line-height: 1; }
+    .image-container { text-align: center; margin: 40px 0; }
+    .image-container img { max-width: 100%; height: auto; border-radius: var(--radius); border: 1px solid var(--line); }
+  </style>
 </head>
-<body data-page="introduction" data-depth="1">
-<div id="app">
-  <div class="header-spacer"></div>
-
-  <section class="page-hero"><div class="wrap">
-    <nav class="breadcrumb"><a href="../index.html">Home</a><span class="sep">/</span><span>Introduction</span><span class="sep">/</span><span>연구실 소개</span></nav>
-    <span class="kicker">About the Lab</span>
-    <h1 class="serif">Introduction</h1>
-    <div class="sub">Energy Materials Circulation Laboratory</div>
-    <div class="ghost-no">01</div>
-  </div></section>
-
-  <section class="page-body"><div class="wrap">
-    
-    <div class="reveal" style="display:grid; grid-template-columns:1fr 300px; gap:48px; align-items:start;">
+<body>
+  <section class="page-hero">
+    <div class="wrap">
+      <h1>About us</h1>
+      <div class="sub">Energy Materials Circulation Laboratory (EMCL)</div>
+    </div>
+  </section>
+  <section class="page-body">
+    <div class="wrap">
       <div class="prose">
-        <p style="font-size:20px;font-family:var(--font-display);color:var(--ink);line-height:1.6;margin-bottom:24px;">
-          에너지물질순환 연구실(EMCL)은 <strong style="color:var(--crimson);font-weight:600;">탄소중립 실현</strong>을 위한 고효율 친환경 에너지 시스템 원천기술을 연구합니다.
-        </p>
-        <p style="margin-bottom:18px;">
-          글로벌 트렌드에 발맞추어 친환경·에너지 절약형 냉동 및 열시스템 설계 기술의 경쟁력을 확보하는 데 정진하고 있습니다. 
-          국내 수준에 안주하지 않고 세계적인 연구실들과 경쟁하며, 트렌드를 뒤쫓기보다 시장을 앞서 나가는 선도 기술 확보를 목표로 합니다.
+        <p style="font-size:1.25em; font-weight: 600;">
+          에너지물질순환 연구실(EMCL)은 <span style="color:var(--crimson);">탄소중립 실현</span>을 위한 고효율 친환경 에너지 시스템 원천기술을 연구합니다.
         </p>
         <p>
-          나아가 기술 극한 경쟁 시대 속에서 국가의 국제 경쟁력 강화에 기여하는 것을 궁극적인 비전으로 삼고 있습니다.
+          국내 수준에 안주하지 않고 세계적인 연구실들과 경쟁하며, 글로벌 트렌드를 선도하는 친환경·에너지 절약형 냉동 및 열시스템 설계 기술을 확보하여 국가 경쟁력 강화에 기여하는 것을 궁극적인 목표로 삼고 있습니다.
         </p>
       </div>
-      <img src="../images/prof_int.jpg" alt="강용태 교수" style="width:100%; border-radius:var(--radius); border:1px solid var(--line);" />
-    </div>
 
-    <div style="margin-top:64px;" class="reveal">
-      <h2 class="lab-section-title">Research Focus · 주요 연구 분야</h2>
-      <div class="tiles">
-        <div class="tile"><div class="t-no">01</div><h3>플러스에너지빌딩</h3><p>솝션 열배터리·고밀도 축열 기반 에너지 자립 건물 기술</p></div>
-        <div class="tile"><div class="t-no">02</div><h3>CO₂ 포집·활용</h3><p>직접 공기 포집(DAC)·CCUS 시스템 개발 및 최적화</p></div>
-        <div class="tile"><div class="t-no">03</div><h3>차세대 히트펌프</h3><p>친환경 냉매·무압축기 냉동 사이클 및 AI 진단 기술</p></div>
-        <div class="tile"><div class="t-no">04</div><h3>열관리·하베스팅</h3><p>수분 탈착·복사냉각 기반 패시브 자가 복구형 냉각</p></div>
+      <div class="image-container">
+        </div>
+
+      <div class="reveal">
+        <h2 class="lab-section-title">1. 연구분야 (Research Focus)</h2>
+        <div class="tiles">
+          <div class="tile">
+            <div class="t-no">01</div>
+            <h3>Plus-Energy Building</h3>
+            <p>솝션 열배터리 최적 운전점 설계 및 고밀도 건물에너지 저장/활용 냉난방 기술</p>
+          </div>
+          <div class="tile">
+            <div class="t-no">02</div>
+            <h3>CO₂ Capture & Application</h3>
+            <p>직접 공기 포집(DAC) 모듈, CCUS 시스템 개발 및 CO₂ 구동 전기/수소 생산</p>
+          </div>
+          <div class="tile">
+            <div class="t-no">03</div>
+            <h3>Next-generation Heat Pump</h3>
+            <p>고온 스팀 제조 및 친환경 R290 냉매 적용 히트펌프, 무압축기 냉동 사이클</p>
+          </div>
+          <div class="tile">
+            <div class="t-no">04</div>
+            <h3>Thermal Management</h3>
+            <p>수분 탈착 흡열 기반 패시브 자가 복구형 냉각 및 복사냉각 기반 등온필름 개발</p>
+          </div>
+        </div>
       </div>
-    </div>
 
-    <div style="margin-top:64px;" class="reveal">
-      <h2 class="lab-section-title">Location · 연구실 위치</h2>
-      <div class="prose"><p>서울특별시 성북구 안암로 145<br>고려대학교 공과대학 기계공학부<br>에너지물질순환연구실 (Innovation Hall 616, 623A)</p></div>
-      <a class="btn btn-ghost btn-sm" href="contact.html" style="margin-top:8px;">오시는 길 보기 &rarr;</a>
-    </div>
-  </div></section>
+      <div class="reveal">
+        <h2 class="lab-section-title">2. 연구실 생활 및 시스템</h2>
+        <div class="list-wrap">
+          <ul>
+            <li><strong>글로벌 역량 강화:</strong> 정기적인 영어 세미나 개최 및 석/박사 과정생의 국제학술대회(IHTC 등) 참가 및 발표 적극 지원</li>
+            <li><strong>기초 소양 및 전문 교육:</strong> 신입생 대상 기초 소양 교육은 물론, 관련 시뮬레이션(CFD, 수치해석) 및 16 bar 이상의 고압 냉매 응축 실험 등 소프트웨어/하드웨어 역량 종합 배양</li>
+            <li><strong>친목 도모:</strong> 연 2회(여름, 겨울방학) 단합대회(MT) 및 다양한 체육활동을 통한 구성원 간 유대감 형성</li>
+          </ul>
+        </div>
+      </div>
 
-</div>
-<script src="../js/main.js"></script>
+      <div class="reveal">
+        <h2 class="lab-section-title">3. 장학 및 지원 제도</h2>
+        <div class="list-wrap">
+          <ul>
+            <li>정부 지원 사업 및 다수의 대형 프로젝트(LG전자, 삼성전자, 현대자동차 등 연계) 참여를 통한 <strong>안정적인 인건비 지급</strong></li>
+            <li>특허, 기술이전, 논문(Science, Nature Communications 등) 연구 성과물에 대한 <strong>다양한 인센티브 부여</strong></li>
+            <li>석사 및 박사 과정 중 학과 조교(TA) 활동 시 등록금의 30%~50%에 해당하는 장학금 지원</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <h2 class="lab-section-title">4. 구성원 및 졸업생 현황</h2>
+        <div class="list-wrap">
+          <ul>
+            <li><strong>지도교수:</strong> 강용태 교수 (Yong Tae Kang, Ph.D.)</li>
+            <li><strong>재학생 현황:</strong> 박사 후 연구원 1명 / 박사과정 11명 / 석사과정 13명 / 학부연구생 3명</li>
+            <li><strong>졸업생 진로:</strong> 국민대학교, 성균관대학교 교수 임용 및 LG전자, 삼성전자, 현대자동차, 정부출연연구소 등 핵심 R&D 인력으로 진출</li>
+            <li><strong>위치:</strong> 고려대학교 공과대학 기계공학부 Innovation Hall 309, 616, 623A</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
 </body>
 </html>
