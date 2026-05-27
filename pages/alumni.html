@@ -98,7 +98,7 @@
     if (p.email) dl += '<dt>E-mail</dt><dd>' + esc(p.email) + '</dd>';
     // 영문 이름이 따로 있으면(이미 영문 이름인 경우) 중복 표기 안 함
     var nameEn = (!isEng(p.name)) ? '' : '';
-    return '<div class="member-list-item reveal">' +
+    return '<div class="member-list-item">' +
       '<div class="mphoto">' + photo + '</div>' +
       '<div class="minfo"><div class="mname">' + esc(p.name) + nameEn + '</div>' +
       '<dl>' + dl + '</dl></div></div>';
