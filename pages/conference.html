@@ -4,41 +4,29 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Conference · EMCL 고려대학교 에너지물질순환연구실</title>
-  <meta name="description" content="에너지물질순환연구실(EMCL)의 학술대회 논문 발표 목록." />
   <link rel="stylesheet" href="../css/style.css" />
   <style>
-    .pub-year { font-family: var(--font-display); font-weight: 700; font-size: 22px; color: var(--crimson);
-      display: flex; align-items: center; gap: 12px; margin: 36px 0 14px; }
+    .pub-year { font-family: var(--font-display); font-weight: 700; font-size: 22px; color: var(--crimson); display: flex; align-items: center; gap: 12px; margin: 36px 0 14px; }
     .pub-year::before { content: ""; width: 14px; height: 14px; background: var(--crimson); display: inline-block; }
-    .pub-year:first-of-type { margin-top: 0; }
     .paper { display: grid; grid-template-columns: 44px 1fr; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--line); }
     .paper .pno { font-family: var(--font-mono); font-size: 15px; font-weight: 700; color: var(--crimson); text-align: right; padding-top: 2px; }
     .paper .pbody { font-size: 14.5px; line-height: 1.6; color: var(--ink-2); }
     .paper .pttl { font-weight: 700; color: var(--ink); }
-    .paper .pjn { color: var(--accent); font-weight: 500; }
-    .paper .ploc { color: var(--gold); font-style: normal; font-family: var(--font-mono); font-size: 13px; }
-    
-    /* 탭 스타일 */
     .conf-tabs { display: flex; gap: 10px; margin-bottom: 20px; }
     .conf-tabs button { font-family: var(--font-mono); font-size: 14px; padding: 8px 20px; border: 1px solid var(--line); background: #fff; cursor: pointer; }
     .conf-tabs button.active { background: var(--ink); color: #fff; border-color: var(--ink); }
-
-    .pub-pager { display: flex; justify-content: center; flex-wrap: wrap; gap: 6px; margin-top: 40px; }
-    .pub-pager button { font-family: var(--font-mono); font-size: 13px; min-width: 38px; height: 38px; padding: 0 10px;
-      border: 1px solid var(--line); background: #fff; color: var(--ink-2); border-radius: 2px; transition: all .2s; }
-    .pub-pager button.active, .pub-pager button:hover:not(:disabled) { background: var(--ink); color: #fff; border-color: var(--ink); }
-    .pub-pager button:disabled { opacity: .4; cursor: not-allowed; }
+    .pub-pager { display: flex; justify-content: center; gap: 6px; margin-top: 40px; }
+    .pub-pager button { font-family: var(--font-mono); font-size: 13px; min-width: 38px; height: 38px; padding: 0 10px; border: 1px solid var(--line); background: #fff; color: var(--ink-2); transition: all .2s; }
+    .pub-pager button.active { background: var(--ink); color: #fff; }
   </style>
 </head>
 <body data-page="conference" data-depth="1">
 <div id="app">
   <div class="header-spacer"></div>
-  
   <section class="page-hero"><div class="wrap">
     <nav class="breadcrumb"><a href="../index.html">Home</a><span class="sep">/</span><span>Publications</span></nav>
     <h1 class="serif">Conference</h1>
   </div></section>
-
   <section class="page-body"><div class="wrap">
     <div class="conf-tabs">
       <button id="tab-int" class="active">International</button>
@@ -48,81 +36,38 @@
     <div class="pub-pager" id="conference-pager"></div>
   </div></section>
 </div>
-
 <script src="../js/conference.js"></script>
 <script src="../js/conference_dom.js"></script>
 <script src="../js/main.js"></script>
 <script>
 (function () {
   var PER_PAGE = 15;
-  var currentData = window.EMCL_CONFERENCES; // 기본: 국제
-
-  function initTab() {
-    var btnInt = document.getElementById("tab-int");
-    var btnDom = document.getElementById("tab-dom");
-
-    btnInt.addEventListener("click", function() {
-      currentData = window.EMCL_CONFERENCES;
-      btnInt.classList.add("active"); btnDom.classList.remove("active");
-      render(1);
-    });
-
-    btnDom.addEventListener("click", function() {
-      currentData = window.EMCL_CONFERENCES_DOM;
-      btnDom.classList.add("active"); btnInt.classList.remove("active");
-      render(1);
-    });
-  }
-
-  function boldNames(authors) {
-    return authors.replace(/(Yong Tae Kang|Y\.T\. Kang|YT Kang|강용태|Soohwan Lim|S\. Lim|임수환)/g, "<b>$1</b>");
-  }
-
+  var currentData = window.EMCL_CONFERENCES; 
   function render(page) {
     var data = currentData.slice().sort(function(a, b) { return b.year - a.year; });
     var total = data.length;
     var pages = Math.max(1, Math.ceil(total / PER_PAGE));
-    
-    // 연도별 순번 처리
-    var yearCount = {};
-    data.forEach(function (p) { yearCount[p.year] = (yearCount[p.year] || 0) + 1; });
-    var seen = {};
-    data.forEach(function (p) {
-      seen[p.year] = (seen[p.year] || 0) + 1;
-      p._no = yearCount[p.year] - seen[p.year] + 1;
-    });
-
     var start = (page - 1) * PER_PAGE;
     var slice = data.slice(start, start + PER_PAGE);
     var html = "";
     var curYear = null;
-    
     slice.forEach(function (p) {
-      if (p.year !== curYear) {
-        curYear = p.year;
-        html += '<div class="pub-year">' + curYear + '</div>';
-      }
-      html += '<div class="paper"><div class="pno">' + p._no + '</div>' +
-        '<div class="pbody">' + boldNames(p.authors) +
-        ' <span class="pttl">"' + p.title + '"</span>, ' +
-        '<span class="pjn">' + p.conference + '</span>, ' +
-        '<span class="ploc">' + p.location + '</span>, ' + p.year +
-        '</div></div>';
+      if (p.year !== curYear) { curYear = p.year; html += '<div class="pub-year">' + curYear + '</div>'; }
+      html += '<div class="paper"><div class="pno">' + p._no + '</div><div class="pbody"><b>' + p.authors + '</b> "' + p.title + '", ' + p.conference + ', ' + p.location + ', ' + p.year + '</div></div>';
     });
-    
     document.getElementById("conference-list").innerHTML = html;
-    
-    // 페이저 렌더링
-    var pagerHtml = "";
-    if (pages > 1) {
-      for (var i = 1; i <= pages; i++) {
-        pagerHtml += '<button class="' + (i === page ? 'active' : '') + '">' + i + '</button>';
-      }
+    var pagerEl = document.getElementById("conference-pager");
+    pagerEl.innerHTML = "";
+    for (var i = 1; i <= pages; i++) {
+      var btn = document.createElement("button");
+      btn.textContent = i;
+      if (i === page) btn.classList.add("active");
+      (function(n) { btn.addEventListener("click", function() { render(n); window.scrollTo({top: 0, behavior: "smooth"}); }); })(i);
+      pagerEl.appendChild(btn);
     }
-    document.getElementById("conference-pager").innerHTML = pagerHtml;
   }
-
-  initTab();
+  document.getElementById("tab-int").addEventListener("click", function() { currentData = window.EMCL_CONFERENCES; this.classList.add("active"); document.getElementById("tab-dom").classList.remove("active"); render(1); });
+  document.getElementById("tab-dom").addEventListener("click", function() { currentData = window.EMCL_CONFERENCES_DOM; this.classList.add("active"); document.getElementById("tab-int").classList.remove("active"); render(1); });
   render(1);
 })();
 </script>
