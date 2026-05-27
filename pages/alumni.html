@@ -31,6 +31,12 @@
     .member-list-item dd.aff { color: var(--accent); font-weight: 500; }
     .member-list-item dd.year { font-family: var(--font-mono); color: var(--crimson); font-weight: 700; }
 
+    .alumni-pager { display: flex; justify-content: center; flex-wrap: wrap; gap: 6px; margin-top: 30px; }
+    .alumni-pager button { font-family: var(--font-mono); font-size: 13px; min-width: 38px; height: 38px; padding: 0 10px;
+      border: 1px solid var(--line); background: #fff; color: var(--ink-2); border-radius: 2px; transition: all .2s; }
+    .alumni-pager button.active, .alumni-pager button:hover:not(:disabled) { background: var(--ink); color: #fff; border-color: var(--ink); }
+    .alumni-pager button:disabled { opacity: .4; cursor: not-allowed; }
+
     @media (max-width: 560px) {
       .member-list-item { grid-template-columns: 80px 1fr; gap: 16px; }
       .member-list-item .mphoto { width: 76px; height: 95px; }
@@ -65,11 +71,13 @@
     <div class="alumni-wrap active" id="tab-phd">
       <h2 class="lab-section-title reveal">Ph. D. Degree <span class="count-badge" id="cnt-phd"></span></h2>
       <div class="member-list" id="list-phd"></div>
+      <div class="alumni-pager" id="pager-phd"></div>
     </div>
 
     <div class="alumni-wrap" id="tab-ms">
       <h2 class="lab-section-title reveal">M.S. Degree <span class="count-badge" id="cnt-ms"></span></h2>
       <div class="member-list" id="list-ms"></div>
+      <div class="alumni-pager" id="pager-ms"></div>
     </div>
   </div></section>
 </div>
@@ -104,15 +112,45 @@
       '<dl>' + dl + '</dl></div></div>';
   }
 
-  function renderList(degree, elId, cntId) {
+  var PER_PAGE = 20;
+  var pageState = { phd: 1, ms: 1 };
+
+  function renderList(degree, elId, cntId, pagerId) {
     var list = all.filter(function (p) { return p.degree === degree; });
     list.sort(function (a, b) { return (b.year || "0").localeCompare(a.year || "0"); });
-    document.getElementById(elId).innerHTML = list.map(cardHTML).join("");
     document.getElementById(cntId).textContent = list.length;
+
+    var pages = Math.max(1, Math.ceil(list.length / PER_PAGE));
+    var page = pageState[degree];
+    if (page > pages) { page = pages; pageState[degree] = page; }
+    var slice = list.slice((page - 1) * PER_PAGE, page * PER_PAGE);
+    document.getElementById(elId).innerHTML = slice.map(cardHTML).join("");
+
+    renderPager(degree, elId, cntId, pagerId, pages);
   }
 
-  renderList("phd", "list-phd", "cnt-phd");
-  renderList("ms", "list-ms", "cnt-ms");
+  function renderPager(degree, elId, cntId, pagerId, pages) {
+    var el = document.getElementById(pagerId);
+    if (pages <= 1) { el.innerHTML = ""; return; }
+    var page = pageState[degree];
+    var h = '<button ' + (page === 1 ? 'disabled' : '') + ' data-go="prev">\u2039</button>';
+    for (var i = 1; i <= pages; i++) h += '<button class="' + (i === page ? 'active' : '') + '" data-go="' + i + '">' + i + '</button>';
+    h += '<button ' + (page === pages ? 'disabled' : '') + ' data-go="next">\u203a</button>';
+    el.innerHTML = h;
+    el.querySelectorAll("button").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var g = b.getAttribute("data-go");
+        if (g === "prev") pageState[degree] = Math.max(1, page - 1);
+        else if (g === "next") pageState[degree] = Math.min(pages, page + 1);
+        else pageState[degree] = parseInt(g, 10);
+        renderList(degree, elId, cntId, pagerId);
+        document.getElementById("tab-" + degree).scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    });
+  }
+
+  renderList("phd", "list-phd", "cnt-phd", "pager-phd");
+  renderList("ms", "list-ms", "cnt-ms", "pager-ms");
 
   // 탭 전환
   var buttons = document.querySelectorAll(".degree-filter button");
