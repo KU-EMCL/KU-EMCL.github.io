@@ -120,5 +120,90 @@
 <script src="js/seed-posts.js"></script>
 <script src="js/board.js"></script>
 <script src="js/main.js"></script>
+  <!-- ===== 모집 공고 팝업 (시작) =====
+     사용법: 이 블록 전체를 팝업 띄우고 싶은 페이지의 </body> 바로 위에 붙여넣으세요.
+     내용 수정: 아래 .recruit-pop-body 안의 글을 고치면 됩니다. -->
+<div id="recruit-pop" class="recruit-pop" style="display:none;">
+  <div class="recruit-pop-dim"></div>
+  <div class="recruit-pop-card">
+    <button class="recruit-pop-x" id="recruit-pop-x" aria-label="닫기">&times;</button>
+    <div class="recruit-pop-body">
+      <h2>대학원생 · 학부연구생 모집</h2>
+      <p>에너지물질순환연구실(EMCL)에서 <strong>탄소중립 실현</strong>을 위한 친환경 에너지 시스템 연구에 함께할 신입 대학원생 및 학부연구생을 모집합니다.</p>
+      <ul>
+        <li>플러스에너지빌딩, CO₂ 포집·활용, 차세대 히트펌프, 열관리·에너지 하베스팅, 데이터센터 냉각 등 다양한 연구 분야</li>
+        <li>과제 인건비, BK21 장학금 및 조교장학금 등 최고 수준의 장학 제도</li>
+        <li>국제학술대회 발표, 해외 연구 교류 등 우수한 연구 환경 제공</li>
+      </ul>
+      <p>연구실에 관심 있는 학생은 메일로 연락 바랍니다.</p>
+      <p class="recruit-pop-contact">강용태 교수 · <a href="mailto:ytkang@korea.ac.kr">ytkang@korea.ac.kr</a></p>
+      <div class="recruit-pop-foot">
+        <button id="recruit-pop-never" class="recruit-pop-never">24시간 동안 보지 않기</button>
+        <button id="recruit-pop-close" class="recruit-pop-close">닫기</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .recruit-pop { position: fixed; inset: 0; z-index: 800; display: flex; align-items: center; justify-content: center; padding: 20px; }
+  .recruit-pop-dim { position: absolute; inset: 0; background: rgba(15,13,11,.62); backdrop-filter: blur(2px); }
+  .recruit-pop-card { position: relative; background: #fff; max-width: 540px; width: 100%; border-radius: 6px;
+    box-shadow: 0 24px 60px rgba(0,0,0,.35); border-top: 5px solid var(--crimson, #8A1538);
+    animation: recruitIn .3s ease; max-height: 88vh; overflow-y: auto; }
+  @keyframes recruitIn { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+  .recruit-pop-x { position: absolute; top: 12px; right: 16px; background: none; border: none; font-size: 28px;
+    line-height: 1; color: #999; cursor: pointer; padding: 0; }
+  .recruit-pop-x:hover { color: var(--crimson, #8A1538); }
+  .recruit-pop-body { padding: 36px 36px 28px; }
+  .recruit-pop-body h2 { font-family: var(--font-display, Arial), sans-serif; font-weight: 700; font-size: 22px;
+    color: var(--crimson, #8A1538); margin: 0 0 16px; }
+  .recruit-pop-body p { font-size: 14.5px; line-height: 1.7; color: var(--ink-2, #3a3530); margin: 0 0 14px; }
+  .recruit-pop-body ul { margin: 0 0 14px; padding-left: 0; list-style: none; }
+  .recruit-pop-body li { font-size: 14px; line-height: 1.6; color: var(--ink-2, #3a3530);
+    padding: 7px 0 7px 18px; position: relative; border-bottom: 1px dashed var(--line, #e3ddd0); }
+  .recruit-pop-body li::before { content: "·"; position: absolute; left: 4px; color: var(--crimson, #8A1538); font-weight: 700; }
+  .recruit-pop-contact { font-weight: 600; color: var(--ink, #1b1916) !important; }
+  .recruit-pop-contact a { color: var(--crimson, #8A1538); text-decoration: none; }
+  .recruit-pop-contact a:hover { text-decoration: underline; }
+  .recruit-pop-foot { display: flex; gap: 10px; justify-content: flex-end; margin-top: 22px; }
+  .recruit-pop-foot button { font-family: var(--font-mono, Arial), sans-serif; font-size: 13px; padding: 10px 18px;
+    border-radius: 3px; cursor: pointer; border: 1px solid var(--line, #e3ddd0); transition: all .2s; white-space: nowrap; }
+  .recruit-pop-never { background: #fff; color: var(--ink-3, #8a847b); }
+  .recruit-pop-never:hover { background: #f5f2ec; }
+  .recruit-pop-close { background: var(--ink, #1b1916); color: #fff; border-color: var(--ink, #1b1916); }
+  .recruit-pop-close:hover { opacity: .85; }
+  @media (max-width: 560px) { .recruit-pop-body { padding: 30px 22px 22px; } }
+</style>
+
+<script>
+(function () {
+  var KEY = "emcl_recruit_hidden_until_v1";  // 버전: 공고 내용 바꿔 다시 띄우려면 v2, v3로 변경
+  var HIDE_HOURS = 24;                        // 다시 안 보기를 누르면 숨길 시간(시간 단위)
+
+  // 저장된 "숨김 만료 시각"이 아직 안 지났으면 띄우지 않음
+  try {
+    var until = parseInt(localStorage.getItem(KEY) || "0", 10);
+    if (until && Date.now() < until) return;
+  } catch (e) {}
+
+  var pop = document.getElementById("recruit-pop");
+  pop.style.display = "flex";
+  document.body.style.overflow = "hidden";
+
+  function close() { pop.style.display = "none"; document.body.style.overflow = ""; }
+  function hideForHours() {
+    try { localStorage.setItem(KEY, String(Date.now() + HIDE_HOURS * 60 * 60 * 1000)); } catch (e) {}
+    close();
+  }
+
+  document.getElementById("recruit-pop-x").addEventListener("click", close);
+  document.getElementById("recruit-pop-close").addEventListener("click", close);
+  document.getElementById("recruit-pop-never").addEventListener("click", hideForHours);
+  pop.querySelector(".recruit-pop-dim").addEventListener("click", close);
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") close(); });
+})();
+</script>
+<!-- ===== 모집 공고 팝업 (끝) ===== -->
 </body>
 </html>
