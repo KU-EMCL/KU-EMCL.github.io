@@ -40,6 +40,7 @@
       text-align:center;
       overflow:hidden;
       isolation:isolate;
+      border-bottom:none;
     }
     .hero--bg .hero-bg{
       position:absolute; inset:0; z-index:0;
@@ -121,6 +122,9 @@
       font-size:15px;        /* ← 추가: 연구 분야와 동일 */
       letter-spacing:.02em;  /* ← 추가: 기본 .12em 자간 줄이기 */
       padding:14px 28px;     /* ← 추가: 연구 분야와 동일한 크기 */
+      width:150px;              /* ← 추가: 두 버튼 폭 고정 */
+      justify-content:center;   /* ← 추가: 글자를 버튼 가운데로 */
+      text-align:center;        /* ← 추가: 가운데 정렬 보조 */
     }
     /* white outline button variant for the dark hero */
     .hero--bg .btn-hero-outline{
