@@ -55,7 +55,7 @@
     
     { key: "project",  label: "Project",      href: "pages/project.html", sub: [
       { label: "Ongoing", href: "pages/project.html#ongoing" },
-      { label: "Completed", href: "pages/project.html#completed" } ] },
+      { label: "Completed", href: "pages/completed.html" } ] },
     { key: "community",label: "Community",    href: "pages/community.html", sub: [
       { label: "News & Notice",   href: "pages/community.html" },
       { label: "Gallery",   href: "pages/gallery.html" } ] },
