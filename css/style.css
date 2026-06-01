@@ -576,3 +576,8 @@ body.nav-open { overflow: hidden; }
 
   object-fit:contain;
 }
+/* 헤더 EMCL 로고 — 글씨 높이에 맞춰 축소 */
+.brand .emcl-logo {
+  height: 48px;   /* 글씨에 맞춰 44~56px 사이에서 조절 */
+  width: auto;    /* 가로세로 비율 유지 */
+}
