@@ -88,7 +88,7 @@
         '<a class="brand" href="' + abs("index.html") + '">' +
           '<img class="ku-logo" src="' + P + 'images/ku_logo.png" alt="고려대학교" />' +
           '<span class="div"></span>' +
-          '<img class="emcl-logo" src="' + P + 'images/EMCL.jpg" alt="EMCL">' +
+          '<span class="mark">EMCL</span>' +
           '<span class="meta"><span class="ko">에너지물질순환연구실</span>' +
           '<span class="en">Energy Materials Circulation Lab</span></span>' +
         '</a>' +
