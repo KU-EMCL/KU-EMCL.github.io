@@ -35,7 +35,7 @@
   <style>
     .hero--bg{
       position:relative;
-      min-height:88vh;
+      min-height:70vh;
       display:flex; align-items:center; justify-content:center;
       text-align:center;
       overflow:hidden;
@@ -63,12 +63,13 @@
     }
     .hero--bg .hero-inner{
       position:relative; z-index:2;
-      width:100%; max-width:1000px;
-      margin:0 auto;
-      /* top padding clears the fixed site header */
-      padding:160px 24px 120px;
+      width:100%; max-width:1240px;
+      margin-left:auto; margin-right:auto;
+      /* top padding clears the fixed site header; bottom trimmed */
+      padding:124px 24px 70px;
       font-family:"Malgun Gothic","맑은 고딕",Arial,sans-serif;
       color:#fff;
+      text-align:center;
     }
     .hero--bg .hw-kicker{
       display:inline-block;
@@ -77,6 +78,8 @@
       text-transform:uppercase;
     }
     .hero--bg .hw-title{
+      display:block;
+      width:100%;
       margin:18px 0 0;
       font-family:"Malgun Gothic","맑은 고딕",Arial,sans-serif;
       font-weight:800;
@@ -84,6 +87,7 @@
       line-height:1.15;
       text-transform:uppercase;
       color:#fff;
+      text-align:center;
       /* sized to keep the full title on ONE line on desktop */
       font-size:clamp(20px, 3.05vw, 44px);
       white-space:nowrap;
