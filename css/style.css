@@ -123,7 +123,7 @@ h1,h2,h3,h4 { font-weight: 600; line-height: 1.12; letter-spacing: -.01em; color
 
 .brand { display: flex; align-items: center; gap: 16px; }
 .brand .mark {
-  font-family: var(--font-display); font-weight: 700; font-size: 28px; letter-spacing: .02em;
+  font-family: var(--font-display); font-weight: 700; font-size: 30px; letter-spacing: .02em;
   color: var(--crimson); line-height: 1;
 }
 .brand .div { width: 1px; height: 40px; background: var(--line); }
