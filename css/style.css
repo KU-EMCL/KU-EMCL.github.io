@@ -303,7 +303,7 @@ section { position: relative; }
 
 .page-body { padding-block: clamp(48px, 7vw, 96px); }
 .prose { max-width: 78ch; }
-.prose p { color: var(--ink-2); margin-bottom: 18px; font-size: 16px; }
+.prose p { color: var(--ink-2); margin-bottom: 18px; font-size: 19px; }
 .prose h2 { font-family: var(--font-display); font-weight: 700; font-size: 28px; margin: 8px 0 18px; }
 .lab-section-title { font-family: var(--font-mono); font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: var(--crimson); display: flex; align-items: center; gap: 14px; margin: 0 0 26px; }
 .lab-section-title::after { content: ""; flex: 1; height: 1px; background: var(--line); }
