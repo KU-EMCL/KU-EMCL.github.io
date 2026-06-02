@@ -26,10 +26,10 @@
 
   --peb-navy:   #1B1916;   /* PEB 로고 배경 남색 */
 
-  --font-display: 'Nanum Gothic', Arial, 'Malgun Gothic', '맑은 고딕', sans-serif;
-  --font-serif:   'Nanum Gothic', Arial, 'Malgun Gothic', '맑은 고딕', sans-serif;
-  --font-sans:    'Nanum Gothic', Arial, 'Malgun Gothic', '맑은 고딕', sans-serif;
-  --font-mono:    'Nanum Gothic', Arial, 'Malgun Gothic', '맑은 고딕', sans-serif;
+  --font-display: Arial, 'Nanum Gothic', 'Malgun Gothic', '맑은 고딕', sans-serif;
+  --font-serif:   Arial, 'Nanum Gothic', 'Malgun Gothic', '맑은 고딕', sans-serif;
+  --font-sans:    Arial, 'Nanum Gothic', 'Malgun Gothic', '맑은 고딕', sans-serif;
+  --font-mono:    Arial, 'Nanum Gothic', 'Malgun Gothic', '맑은 고딕', sans-serif;
 
   --maxw: 1240px;
   --gutter: clamp(20px, 5vw, 64px);
@@ -128,7 +128,7 @@ h1,h2,h3,h4 { font-weight: 600; line-height: 1.12; letter-spacing: -.01em; color
 }
 .brand .div { width: 1px; height: 40px; background: var(--line); }
 .brand .meta { display: flex; flex-direction: column; gap: 1px; line-height: 1.15; }
-.brand .meta .ko { font-size: 16px; font-weight: 700; color: var(--ink); letter-spacing: -.01em; }
+.brand .meta .ko { font-size: 20px; font-weight: 700; color: var(--ink); letter-spacing: -.01em; }
 .brand .meta .en { font-family: var(--font-mono); font-size: 9.5px; letter-spacing: .14em; color: var(--ink-3); text-transform: uppercase; }
 
 /* 고려대 로고 + 글자 */
