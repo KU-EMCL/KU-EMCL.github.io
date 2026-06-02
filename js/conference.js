@@ -4,11 +4,6 @@
 window.EMCL_CONFERENCES = [
 
   // ===== 2026 =====
-  { year: 2026,
-    authors: "Soohwan Lim, Yong Tae Kang",
-    title: "Condensation Heat Transfer Characteristics of Low-GWP Refrigerant R-1233zd(E) at High Pressure Systems",
-    conference: "The 18th International Heat Transfer Conference (IHTC-18)",
-    location: "Rio de Janeiro, Brazil" },
     
   { year: 2026, authors: "Hyungseop Ahn, Yong Tae Kang",
     title: "Solar-driven Integrated Device for Simultaneous Atmospheric Water Harvesting",
