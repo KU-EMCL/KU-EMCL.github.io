@@ -6,45 +6,7 @@
   <title>Alumni · EMCL 고려대학교 에너지물질순환연구실</title>
   <meta name="description" content="에너지물질순환연구실(EMCL) 졸업생 — 학위, 졸업연도, 현 소속." />
   <link rel="stylesheet" href="../css/style.css" />
-  <style>
-    .degree-filter { margin-bottom: 34px; }
-    .degree-filter button { min-width: 180px; }
-    .alumni-wrap { display: none; }
-    .alumni-wrap.active { display: block; animation: fadeIn .25s ease; }
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
 
-    /* 졸업생 카드 리스트 (member 스타일과 동일 톤) */
-    .member-list { display: flex; flex-direction: column; gap: 0; border-top: 2px solid var(--ink); }
-    .member-list-item { display: grid; grid-template-columns: 110px 1fr; gap: 24px; align-items: center;
-      padding: 20px 8px; border-bottom: 1px solid var(--line); transition: background .2s; }
-    .member-list-item:hover { background: #faf8f3; }
-    .member-list-item .mphoto { width: 100px; height: 125px; border-radius: var(--radius); overflow: hidden;
-      background: linear-gradient(150deg,#efe9dd,#ded6c6); display: flex; align-items: center; justify-content: center; }
-    .member-list-item .mphoto img { width: 100%; height: 100%; object-fit: cover; }
-    .member-list-item .mphoto svg { width: 42%; fill: #c3b9a5; }
-    .member-list-item .minfo { min-width: 0; }
-    .member-list-item .mname { font-family: var(--font-display); font-weight: 700; font-size: 19px; color: var(--ink); margin-bottom: 4px; }
-    .member-list-item .mname-en { font-family: var(--font-mono); font-size: 12px; font-weight: 400; color: var(--crimson); letter-spacing: .04em; margin-left: 8px; }
-    .member-list-item dl { display: grid; grid-template-columns: 130px 1fr; gap: 4px 14px; font-size: 14px; margin-top: 8px; }
-    .member-list-item dt { font-family: var(--font-mono); font-size: 10px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-3); padding-top: 3px; }
-    .member-list-item dd { color: var(--ink-2); }
-    .member-list-item dd.aff { color: var(--accent); font-weight: 500; }
-    .member-list-item dd.year { font-family: var(--font-mono); color: var(--crimson); font-weight: 700; }
-
-    .alumni-pager { display: flex; justify-content: center; flex-wrap: wrap; gap: 6px; margin-top: 30px; }
-    .alumni-pager button { font-family: var(--font-mono); font-size: 13px; min-width: 38px; height: 38px; padding: 0 10px;
-      border: 1px solid var(--line); background: #fff; color: var(--ink-2); border-radius: 2px; transition: all .2s; }
-    .alumni-pager button.active, .alumni-pager button:hover:not(:disabled) { background: var(--ink); color: #fff; border-color: var(--ink); }
-    .alumni-pager button:disabled { opacity: .4; cursor: not-allowed; }
-
-    @media (max-width: 560px) {
-      .member-list-item { grid-template-columns: 80px 1fr; gap: 16px; }
-      .member-list-item .mphoto { width: 76px; height: 95px; }
-      .member-list-item dl { grid-template-columns: 1fr; gap: 2px; }
-      .member-list-item dt { padding-top: 8px; }
-      .degree-filter button { min-width: auto; flex: 1; }
-    }
-  </style>
 </head>
 <body data-page="alumni" data-depth="1">
 <div id="app">
