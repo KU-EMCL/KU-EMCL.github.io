@@ -105,7 +105,7 @@ h1,h2,h3,h4 { font-weight: 600; line-height: 1.12; letter-spacing: -.01em; color
 #site-header .topbar {
   background: var(--crimson);
   color: rgba(255,255,255,.85);
-  font-family: var(--font-mono); font-size: 13px; letter-spacing: .12em;
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: .12em;
   transition: all .4s var(--ease);
 }
 #site-header .topbar .wrap { display: flex; justify-content: space-between; align-items: center; height: 34px; }
@@ -129,20 +129,20 @@ h1,h2,h3,h4 { font-weight: 600; line-height: 1.12; letter-spacing: -.01em; color
 .brand .div { width: 1px; height: 40px; background: var(--line); }
 .brand .meta { display: flex; flex-direction: column; gap: 1px; line-height: 1.15; }
 .brand .meta .ko { font-size: 16px; font-weight: 700; color: var(--ink); letter-spacing: -.01em; }
-.brand .meta .en { font-family: var(--font-mono); font-size: 13px; letter-spacing: .14em; color: var(--ink-3); text-transform: uppercase; }
+.brand .meta .en { font-family: var(--font-mono); font-size: 9.5px; letter-spacing: .14em; color: var(--ink-3); text-transform: uppercase; }
 
 /* 고려대 로고 + 글자 */
 .brand .ku-logo { height: 36px; width: auto; }
 .brand .ku-name { display: flex; flex-direction: column; line-height: 1.15; }
 .brand .ku-name b { font-size: 18px; font-weight: 900; color: var(--ink); letter-spacing: .11em; }
-.brand .ku-name i { font-size: 13px; letter-spacing: .06em; color: var(--ink-3); }
+.brand .ku-name i { font-size: 9.5px; letter-spacing: .06em; color: var(--ink-3); }
 
 /* primary nav */
 .nav { display: flex; align-items: center; gap: 2px; }
 .nav > li { position: relative; }
 .nav > li > a {
   display: flex; align-items: center; gap: 6px; padding: 12px 16px;
-  font-family: var(--font-mono); font-size: 13px; letter-spacing: .1em; text-transform: uppercase;
+  font-family: var(--font-mono); font-size: 12px; letter-spacing: .1em; text-transform: uppercase;
   color: var(--ink-2); transition: color .25s; position: relative;
 }
 .nav > li > a::after {
