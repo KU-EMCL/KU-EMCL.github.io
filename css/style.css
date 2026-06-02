@@ -743,7 +743,7 @@ body.nav-open { overflow: hidden; }
     @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
 
     /* 졸업생 카드 리스트 (member 스타일과 동일 톤) */
-    .member-list { display: flex; flex-direction: column; gap: 0; border-top: 2px solid var(--ink); }
+    .member-list { display: flex; flex-direction: column; gap: 0; }
     .member-list-item { display: grid; grid-template-columns: 110px 1fr; gap: 24px; align-items: center;
       padding: 20px 8px; border-bottom: 1px solid var(--line); transition: background .2s; }
     .member-list-item:hover { background: #faf8f3; }
