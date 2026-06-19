@@ -1,21 +1,30 @@
 /* ============================================================
-   EMCL — Published content (visible to EVERYONE)
+   EMCL — 게시판 공개 콘텐츠 (모든 방문자에게 표시됨)
    ------------------------------------------------------------
-   This file holds the board posts and gallery photos that are
-   "published" for all visitors. It is loaded by every browser.
+   이 파일이 게시판(News & Notice)에 보이는 글 목록입니다.
+   방문자의 브라우저는 이 파일을 그대로 읽어 화면에 보여 줍니다.
 
-   HOW TO PUBLISH NEW CONTENT FOR EVERYONE:
-     1. Open 게시판 / 갤러리 on the site.
-     2. Log in as admin (관리자), write a post or add photos.
-        (These are saved only in YOUR browser at first.)
-     3. Click "발행 파일 내보내기" → downloads a new seed-posts.js.
-     4. Replace this file with the downloaded one and commit / push.
-     5. After GitHub Pages redeploys, everyone sees the new content.
+   ── 글을 추가·수정·삭제하는 방법 (GitHub에서 직접 편집) ──
+     1. 아래 EMCL_SEED_POSTS 배열에서 항목을 고치거나,
+        새 항목 { ... } 을 넣거나 빼세요.
+     2. 변경 내용을 커밋(commit) 후 푸시(push)합니다.
+     3. GitHub Pages 재배포가 끝나면 모두에게 반영됩니다.
 
-   You can also just hand-edit the arrays below.
-   Dates use the format "YYYY.MM.DD".
+   ── 글 항목 형식 ──
+     {
+       id:       "p11",          // 다른 글과 겹치지 않는 고유값
+       category: "notice",       // notice | seminar | news | general
+       pinned:   false,          // 상단 고정 여부 (true / false)
+       title:    "제목",
+       author:   "관리자",
+       date:     "2026.06.19",   // YYYY.MM.DD 형식
+       content:  "본문 내용. 줄을 바꾸려면 \n 을 넣으세요.",
+       images:   []              // 보통은 비워 둡니다
+     }
+
+   ※ 정렬은 자동입니다 — 고정(pinned) 글이 먼저, 그다음 날짜 내림차순.
+   ※ 갤러리 사진은 이 파일이 아니라 js/gallery-data.js 에서 관리합니다.
    ============================================================ */
-
 window.EMCL_SEED_POSTS = [
   { id: "p10", category: "notice",  pinned: true,
     title: "2027년 신입 연구원 모집 공고",
@@ -52,15 +61,4 @@ window.EMCL_SEED_POSTS = [
     author: "관리자", date: "2024.05.20",
     content: "한국기계학회(KSME) 춘계 학술대회에서 본 연구실 연구원들이 다수의 논문을 발표하였습니다.",
     images: [] },
-];
-
-window.EMCL_SEED_GALLERY = [
-  { id: "g1", title: "연구실 전경", date: "2024", color: "linear-gradient(135deg,#8A1538,#A52B4E)", src: "" },
-  { id: "g2", title: "실험실 연구", date: "2024", color: "linear-gradient(135deg,#1F5048,#2C6E63)", src: "" },
-  { id: "g3", title: "국제학술대회 발표", date: "2024", color: "linear-gradient(135deg,#7a5a16,#B0832B)", src: "" },
-  { id: "g4", title: "연구실 MT",  date: "2024", color: "linear-gradient(135deg,#5d3a1a,#9a6a2e)", src: "" },
-  { id: "g5", title: "정기 세미나", date: "2024", color: "linear-gradient(135deg,#3a2233,#6b3450)", src: "" },
-  { id: "g6", title: "2024 졸업식", date: "2024", color: "linear-gradient(135deg,#1a3340,#2e6b80)", src: "" },
-  { id: "g7", title: "신규 장비 설치", date: "2024", color: "linear-gradient(135deg,#2e4057,#48907f)", src: "" },
-  { id: "g8", title: "우수논문상 수상", date: "2024", color: "linear-gradient(135deg,#4a2c1a,#8a5a3a)", src: "" }
 ];
