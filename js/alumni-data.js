@@ -65,6 +65,14 @@ window.EMCL_ALUMNI = [
   "degree": "phd"
  },
  {
+  "name": "김현수",
+  "year": "2024",
+  "aff": "-",
+  "email": "gustn4475@korea.ac.kr",
+  "img": "hyoun_soo_kim.jpg",
+  "degree": "ms"
+ },
+ {
   "name": "두현진",
   "year": "2024",
   "aff": "LG전자",
