@@ -628,6 +628,10 @@ body.nav-open { overflow: hidden; }
       font-family:var(--font-display);
       color:#fff;
       text-align:center;
+      /* 모든 자식 요소를 한 열로 중앙 정렬 */
+      display:flex;
+      flex-direction:column;
+      align-items:center;
     }
     .hero--bg .hw-kicker{
       display:inline-block;
@@ -637,8 +641,9 @@ body.nav-open { overflow: hidden; }
     }
     .hero--bg .hw-title{
       display:block;
-      width:100%;
-      margin:18px 0 0;
+      width:auto;
+      max-width:100%;
+      margin:18px auto 0;
       font-family:var(--font-display);
       font-weight:800;
       letter-spacing:.01em;
