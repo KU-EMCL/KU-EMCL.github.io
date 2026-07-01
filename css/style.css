@@ -200,13 +200,13 @@ h1,h2,h3,h4 { font-weight: 600; line-height: 1.12; letter-spacing: -.01em; color
 @media (prefers-reduced-motion: reduce) { .orbit-dash, .node, .pulse { animation: none !important; } }
 
 /* stat band */
-.statband { background: var(--ink); color: var(--paper); }
+.statband { background: #F5F2EC; color: var(--ink); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .statband .wrap { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; }
 .stat { padding: 36px 8px; text-align: center; position: relative; }
-.stat:not(:last-child)::after { content: ""; position: absolute; right: 0; top: 28px; bottom: 28px; width: 1px; background: rgba(255,255,255,.12); }
-.stat .num { font-family: var(--font-display); font-weight: 700; font-size: clamp(44px, 5vw, 76px); line-height: 1; color: #fff; }
-.stat .num span { color: var(--crimson-2); }
-.stat .lbl { font-family: var(--font-mono); font-size: 14px; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.6); margin-top: 10px; }
+.stat:not(:last-child)::after { content: ""; position: absolute; right: 0; top: 28px; bottom: 28px; width: 1px; background: var(--line); }
+.stat .num { font-family: var(--font-display); font-weight: 700; font-size: clamp(44px, 5vw, 76px); line-height: 1; color: var(--ink); }
+.stat .num span { color: var(--crimson); }
+.stat .lbl { font-family: var(--font-mono); font-size: 14px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); margin-top: 10px; }
 
 /* ============================================================
    SECTIONS
@@ -606,18 +606,18 @@ body.nav-open { overflow: hidden; }
       background-position:center;
       background-repeat:no-repeat;
       /* light blur softens the embedded labels; scale hides blurred edges */
-      filter:blur(3px);
+      filter:blur(3px) brightness(1.08);
       transform:scale(1.06);
     }
-    /* base darkening (≈60% black, verified for white-text legibility) */
+    /* base darkening — lightened for a brighter hero (white text still legible via text-shadow) */
     .hero--bg .hero-overlay{
       position:absolute; inset:0; z-index:1;
-      background:rgba(8,7,6,0.60);
+      background:rgba(8,7,6,0.44);
     }
     /* extra scrim concentrated behind the text block */
     .hero--bg .hero-scrim{
       position:absolute; inset:0; z-index:1;
-      background:radial-gradient(70% 60% at 50% 52%, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0) 75%);
+      background:radial-gradient(70% 60% at 50% 52%, rgba(0,0,0,0.32) 0%, rgba(0,0,0,0) 75%);
     }
     .hero--bg .hero-inner{
       position:relative; z-index:2;
