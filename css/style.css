@@ -219,7 +219,7 @@ h1,h2,h3,h4 { font-weight: 600; line-height: 1.12; letter-spacing: -.01em; color
    SECTIONS
    ============================================================ */
 section { position: relative; }
-.section { padding-block: clamp(64px, 9vw, 130px); }
+.section { padding-block: clamp(40px, 5vw, 72px); }
 .section-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; margin-bottom: 52px; flex-wrap: wrap; }
 .section-head h2 { font-family: var(--font-display); font-weight: 700; font-size: clamp(28px, 4vw, 46px); letter-spacing: -.02em; margin-top: 14px; }
 .section-head .link { font-family: var(--font-mono); font-size: 13px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-2); display: inline-flex; gap: 8px; align-items: center; transition: gap .3s var(--ease), color .25s; }
