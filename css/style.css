@@ -200,7 +200,7 @@ h1,h2,h3,h4 { font-weight: 600; line-height: 1.12; letter-spacing: -.01em; color
 @media (prefers-reduced-motion: reduce) { .orbit-dash, .node, .pulse { animation: none !important; } }
 
 /* stat band */
-.statband { background: #FFFFFF; color: var(--ink); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.statband { background: #FFFFFF; color: var(--ink); }
 .statband .wrap { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; }
 .stat { padding: 36px 8px; text-align: center; position: relative; }
 .stat:not(:last-child)::after { content: ""; position: absolute; right: 0; top: 28px; bottom: 28px; width: 1px; background: var(--line); }
@@ -209,7 +209,7 @@ h1,h2,h3,h4 { font-weight: 600; line-height: 1.12; letter-spacing: -.01em; color
 .stat .lbl { font-family: var(--font-mono); font-size: 14px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); margin-top: 10px; }
 
 /* PEB research center — centered; logo left of heading, Go right of heading */
-.peb-section { background: #FFFFFF; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); text-align: center; }
+.peb-section { background: #FFFFFF; border-top: 1px solid var(--line); text-align: center; }
 .peb-section .wrap { padding-block: clamp(28px, 3.5vw, 48px); }
 .peb-head { display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; margin-bottom: 12px; }
 .peb-logo { height: clamp(28px, 3vw, 38px); width: auto; flex-shrink: 0; }
