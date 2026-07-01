@@ -208,14 +208,18 @@ h1,h2,h3,h4 { font-weight: 600; line-height: 1.12; letter-spacing: -.01em; color
 .stat .num span { color: var(--crimson); }
 .stat .lbl { font-family: var(--font-mono); font-size: 14px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); margin-top: 10px; }
 
-/* PEB research center — logo sits to the LEFT of the heading (no box) */
-.peb-section { background: #F5F2EC; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-.peb-section .wrap { padding-block: clamp(44px, 6vw, 80px); }
-.peb-head { display: flex; align-items: center; gap: 24px; margin-bottom: 8px; flex-wrap: wrap; }
-.peb-logo { height: clamp(64px, 7vw, 92px); width: auto; flex-shrink: 0; }
-.peb-section h2 { font-family: var(--font-display); font-weight: 700; color: var(--ink); font-size: clamp(24px, 2.8vw, 36px); margin: 0; line-height: 1.12; }
-.peb-sub { font-family: var(--font-mono); font-size: 12px; letter-spacing: .08em; color: var(--ink-3); text-transform: uppercase; margin-bottom: 16px; }
-.peb-section p { color: var(--ink-2); margin: 0 0 24px; max-width: 68ch; }
+/* PEB research center — centered; logo left of heading, Go right of heading */
+.peb-section { background: #F5F2EC; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); text-align: center; }
+.peb-section .wrap { padding-block: clamp(40px, 5vw, 68px); }
+.peb-head { display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; margin-bottom: 12px; }
+.peb-logo { height: clamp(28px, 3vw, 38px); width: auto; flex-shrink: 0; }
+.peb-section h2 { font-family: var(--font-display); font-weight: 700; color: var(--ink); font-size: clamp(22px, 2.4vw, 30px); margin: 0; line-height: 1.12; }
+.peb-go { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: 13px; letter-spacing: .1em; text-transform: uppercase; color: var(--crimson); background: transparent; border: 1px solid var(--crimson); border-radius: 2px; padding: 8px 16px; transition: all .25s var(--ease); }
+.peb-go:hover { background: var(--crimson); color: #fff; }
+.peb-go .ar { transition: transform .25s var(--ease); }
+.peb-go:hover .ar { transform: translateX(4px); }
+.peb-sub { font-family: var(--font-mono); font-size: 12px; letter-spacing: .08em; color: var(--ink-3); text-transform: uppercase; margin-bottom: 14px; }
+.peb-section p { color: var(--ink-2); margin: 0 auto; max-width: 900px; }
 
 /* ============================================================
    SECTIONS
@@ -595,7 +599,7 @@ body.nav-open { overflow: hidden; }
 /* ---------- HOME — hero (background image) + recruit popup ---------- */
     .hero--bg{
       position:relative;
-      min-height:58vh;
+      min-height:66vh;
       display:flex; align-items:center; justify-content:center;
       text-align:center;
       overflow:hidden;
@@ -609,13 +613,13 @@ body.nav-open { overflow: hidden; }
       background-position:center;
       background-repeat:no-repeat;
       /* light blur softens busy details behind text */
-      filter:blur(2px);
+      filter:blur(2px) brightness(1.08);
       transform:scale(1.06);
     }
     /* dark overlay so white text stays legible over the bright light-streams */
     .hero--bg .hero-overlay{
       position:absolute; inset:0; z-index:1;
-      background:rgba(8,7,6,0.52);
+      background:rgba(8,7,6,0.44);
     }
     /* extra scrim concentrated behind the text block */
     .hero--bg .hero-scrim{
@@ -627,7 +631,7 @@ body.nav-open { overflow: hidden; }
       width:100%; max-width:1440px;
       margin-left:auto; margin-right:auto;
       /* top padding clears the fixed site header; bottom trimmed */
-      padding:148px 24px 52px;
+      padding:158px 24px 64px;
       font-family:var(--font-display);
       color:#fff;
       text-align:center;
@@ -709,8 +713,8 @@ body.nav-open { overflow: hidden; }
     }
 
     @media (max-width:720px){
-      .hero--bg{ min-height:60vh; }
-      .hero--bg .hero-inner{ padding:104px 20px 56px; }
+      .hero--bg{ min-height:66vh; }
+      .hero--bg .hero-inner{ padding:112px 20px 60px; }
       .hero--bg .hw-title{ white-space:normal; font-size:clamp(22px, 6.4vw, 34px); }
     }
   
@@ -1009,3 +1013,4 @@ body.nav-open { overflow: hidden; }
       border: 1px solid var(--line); background: #fff; color: var(--ink-2); border-radius: 2px; transition: all .2s; }
     .pub-pager button.active, .pub-pager button:hover:not(:disabled) { background: var(--ink); color: #fff; border-color: var(--ink); }
     .pub-pager button:disabled { opacity: .4; cursor: not-allowed; }
+  
