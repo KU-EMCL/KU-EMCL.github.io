@@ -213,7 +213,7 @@ h1,h2,h3,h4 { font-weight: 600; line-height: 1.12; letter-spacing: -.01em; color
 .peb-side .badge { display: inline-flex; align-items: center; gap: 10px; font-family: var(--font-mono); font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: var(--crimson); }
 .peb-side h2 { font-family: var(--font-display); font-weight: 700; color: var(--ink); font-size: clamp(21px, 2.3vw, 30px); margin: 0; line-height: 1.1; }
 .peb-side .sub { font-family: var(--font-mono); font-size: 12px; letter-spacing: .08em; color: var(--ink-3); text-transform: uppercase; margin-bottom: 10px; }
-.peb-side p { color: var(--ink-2); font-size: 14px; line-height: 1.6; margin: 0 0 18px; max-width: 54ch; }
+.peb-side p { color: var(--ink-2); font-size: 14px; line-height: 1.6; margin: 0 0 18px; max-width: none; }
 
 /* ============================================================
    SECTIONS
