@@ -208,18 +208,14 @@ h1,h2,h3,h4 { font-weight: 600; line-height: 1.12; letter-spacing: -.01em; color
 .stat .num span { color: var(--crimson); }
 .stat .lbl { font-family: var(--font-mono); font-size: 14px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); margin-top: 10px; }
 
-/* PEB research center — standalone split section (logo card + text) */
+/* PEB research center — logo sits to the LEFT of the heading (no box) */
 .peb-section { background: #F5F2EC; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-.peb-section .wrap { display: grid; grid-template-columns: minmax(240px, 340px) 1fr; gap: clamp(28px, 4vw, 56px); align-items: center; padding-block: clamp(44px, 6vw, 80px); }
-.peb-logo-col { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; aspect-ratio: 16 / 10; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-sm); }
-.peb-logo-col img { max-width: 100%; max-height: 100%; width: auto; height: auto; }
-.peb-text-col h2 { font-family: var(--font-display); font-weight: 700; color: var(--ink); font-size: clamp(24px, 2.8vw, 36px); margin: 0 0 6px; line-height: 1.12; }
-.peb-text-col .peb-sub { font-family: var(--font-mono); font-size: 12px; letter-spacing: .08em; color: var(--ink-3); text-transform: uppercase; margin-bottom: 16px; }
-.peb-text-col p { color: var(--ink-2); margin: 0 0 24px; max-width: 64ch; }
-@media (max-width: 760px) {
-  .peb-section .wrap { grid-template-columns: 1fr; gap: 24px; }
-  .peb-logo-col { aspect-ratio: auto; padding: 24px; max-width: 340px; }
-}
+.peb-section .wrap { padding-block: clamp(44px, 6vw, 80px); }
+.peb-head { display: flex; align-items: center; gap: 24px; margin-bottom: 8px; flex-wrap: wrap; }
+.peb-logo { height: clamp(64px, 7vw, 92px); width: auto; flex-shrink: 0; }
+.peb-section h2 { font-family: var(--font-display); font-weight: 700; color: var(--ink); font-size: clamp(24px, 2.8vw, 36px); margin: 0; line-height: 1.12; }
+.peb-sub { font-family: var(--font-mono); font-size: 12px; letter-spacing: .08em; color: var(--ink-3); text-transform: uppercase; margin-bottom: 16px; }
+.peb-section p { color: var(--ink-2); margin: 0 0 24px; max-width: 68ch; }
 
 /* ============================================================
    SECTIONS
@@ -599,7 +595,7 @@ body.nav-open { overflow: hidden; }
 /* ---------- HOME — hero (background image) + recruit popup ---------- */
     .hero--bg{
       position:relative;
-      min-height:80vh;
+      min-height:58vh;
       display:flex; align-items:center; justify-content:center;
       text-align:center;
       overflow:hidden;
@@ -631,7 +627,7 @@ body.nav-open { overflow: hidden; }
       width:100%; max-width:1440px;
       margin-left:auto; margin-right:auto;
       /* top padding clears the fixed site header; bottom trimmed */
-      padding:160px 24px 70px;
+      padding:148px 24px 52px;
       font-family:var(--font-display);
       color:#fff;
       text-align:center;
@@ -713,8 +709,8 @@ body.nav-open { overflow: hidden; }
     }
 
     @media (max-width:720px){
-      .hero--bg{ min-height:78vh; }
-      .hero--bg .hero-inner{ padding:130px 20px 84px; }
+      .hero--bg{ min-height:60vh; }
+      .hero--bg .hero-inner{ padding:104px 20px 56px; }
       .hero--bg .hw-title{ white-space:normal; font-size:clamp(22px, 6.4vw, 34px); }
     }
   
@@ -1013,4 +1009,3 @@ body.nav-open { overflow: hidden; }
       border: 1px solid var(--line); background: #fff; color: var(--ink-2); border-radius: 2px; transition: all .2s; }
     .pub-pager button.active, .pub-pager button:hover:not(:disabled) { background: var(--ink); color: #fff; border-color: var(--ink); }
     .pub-pager button:disabled { opacity: .4; cursor: not-allowed; }
-  
