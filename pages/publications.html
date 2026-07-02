@@ -6,7 +6,6 @@
   <title>Paper · EMCL 고려대학교 에너지물질순환연구실</title>
   <meta name="description" content="에너지물질순환연구실(EMCL)의 저널 논문 목록." />
   <link rel="stylesheet" href="../css/style.css" />
-
 </head>
 <body data-page="publications" data-depth="1">
 <div id="app">
@@ -19,6 +18,10 @@
     <div class="ghost-no">論</div>
   </div></section>
   <section class="page-body"><div class="wrap">
+    <div class="board-search" style="max-width:380px;margin-bottom:26px;">
+      <svg viewBox="0 0 24 24"><path d="M21 21l-4.3-4.3M19 11a8 8 0 11-16 0 8 8 0 0116 0z" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+      <input type="text" id="paper-search" placeholder="제목 · 저자 · 저널 검색" autocomplete="off" />
+    </div>
     <div id="paper-list"></div>
     <div class="pub-pager" id="paper-pager"></div>
   </div></section>
@@ -28,26 +31,12 @@
 <script>
 (function () {
   var PER_PAGE = 15;
-  var papers = (window.EMCL_PAPERS || []).slice();
-
+  var all = (window.EMCL_PAPERS || []).slice();
   // 연도 내림차순 정렬 (같은 연도는 입력 순서 유지)
-  papers.sort(function (a, b) { return b.year - a.year; });
+  all.sort(function (a, b) { return b.year - a.year; });
 
-  var total = papers.length;
-
-  // 연도별 개수 세기
-  var yearCount = {};
-  papers.forEach(function (p) { yearCount[p.year] = (yearCount[p.year] || 0) + 1; });
-
-  // 연도별 번호 매기기: 각 연도 안에서 (그 해 총 개수) → 1 로 내려감
-  var seen = {};
-  papers.forEach(function (p) {
-    seen[p.year] = (seen[p.year] || 0) + 1;
-    p._no = yearCount[p.year] - seen[p.year] + 1;
-  });
-
+  var query = "";
   var page = 1;
-  var pages = Math.max(1, Math.ceil(total / PER_PAGE));
 
   function statusClass(s) {
     s = (s || "").toLowerCase();
@@ -56,52 +45,89 @@
     return "published";
   }
   function boldKang(authors) {
-    return authors.replace(/(Yong Tae Kang|Y\.T\. Kang|YT Kang)/g, "<b>$1</b>");
+    return (authors || "").replace(/(Yong Tae Kang|Y\.T\. Kang|YT Kang)/g, "<b>$1</b>");
   }
 
-  function render() {
-    var start = (page - 1) * PER_PAGE;
-    var slice = papers.slice(start, start + PER_PAGE);
-    var html = "";
-    var curYear = null;
-    slice.forEach(function (p) {
-      if (p.year !== curYear) {
-        curYear = p.year;
-        html += '<div class="pub-year">' + curYear + '</div>';
-      }
-      html += '<div class="paper"><div class="pno">' + p._no + '</div>' +
-        '<div class="pbody">' + boldKang(p.authors) +
-        ' <span class="pttl">"' + p.title + '"</span>, ' +
-        '<span class="pjn">' + p.journal + '</span>, ' + p.year +
-        (p.status ? ' <span class="pst ' + statusClass(p.status) + '">' + p.status + '</span>' : '') +
-        '</div></div>';
+  // 검색어로 필터 (제목·저자·저널·연도)
+  function getFiltered() {
+    if (!query) return all;
+    var q = query.toLowerCase();
+    return all.filter(function (p) {
+      return ((p.title || "") + " " + (p.authors || "") + " " + (p.journal || "") + " " + p.year)
+        .toLowerCase().indexOf(q) > -1;
     });
-    document.getElementById("paper-list").innerHTML = html;
-    renderPager();
-    window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
-  function renderPager() {
-    if (pages <= 1) { document.getElementById("paper-pager").innerHTML = ""; return; }
+  // 연도별 번호 매기기 (각 연도 안에서 최신 = 큰 번호)
+  function numberByYear(list) {
+    var yc = {}, seen = {};
+    list.forEach(function (p) { yc[p.year] = (yc[p.year] || 0) + 1; });
+    list.forEach(function (p) { seen[p.year] = (seen[p.year] || 0) + 1; p._no = yc[p.year] - seen[p.year] + 1; });
+  }
+
+  function render(scroll) {
+    var list = getFiltered();
+    numberByYear(list);
+    var total = list.length;
+    var pages = Math.max(1, Math.ceil(total / PER_PAGE));
+    if (page > pages) page = pages;
+    var start = (page - 1) * PER_PAGE;
+    var slice = list.slice(start, start + PER_PAGE);
+
+    var html = "";
+    if (!slice.length) {
+      html = '<div class="board-empty">검색 결과가 없습니다.</div>';
+    } else {
+      var curYear = null;
+      slice.forEach(function (p) {
+        if (p.year !== curYear) {
+          curYear = p.year;
+          html += '<div class="pub-year">' + curYear + '</div>';
+        }
+        html += '<div class="paper"><div class="pno">' + p._no + '</div>' +
+          '<div class="pbody">' + boldKang(p.authors) +
+          ' <span class="pttl">"' + p.title + '"</span>, ' +
+          '<span class="pjn">' + p.journal + '</span>, ' + p.year +
+          (p.status ? ' <span class="pst ' + statusClass(p.status) + '">' + p.status + '</span>' : '') +
+          '</div></div>';
+      });
+    }
+    document.getElementById("paper-list").innerHTML = html;
+    renderPager(pages);
+    if (scroll) window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  function renderPager(pages) {
+    var el = document.getElementById("paper-pager");
+    if (pages <= 1) { el.innerHTML = ""; return; }
     var h = '<button ' + (page === 1 ? 'disabled' : '') + ' data-go="prev">‹</button>';
     for (var i = 1; i <= pages; i++) {
       h += '<button class="' + (i === page ? 'active' : '') + '" data-go="' + i + '">' + i + '</button>';
     }
     h += '<button ' + (page === pages ? 'disabled' : '') + ' data-go="next">›</button>';
-    var el = document.getElementById("paper-pager");
     el.innerHTML = h;
     el.querySelectorAll("button").forEach(function (b) {
       b.addEventListener("click", function () {
         var g = b.getAttribute("data-go");
         if (g === "prev") page = Math.max(1, page - 1);
-        else if (g === "next") page = Math.min(pages, page + 1);
+        else if (g === "next") page = page + 1;
         else page = parseInt(g, 10);
-        render();
+        render(true);
       });
     });
   }
 
-  render();
+  // 검색 입력 → 실시간 필터
+  var searchInput = document.getElementById("paper-search");
+  if (searchInput) {
+    searchInput.addEventListener("input", function () {
+      query = this.value.trim();
+      page = 1;
+      render(false);
+    });
+  }
+
+  render(false);
 })();
 </script>
 </body>
