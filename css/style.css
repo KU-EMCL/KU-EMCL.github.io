@@ -202,7 +202,7 @@ h1,h2,h3,h4 { font-weight: 600; line-height: 1.12; letter-spacing: -.01em; color
 /* stat band */
 .statband { background: #FFFFFF; color: var(--ink); }
 .statband .wrap { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; }
-.stat { padding: 36px 8px; text-align: center; position: relative; }
+.stat { padding: 24px 8px; text-align: center; position: relative; }
 .stat:not(:last-child)::after { content: ""; position: absolute; right: 0; top: 28px; bottom: 28px; width: 1px; background: var(--line); }
 .stat .num { font-family: var(--font-display); font-weight: 700; font-size: clamp(44px, 5vw, 76px); line-height: 1; color: var(--ink); }
 .stat .num span { color: var(--crimson); }
@@ -210,7 +210,7 @@ h1,h2,h3,h4 { font-weight: 600; line-height: 1.12; letter-spacing: -.01em; color
 
 /* PEB research center — centered; logo left of heading, Go right of heading */
 .peb-section { background: #FFFFFF; border-top: 1px solid var(--line); text-align: center; }
-.peb-section .wrap { padding-block: clamp(28px, 3.5vw, 48px); }
+.peb-section .wrap { padding-block: clamp(18px, 2.2vw, 30px); }
 .peb-head { display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; margin-bottom: 12px; }
 .peb-logo { height: clamp(28px, 3vw, 38px); width: auto; flex-shrink: 0; }
 .peb-section h2 { font-family: var(--font-display); font-weight: 700; color: var(--ink); font-size: clamp(22px, 2.4vw, 30px); margin: 0; line-height: 1.12; }
@@ -1013,4 +1013,3 @@ body.nav-open { overflow: hidden; }
       border: 1px solid var(--line); background: #fff; color: var(--ink-2); border-radius: 2px; transition: all .2s; }
     .pub-pager button.active, .pub-pager button:hover:not(:disabled) { background: var(--ink); color: #fff; border-color: var(--ink); }
     .pub-pager button:disabled { opacity: .4; cursor: not-allowed; }
-  
