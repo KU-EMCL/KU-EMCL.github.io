@@ -257,14 +257,6 @@ window.EMCL_ALUMNI = [
   "degree": "ms"
  },
  {
-  "name": "최성",
-  "year": "2019",
-  "aff": "University of California, Los Angeles 박사과정",
-  "email": "choisung0205@gmail.com",
-  "img": "alumni_32.jpg",
-  "degree": "ms"
- },
- {
   "name": "이수경",
   "year": "2018",
   "aff": "LG전자",
