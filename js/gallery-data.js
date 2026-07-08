@@ -1,5 +1,15 @@
 /* EMCL 갤러리 데이터 — gallery_posts.xlsx에서 자동 생성. 이미지: images/gXXXX.jpg */
 window.EMCL_GALLERY = [
+  {
+  "title": "졸업생 송별회",
+  "content": "2026년 07월 06일\n석사과정을 마친 신재현(MIT), 김성헌(UC Berkeley), 신주영(UC Berkeley) 연구원 송별회",
+  "year": 2026,
+  "images": [
+   "20260706_3.jpg",
+   "20260706_2.jpg",
+   "20260706_1.jpg"
+  ]
+ }, 
  {
   "title": "대한설비공학회 2026 하계학술발표대회 참석 및 우수발표상 수상",
   "content": "2026년 06월 27일\n2026 하계설비공학회(평창 알펜시아 리초트) 김동준 석사과정 우수발표상 수상",
