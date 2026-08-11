@@ -15,7 +15,7 @@ window.EMCL_PAPERS = [
 
   { year: 2026, authors: "Ronghuan Xu, Seonggon Kim, Seongheon Kim, Hyungseop Ahn, Hyoun Soo Kim, Yong Tae Kang",
     title: "Engineering self-assembled pellet adsorbents for energy-efﬁcient sub-ambient direct air capture",
-    journal: "Journal of Energy Chemistry (초저습 사사, IF=14.9, TOP 2.0%)", status: "Published" },
+    journal: "Journal of Energy Chemistry, (초저습, IF=14.9, TOP 2.0%, 119,734-742)", status: "Published" },
    
   { year: 2026, authors: "Joo Young Shin, Jin Un Byun, Seung Hwa Ryu, Hyun Soo Kim, Ronghuan Xu, Yong Tae Kang",
     title: "Low waste heat driven indoor CO2 capture via 3D-printed hybrid TPMS monoliths",
@@ -31,7 +31,7 @@ window.EMCL_PAPERS = [
    
 { year: 2026, authors: "Yun Mo Ko, Sunghun Lee, Yong Tae Kang",
     title: "A review of thermally regenerative batteries: From heat to electricity via concentration gradient",
-    journal: "Renewable and Sustainable Energy Reviews (IF=18.0, TOP 3.1%)", status: "Published" },
+    journal: "Renewable and Sustainable Energy Reviews, (IF=18.0, TOP 3.1%, 242, 117361)", status: "Published" },
    
   { year: 2026, authors: "Minjae Kim, Joo Young Shin, Jungwoo Huh, Gil Jung, Seonggon Kim, Sam S. Yoon, Yong Tae Kang",
     title: "Joule-heating regenerable CO2 capture filter: From material to system application",
