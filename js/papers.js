@@ -35,7 +35,7 @@ window.EMCL_PAPERS = [
    
   { year: 2026, authors: "Ronghuan Xu, Seonggon Kim, Seongheon Kim, Hyungseop Ahn, Hyoun Soo Kim, Yong Tae Kang",
     title: "Engineering self-assembled pellet adsorbents for energy-efﬁcient sub-ambient direct air capture",
-    journal: "Journal of Energy Chemistry, (초저습, IF=14.9, TOP 2.0%, 119,734-742)", status: "Published" },
+    journal: "Journal of Energy Chemistry, (초저습, IF=14.9, TOP 2.0%, 119, 734-742)", status: "Published" },
    
    { year: 2026, authors: "Minjae Kim, Hyungseop Ahn, Dae Young Jung, Yong Tae Kang",
     title: "Heat pump assisted direct air capture system for carbon enrichment in plant factory",
