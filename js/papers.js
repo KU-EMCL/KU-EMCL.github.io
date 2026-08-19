@@ -31,7 +31,7 @@ window.EMCL_PAPERS = [
 
 { year: 2026, authors: "Yun Mo Ko, Sunghun Lee, Yong Tae Kang",
     title: "A review of thermally regenerative batteries: From heat to electricity via concentration gradient",
-    journal: "Renewable and Sustainable Energy Reviews, (ERC, 중견 IF=18.0, TOP 3.1%, 242, 117361)", status: "Published" },
+    journal: "Renewable and Sustainable Energy Reviews, (ERC, 중견, IF=18.0, TOP 3.1%, 242, 117361)", status: "Published" },
    
   { year: 2026, authors: "Ronghuan Xu, Seonggon Kim, Seongheon Kim, Hyungseop Ahn, Hyoun Soo Kim, Yong Tae Kang",
     title: "Engineering self-assembled pellet adsorbents for energy-efﬁcient sub-ambient direct air capture",
