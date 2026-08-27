@@ -74,6 +74,39 @@ window.EMCL_GALLERY = [
   ]
  },
  {
+  "title": "2025 동계 대한기계학회",
+  "content": "2025년 12월\n정대영 박사과정, 안형섭 박사과정, 이성훈 박사과정",
+  "year": 2025,
+  "images": [
+   "mech_1.jpg",
+   "mech_2.jpg",
+   "mech_3.jpg",
+   "mech_4.jpg",
+   "mech_5.jpg"
+  ]
+ },
+ {
+  "title": "ICP2025 튀르키예 안탈리아 학회",
+  "content": "2025년 8월\n정대영 박사과정, 김현수 박사과정",
+  "year": 2025,
+  "images": [
+   "tur_1.jpg",
+   "tur_2.jpg",
+   "tur_3.jpg",
+   "tur_4.jpg",
+   "tur_5.jpg"
+  ]
+ },
+ {
+  "title": "삼성전자 공모전 수상",
+  "content": "2025년 8월\n정대영 박사과정, 고윤모 박사과정",
+  "year": 2025,
+  "images": [
+   "sam_1.jpg",
+   "sam_2.jpg"
+  ]
+ },
+ {
   "title": "2025 공과대학 우수대학원생상 수상 최형원",
   "content": "일자: 2025년 3월 19일\n공과대학 우수대학원생상 수상 최형원",
   "year": 2025,
