@@ -15,7 +15,7 @@ window.EMCL_PAPERS = [
 
  { year: 2026, authors: "Dae Young Jung, Gyeong Eun Kim, Minjae Kim, Soohwan Lim, Jaehwan Lee, Kyoungrock Kim, Yong Tae Kang",
     title: "Self-sustained thermal moisture pump for zero-electric indoor latent heat management",
-    journal: "Energy & Environmental Science (초저습, IF = 30.5 TOP 1.8%)", status: "submitted" },
+    journal: "Energy & Environmental Science (초저습, IF = 30.5, TOP 1.8%)", status: "submitted" },
 
    { year: 2026, authors: "Dae Young Jung, Sanghyeon Lee, Ja Ryong Koo, Hyungseop Ahn, Minjae Kim, Sukgoo Yoon, Yong Tae Kang",
     title: "Dynamic pressure swing operation of adsorption heat pump driven by 50 ℃ data center waste heat",
