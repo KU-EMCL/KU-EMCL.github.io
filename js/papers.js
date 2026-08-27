@@ -13,7 +13,15 @@ window.EMCL_PAPERS = [
 
   // ===== 2026 =====
 
-   { year: 2026, authors: "Joo Young Shin, Jin Un Byun, Seung Hwa Ryu, Hyun Soo Kim, Ronghuan Xu, Yong Tae Kang",
+ { year: 2026, authors: "Dae Young Jung, Gyeong Eun Kim, Minjae Kim, Soohwan Lim, Jaehwan Lee, Kyoungrock Kim, Yong Tae Kang",
+    title: "Self-sustained thermal moisture pump for zero-electric indoor latent heat management",
+    journal: "Energy & Environmental Science (초저습, IF = 30.5 TOP 1.8%)", status: "submitted" },
+
+   { year: 2026, authors: "Dae Young Jung, Sanghyeon Lee, Ja Ryong Koo, Hyungseop Ahn, Minjae Kim, Sukgoo Yoon, Yong Tae Kang",
+    title: "Dynamic pressure swing operation of adsorption heat pump driven by 50 ℃ data center waste heat",
+    journal: "Energy Conversion and Management (초저습, IF=10.9, TOP 2.0%)", status: "submitted" },
+   
+{ year: 2026, authors: "Joo Young Shin, Jin Un Byun, Seung Hwa Ryu, Hyun Soo Kim, Ronghuan Xu, Yong Tae Kang",
     title: "Low waste heat driven indoor CO2 capture via 3D-printed hybrid TPMS monoliths",
     journal: "Nature Communications (IF=15.7, TOP 4.78%)", status: "Under Review" },
 
