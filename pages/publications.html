@@ -42,6 +42,7 @@
     s = (s || "").toLowerCase();
     if (s.indexOf("review") > -1) return "review";
     if (s.indexOf("revision") > -1) return "revision";
+    if (s.indexOf("submit") > -1) return "submitted";
     return "published";
   }
   function boldKang(authors) {
