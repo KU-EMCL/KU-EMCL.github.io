@@ -1007,7 +1007,7 @@ body.nav-open { overflow: hidden; }
     .paper .pst { display: inline-block; font-family: var(--font-mono); font-size: 13px; letter-spacing: .04em; text-transform: uppercase;
       padding: 2px 8px; border-radius: 20px; margin-left: 4px; }
     .pst.published { background: var(--accent); color: #fff; }
-    .pst.review, .pst.revision { color: var(--gold); border: 1px solid var(--gold); }
+    .pst.review, .pst.revision, .pst.submitted { color: var(--gold); border: 1px solid var(--gold); }
     .pub-pager { display: flex; justify-content: center; flex-wrap: wrap; gap: 6px; margin-top: 40px; }
     .pub-pager button { font-family: var(--font-mono); font-size: 13px; min-width: 38px; height: 38px; padding: 0 10px;
       border: 1px solid var(--line); background: #fff; color: var(--ink-2); border-radius: 2px; transition: all .2s; }
