@@ -599,7 +599,7 @@ body.nav-open { overflow: hidden; }
 /* ---------- HOME — hero (background image) + recruit popup ---------- */
     .hero--bg{
       position:relative;
-      min-height:60vh;
+      min-height:62vh;
       display:flex; align-items:center; justify-content:center;
       text-align:center;
       overflow:hidden;
