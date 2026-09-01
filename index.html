@@ -108,60 +108,140 @@
 <script src="js/papers.js"></script>
 <script src="js/stats.js"></script>
 <script src="js/main.js"></script>
-  <!-- ===== 모집 공고 팝업 (시작) =====
-     사용법: 이 블록 전체를 팝업 띄우고 싶은 페이지의 </body> 바로 위에 붙여넣으세요.
-     내용 수정: 아래 .recruit-pop-body 안의 글을 고치면 됩니다. -->
-<div id="recruit-pop" class="recruit-pop" style="display:none;">
-  <div class="recruit-pop-dim"></div>
-  <div class="recruit-pop-card">
-    <button class="recruit-pop-x" id="recruit-pop-x" aria-label="닫기">&times;</button>
-    <div class="recruit-pop-body">
-      <h2>대학원생 · 학부연구생 모집</h2>
-      <p>에너지물질순환연구실(EMCL)에서 <strong>탄소중립 실현</strong>을 위한 친환경 에너지 시스템 연구에 함께할 신입 대학원생 및 학부연구생을 모집합니다.</p>
-      <ul>
-        <li>플러스에너지빌딩, CO₂ 포집·활용, 차세대 히트펌프, 열관리·에너지 하베스팅, 데이터센터 냉각 등 다양한 연구 분야</li>
-        <li>국제학술대회 발표, 해외 연구 교류 등 우수한 연구 환경 제공</li>
-      </ul>
-      <p>연구실에 관심 있는 학생은 메일로 연락 바랍니다.</p>
-      <p class="recruit-pop-contact">강용태 교수 · <a href="mailto:ytkang@korea.ac.kr">ytkang@korea.ac.kr</a></p>
-      <p class="recruit-pop-contact">이성훈 연구실장 · <a href="mailto:lsh7478854@korea.ac.kr">lsh7478854@korea.ac.kr</a></p>
-      <div class="recruit-pop-foot">
-        <button id="recruit-pop-never" class="recruit-pop-never">24시간 동안 보지 않기</button>
-        <button id="recruit-pop-close" class="recruit-pop-close">닫기</button>
+
+<!-- ===== 팝업 레이어 (모집공고 + 영상) 시작 =====
+     ▶ 영상 바꾸기: 아래 JS 의 VIDEO_ID 값만 교체하면 됩니다.
+     ▶ 다시 띄우기: JS 의 key 를 v2, v3 로 바꾸면 이미 닫은 사람에게도 다시 보입니다. -->
+<div id="pop-layer" class="pop-layer" style="display:none;">
+  <div class="pop-dim"></div>
+
+  <div class="pop-row">
+
+    <!-- ---------- 1) 모집 공고 ---------- -->
+    <div class="pop-card" id="pop-recruit" style="display:none;">
+      <button class="pop-x" data-close aria-label="닫기">&times;</button>
+      <div class="pop-body">
+        <h2>대학원생 · 학부연구생 모집</h2>
+        <p>에너지물질순환연구실(EMCL)에서 <strong>탄소중립 실현</strong>을 위한 친환경 에너지 시스템 연구에 함께할 신입 대학원생 및 학부연구생을 모집합니다.</p>
+        <ul>
+          <li>플러스에너지빌딩, CO₂ 포집·활용, 차세대 히트펌프, 열관리·에너지 하베스팅, 데이터센터 냉각 등 다양한 연구 분야</li>
+          <li>국제학술대회 발표, 해외 연구 교류 등 우수한 연구 환경 제공</li>
+        </ul>
+        <p>연구실에 관심 있는 학생은 메일로 연락 바랍니다.</p>
+        <p class="pop-contact">강용태 교수 · <a href="mailto:ytkang@korea.ac.kr">ytkang@korea.ac.kr</a></p>
+        <p class="pop-contact">이성훈 연구실장 · <a href="mailto:lsh7478854@korea.ac.kr">lsh7478854@korea.ac.kr</a></p>
+        <div class="pop-foot">
+          <button class="pop-btn-never" data-never>24시간 동안 보지 않기</button>
+          <button class="pop-btn-close" data-close>닫기</button>
+        </div>
       </div>
     </div>
+
+    <!-- ---------- 2) 언론 보도 영상 ---------- -->
+    <div class="pop-card pop-card--video" id="pop-video" style="display:none;">
+      <button class="pop-x" data-close aria-label="닫기">&times;</button>
+      <div class="pop-body">
+        <h2>언론 보도 · YTN 사이언스</h2>
+        <div class="pop-video-frame">
+          <iframe id="pop-video-frame"
+                  src=""
+                  title="공기 중 이산화탄소, 알갱이형 흡착제로 잡는다 / YTN 사이언스"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen></iframe>
+        </div>
+        <p><strong>영하 10도에서도 활용 가능한 펠렛형 이산화탄소 흡착제 개발</strong><br>
+          본 연구실의 연구 성과가 YTN 사이언스에 소개되었습니다.</p>
+        <p class="pop-contact">
+          <a href="https://www.youtube.com/watch?v=nU82iI2kT_o" target="_blank" rel="noopener">유튜브에서 보기 ↗</a>
+        </p>
+        <div class="pop-foot">
+          <button class="pop-btn-never" data-never>24시간 동안 보지 않기</button>
+          <button class="pop-btn-close" data-close>닫기</button>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>
 
-
 <script>
 (function () {
-  var KEY = "emcl_recruit_hidden_until_v1";  // 버전: 공고 내용 바꿔 다시 띄우려면 v2, v3로 변경
-  var HIDE_HOURS = 24;                        // 다시 안 보기를 누르면 숨길 시간(시간 단위)
+  /* ---------- 설정 ---------- */
 
-  // 저장된 "숨김 만료 시각"이 아직 안 지났으면 띄우지 않음
-  try {
-    var until = parseInt(localStorage.getItem(KEY) || "0", 10);
-    if (until && Date.now() < until) return;
-  } catch (e) {}
+  // 유튜브 주소 https://www.youtube.com/watch?v=nU82iI2kT_o 의 v= 뒤 부분
+  var VIDEO_ID = "nU82iI2kT_o";
 
-  var pop = document.getElementById("recruit-pop");
-  pop.style.display = "flex";
-  document.body.style.overflow = "hidden";
+  var HIDE_HOURS = 24;   // "보지 않기"를 눌렀을 때 숨길 시간
 
-  function close() { pop.style.display = "none"; document.body.style.overflow = ""; }
-  function hideForHours() {
-    try { localStorage.setItem(KEY, String(Date.now() + HIDE_HOURS * 60 * 60 * 1000)); } catch (e) {}
-    close();
+  var POPS = [
+    { id: "pop-recruit", key: "emcl_recruit_hidden_until_v1" },
+    { id: "pop-video",   key: "emcl_video_hidden_until_v1"   }
+  ];
+
+  /* ---------- 여기서부터는 수정하지 않아도 됩니다 ---------- */
+
+  var layer = document.getElementById("pop-layer");
+  var frame = document.getElementById("pop-video-frame");
+  if (!layer) return;
+
+  function hiddenUntil(key) {
+    try { return parseInt(localStorage.getItem(key) || "0", 10); } catch (e) { return 0; }
   }
 
-  document.getElementById("recruit-pop-x").addEventListener("click", close);
-  document.getElementById("recruit-pop-close").addEventListener("click", close);
-  document.getElementById("recruit-pop-never").addEventListener("click", hideForHours);
-  pop.querySelector(".recruit-pop-dim").addEventListener("click", close);
-  document.addEventListener("keydown", function (e) { if (e.key === "Escape") close(); });
+  // 숨김 기간이 지나지 않은 팝업은 건너뛴다
+  var shown = 0;
+  POPS.forEach(function (p) {
+    p.el = document.getElementById(p.id);
+    if (!p.el) return;
+    if (Date.now() < hiddenUntil(p.key)) return;
+    p.el.style.display = "block";
+    shown++;
+  });
+  if (!shown) return;
+
+  layer.style.display = "flex";
+  document.body.style.overflow = "hidden";
+
+  // 영상은 팝업이 실제로 뜰 때만 불러온다 (평소 페이지 로딩을 무겁게 하지 않도록)
+  var videoCard = document.getElementById("pop-video");
+  if (frame && videoCard && videoCard.style.display !== "none") {
+    frame.src = "https://www.youtube.com/embed/" + VIDEO_ID + "?rel=0";
+  }
+
+  // 닫을 때 src 를 비워야 소리가 계속 나지 않는다
+  function stopVideo() { if (frame) frame.src = ""; }
+
+  function closeAll() {
+    stopVideo();
+    layer.style.display = "none";
+    document.body.style.overflow = "";
+  }
+
+  function closeCard(p) {
+    p.el.style.display = "none";
+    if (p.el === videoCard) stopVideo();
+    var left = POPS.some(function (q) { return q.el && q.el.style.display !== "none"; });
+    if (!left) closeAll();
+  }
+
+  POPS.forEach(function (p) {
+    if (!p.el) return;
+    p.el.querySelectorAll("[data-close]").forEach(function (b) {
+      b.addEventListener("click", function () { closeCard(p); });
+    });
+    p.el.querySelectorAll("[data-never]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        try { localStorage.setItem(p.key, String(Date.now() + HIDE_HOURS * 3600 * 1000)); } catch (e) {}
+        closeCard(p);
+      });
+    });
+  });
+
+  layer.querySelector(".pop-dim").addEventListener("click", closeAll);
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") closeAll(); });
 })();
 </script>
-<!-- ===== 모집 공고 팝업 (끝) ===== -->
+<!-- ===== 팝업 레이어 (끝) ===== -->
 </body>
 </html>
