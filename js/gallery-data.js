@@ -1,5 +1,16 @@
 /* EMCL 갤러리 데이터 — gallery_posts.xlsx에서 자동 생성. 이미지: images/gXXXX.jpg */
 window.EMCL_GALLERY = [
+ {
+  "title": "YTN 사이언스 언론보도",
+  "content": "2026년 08월 31일\n서영환 박사과정 YTN 사이언스 언론보도",
+  "year": 2026,
+  "images": [
+   "ytn_1.png",
+   "ytn_2.png",
+   "ytn_3.png",
+   "ytn_4.png"
+  ]
+ }, 
   {
   "title": "졸업생 송별회",
   "content": "2026년 07월 06일\n석사과정을 마친 신재현(MIT), 김성헌(UC Berkeley), 신주영(UC Berkeley) 연구원 송별회",
