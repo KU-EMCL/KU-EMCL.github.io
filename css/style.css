@@ -1097,7 +1097,7 @@ body.nav-open { overflow: hidden; }
 @media (max-width: 960px) {
   .pop-layer { align-items: flex-start; overflow-y: auto; padding: 16px; }
   .pop-row { flex-direction: column; align-items: center; gap: 16px; }
-  .pop-card { width: 100%; max-width: 540px; max-height: none; }
+  .pop-card { flex: 0 0 auto; width: 100%; max-width: 540px; max-height: none; }
 }
 @media (max-width: 560px) {
   .pop-body { padding: 30px 22px 22px; }
