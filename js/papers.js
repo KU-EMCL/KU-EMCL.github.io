@@ -177,11 +177,11 @@ window.EMCL_PAPERS = [
 
   { year: 2024, authors: "Yun Mo Ko, Sunghun Lee, Seonggon Kim, Yong Tae Kang",
     title: "Thermally regenerative battery based on copper complexation with low-grade heat source temperature",
-    journal: "Journal of Energy Storage (중견, IF=8.9, TOP 16.8%)", status: "Published" },
+    journal: "Journal of Energy Storage, 101,  113869 (중견, IF=8.9, TOP 16.8%)", status: "Published" },
 
   { year: 2024, authors: "Ronghuan Xu, Seonggon Kim, Hyungseop Ahn, Hyoun Soo Kim, Minjae Kim, Yong Tae Kang",
     title: "Harnessing reaction-Controlled regime of amine-impregnated adsorbents via Tracking optimal adsorption Timing for enhancing CO2 capture efficiency",
-    journal: "Separation and Purification Technology (ERC, IF=8.1, TOP 8.5%)", status: "Published" },
+    journal: "Separation and Purification Technology, 356, 129922 (ERC, IF=8.1, TOP 8.5%)", status: "Published" },
 
   { year: 2024, authors: "Jinwoo Oh, Ukmin Han, Yujun Jung, Yong Tae Kang, Hoseong Lee",
     title: "Advancing waste heat potential assessment for net-zero emissions: A review of demand-based thermal energy systems",
@@ -209,7 +209,7 @@ window.EMCL_PAPERS = [
 
   { year: 2024, authors: "Seonggon Kim, Sunghun Lee, Jehyung Lee, Hyung Won Choi, Wonjoon Choi, Yong Tae Kang",
     title: "Passive isothermal film with self-switchable radiative cooling-driven water sorption layer for arid climate applications",
-    journal: "Nature Communications (ERC, IF=14.7, TOP 5.6%)", status: "Published" },
+    journal: "Nature Communications, 15, 1-11  (ERC, IF=14.7, TOP 5.6%)", status: "Published" },
 
   { year: 2024, authors: "Hyung Won Choi, Dae Young Jung, Yun Doseong, Min Soo Kim, Yong Tae Kang",
     title: "Sorption thermal battery with solar powered absorption chiller for various building cooling applications",
