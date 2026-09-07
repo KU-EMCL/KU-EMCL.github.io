@@ -96,31 +96,31 @@ window.EMCL_PAPERS = [
 
   { year: 2025, authors: "M. Khoshvaght-Aliabadi, P. Ghodrati, J.Y. Shin, Y.T. Kang",
     title: "Impact of coolant distribution design on server-level thermal management in data centers",
-    journal: "Energy (ERC, 브레인풀, IF=9.4, TOP 3.2%)", status: "Published" },
+    journal: "Energy, 330, 136936 (ERC, 브레인풀, IF=9.4, TOP 3.2%)", status: "Published" },
 
   { year: 2025, authors: "Yun Mo Ko, Sunghun Lee, Seonggon Kim, Yong Tae Kang",
     title: "Enhancing thermally regenerative battery performance by mitigating ammonia crossover",
-    journal: "Applied Energy (ERC, 중견, IF=10.1, TOP 6.2%)", status: "Published" },
+    journal: "Applied Energy, 396, 126337 (ERC, 중견, IF=10.1, TOP 6.2%)", status: "Published" },
 
   { year: 2025, authors: "Hyung Won Choi, Jinhee Jeong, Ja Ryong Koo, Young Kim, Yong Tae Kang",
     title: "Proof of concept for unsteady dynamic model of sorption thermal battery with H2O/LiBr and universal methodology to optimize energy storage density",
-    journal: "Energy (알키미스트, 대온도차, IF=9.0, TOP 3.2%)", status: "Published" },
+    journal: "Energy, 328, 136612 (알키미스트, 대온도차, IF=9.0, TOP 3.2%)", status: "Published" },
 
   { year: 2025, authors: "Shokoufeh Mizani, Morteza Khoshvaght-Aliabadi, Yong Tae Kang",
     title: "Enhancing thermal management in concentrated photovoltaic cells using supercritical carbon dioxide",
-    journal: "Applied Thermal Engineering (브레인풀, IF=6.1, TOP 5.2%)", status: "Published" },
+    journal: "Applied Thermal Engineering, 274, 126555 (브레인풀, IF=6.1, TOP 5.2%)", status: "Published" },
 
   { year: 2025, authors: "Ronghuan Xu, Seonggon Kim, Hyungseop Ahn, Seongheon Kim, Hyoun Soo Kim, Yong Tae Kang",
     title: "Carbon nanotube-assisted self-assembly of CO2 adsorbent pellets: Evaluating the optimum pellet diameter for enhanced mass transfer",
-    journal: "Chemical Engineering Journal (중견, IF=13.4, TOP 3.1%)", status: "Published" },
+    journal: "Chemical Engineering Journal, 513, 162718 (중견, IF=13.4, TOP 3.1%)", status: "Published" },
 
   { year: 2025, authors: "Morteza Khoshvaght-Aliabadi, Parvaneh Ghodrati, Yong Tae Kang",
     title: "Advanced Heat Sink Designs for High-Efficiency Thermal Management in Concentrated Photovoltaic Systems",
-    journal: "International Communications in Heat and Mass Transfer (브레인풀, ERC, IF=6.4, TOP 4.4%)", status: "Published" },
+    journal: "International Communications in Heat and Mass Transfer, 164, 108965 (브레인풀, ERC, IF=6.4, TOP 4.4%)", status: "Published" },
 
   { year: 2025, authors: "M Khoshvaght-Aliabadi, Z Chamanroy, A Feizabadi, YT Kang",
     title: "Optimal Thermal Management of High-Concentrator Photovoltaic Systems Using Heat Sinks with Various Cavity Configurations",
-    journal: "Energy Conversion and Management (브레인풀, IF=10.9, TOP 1.9%)", status: "Published" },
+    journal: "Energy Conversion and Management, 345, 120208 (브레인풀, IF=10.9, TOP 1.9%)", status: "Published" },
 
   { year: 2025, authors: "M Khoshvaght-Aliabadi, F Hojjati, YT Kang",
     title: "Utilizing Supercritical Carbon Dioxide/Propane Mixture for Efficient Heat Extraction from Salinity Gradient Solar Ponds",
@@ -128,7 +128,7 @@ window.EMCL_PAPERS = [
 
   { year: 2025, authors: "Dae Young Jung, Hyung Won Choi, Jin hee Jeong, Young Kim, Jin seong Kim, Jung kyu Choi, Yong Tae Kang",
     title: "Optimization of sorption thermal battery via breakthrough curve modeling and experimental validation",
-    journal: "Energy Conversion and Management (알키미스트, ERC, IF=9.9, TOP 1.5%)", status: "Published" },
+    journal: "Energy Conversion and Management, 343, 120252 (알키미스트, ERC, IF=9.9, TOP 1.5%)", status: "Published" },
 
   { year: 2025, authors: "Morteza Khoshvaght-Aliabadi, Parvaneh Ghodrati, Majid Salami, Yong Tae Kang",
     title: "Turbulent supercritical CO2 flow and cooling heat transfer in vertical alternating flattened tubes",
