@@ -148,11 +148,11 @@ window.EMCL_PAPERS = [
 
   { year: 2025, authors: "Gil Jeong, Je Hyung Lee, Hyung Won Choi, Hee Wong Park, Hyun Jong Kim, Beom Soo Seo, Simon Chin, Yong Tae Kang",
     title: "Deep Learning-Based Prediction of Oil Reversal in R290 Heat Pump Systems",
-    journal: "Energy (대온도차, LG, IF=9.0, TOP 3.2%)", status: "Published" },
+    journal: "Energy,320, 135255 (대온도차, LG, IF=9.0, TOP 3.2%)", status: "Published" },
 
   { year: 2025, authors: "Do Seong Yun, Hyung Won Choi, Wan Soo Lee, Seong Kook Park, Hyun Uk Cho, Yong Tae Kang",
     title: "A large temperature difference absorption heat pump system with multi-step heat exchangers for district heating applications",
-    journal: "Energy (대온도차, IF=9.0, TOP 3.2%)", status: "Published" },
+    journal: "Energy,328,136596 (대온도차, IF=9.0, TOP 3.2%)", status: "Published" },
 
   { year: 2025, authors: "Hyoun Soo Kim, Ronghuan Xu, Seonggon Kim, Minjae Kim, Youngdeog Koh, Kwangjoo Kim, Jino Kim, Hoon Wee, Yong Tae Kang",
     title: "Impact of partial regeneration method on the reduction of CO2 desorption energy",
