@@ -144,7 +144,7 @@ window.EMCL_PAPERS = [
 
   { year: 2025, authors: "Hyung Won Choi, Ja Ryong Koo, Yong Tae Kang",
     title: "Optimization of sorption thermal battery integrated with heat pump for plus energy building applications",
-    journal: "Energy Conversion and Management (알키미스트, 대온도차, IF=9.9, TOP 1.5%)", status: "Published" },
+    journal: "Energy Conversion and Management, 332, 119693 (알키미스트, 대온도차, IF=9.9, TOP 1.5%)", status: "Published" },
 
   { year: 2025, authors: "Gil Jeong, Je Hyung Lee, Hyung Won Choi, Hee Wong Park, Hyun Jong Kim, Beom Soo Seo, Simon Chin, Yong Tae Kang",
     title: "Deep Learning-Based Prediction of Oil Reversal in R290 Heat Pump Systems",
@@ -160,11 +160,11 @@ window.EMCL_PAPERS = [
 
   { year: 2025, authors: "Geun Jeong Lee, Jae Won Lee, Hyung Won Choi, Seonggon Kim, Yong Tae Kang",
     title: "CO2 thermochemical sorption battery driven by low temperature heat source for plus energy building application",
-    journal: "Applied Energy (ERC, 중견, IF=10.1, TOP 6.0%)", status: "Published" },
+    journal: "Applied Energy, 377, 124401 (ERC, 중견, IF=10.1, TOP 6.0%)", status: "Published" },
 
   { year: 2025, authors: "Minjae Kim, Hyoun Soo Kim, Seonggon Kim, Ronghwan Xu, Youngdeog Koh, Kwangjoo Kim, Min Kyung Lee, Jae Won Lee, Yong Tae Kang",
     title: "Indoor CO2 capture-driven energy load reduction and ventilation management for plus energy building applications",
-    journal: "Energy (ERC, IF=9.0, TOP 3.2%)", status: "Published" },
+    journal: "Energy, 326, 136259 (ERC, IF=9.0, TOP 3.2%)", status: "Published" },
 
   // ===== 2024 =====
   { year: 2024, authors: "Dongjoon Shin, Kihoon Ryu, Daehyun Kim, Eunho Choi, Seunghoon Chae, Yundong Lee, Yong Tae Kang, Sangtae Kim, Wonjoon Choi",
