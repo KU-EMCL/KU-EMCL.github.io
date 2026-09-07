@@ -39,39 +39,39 @@ window.EMCL_PAPERS = [
 
 { year: 2026, authors: "Yun Mo Ko, Sunghun Lee, Yong Tae Kang",
     title: "A review of thermally regenerative batteries: From heat to electricity via concentration gradient",
-    journal: "Renewable and Sustainable Energy Reviews, (ERC, 중견, IF=18.0, TOP 3.1%, 242, 117361)", status: "Published" },
+    journal: "Renewable and Sustainable Energy Reviews, 242, 117361 (ERC, 중견, IF=18.0, TOP 3.1% )", status: "Published" },
    
   { year: 2026, authors: "Ronghuan Xu, Seonggon Kim, Seongheon Kim, Hyungseop Ahn, Hyoun Soo Kim, Yong Tae Kang",
     title: "Engineering self-assembled pellet adsorbents for energy-efﬁcient sub-ambient direct air capture",
-    journal: "Journal of Energy Chemistry, (초저습, IF=14.9, TOP 2.0%, 119, 734-742)", status: "Published" },
+    journal: "Journal of Energy Chemistry,  119, 734-742 (초저습, IF=14.9, TOP 2.0% )", status: "Published" },
    
    { year: 2026, authors: "Minjae Kim, Hyungseop Ahn, Dae Young Jung, Yong Tae Kang",
     title: "Heat pump assisted direct air capture system for carbon enrichment in plant factory",
-    journal: "Energy (초저습, IF=9.4, TOP 3.2%, 352, 140941)", status: "Published" },
+    journal: "Energy, 352, 140941 (초저습, IF=9.4, TOP 3.2% )", status: "Published" },
 
   { year: 2026, authors: "Seongheon Kim, Seonggon Kim, Ronghuan Xu, Yong Tae Kang",
     title: "Sub-ambient transparent radiative liquid cooling system enabling simultaneous solar energy utilization",
-    journal: "Energy Conversion and Management (ERC, IF=10.9, TOP 2.0%, 356, 121410)", status: "Published" },
+    journal: "Energy Conversion and Management, 356, 121410 (ERC, IF=10.9, TOP 2.0% )", status: "Published" },
 
   { year: 2026, authors: "Hyung Won Choi, Dae Young Jung, Seonggon Kim, Ja Ryong Koo, Yeonsook Heo, Su Won Song, Yong Tae Kang",
     title: "A review on passive/active technologies towards plus energy building in urban area",
-    journal: "Renewable and Sustainable Energy Reviews (IF=16.3, TOP 2.4%, 235, 116973)", status: "Published" },
+    journal: "Renewable and Sustainable Energy Reviews, 235, 116973 (IF=16.3, TOP 2.4% )", status: "Published" },
 
   { year: 2026, authors: "Seongheon Kim, Seonggon Kim, Yong Tae Kang",
     title: "Flat-plate beam-splitting photovoltaic thermal systems for building energy management applications",
-    journal: "Energy Conversion and Management (ERC, IF=10.9, TOP 2%, 352, 121094)", status: "Published" },
+    journal: "Energy Conversion and Management, 352, 121094 (ERC, IF=10.9, TOP 2% )", status: "Published" },
 
   { year: 2026, authors: "M Khoshvaght-Aliabadi, P Ghodrati, A Feizabadi, Yong Tae Kang",
     title: "Analysis of coolant inlet/outlet layout and non-uniform cell spacing on thermal management of pouch battery packs",
-    journal: "Applied Thermal Engineering (중견, ERC, IF=6.9, TOP 4.7%, 291, 129927)", status: "Published" },
+    journal: "Applied Thermal Engineering, 291, 129927 (중견, ERC, IF=6.9, TOP 4.7% )", status: "Published" },
 
   { year: 2026, authors: "Hyungseop Ahn, Seonggon Kim, Ronghuan Xu, Minjae Kim, Yong Tae Kang",
     title: "Solar-driven integrated device for simultaneous direct air capture and atmospheric water harvesting",
-    journal: "Chemical Engineering Journal (ERC, 전기화학, IF=13.2, TOP 3.0%, 531, 174348)", status: "Published" },
+    journal: "Chemical Engineering Journal, 531, 174348 (ERC, 전기화학, IF=13.2, TOP 3.0% )", status: "Published" },
 
   { year: 2026, authors: "M. Khoshvaght-Aliabadi, A. Nasrolahzadeh, P. Ghodrati, Yong Tae Kang",
     title: "Oblique-fn heat sink design for uniform CPU cooling in immersion-cooled servers",
-    journal: "Applied Thermal Engineering (ERC, IF=6.9, TOP 4.7%, 288, 129628)", status: "Published" },
+    journal: "Applied Thermal Engineering, 288, 129628 (ERC, IF=6.9, TOP 4.7% )", status: "Published" },
 
   // ===== 2025 =====
   { year: 2025, authors: "Seonggon Kim, Jae Hyeon Shin, Gil Jeong, Dae Young Jung, Jiachen Li, Zhenyuan Xu, Ruzhu Wang, Yong Tae Kang",
@@ -148,7 +148,7 @@ window.EMCL_PAPERS = [
 
   { year: 2025, authors: "Gil Jeong, Je Hyung Lee, Hyung Won Choi, Hee Wong Park, Hyun Jong Kim, Beom Soo Seo, Simon Chin, Yong Tae Kang",
     title: "Deep Learning-Based Prediction of Oil Reversal in R290 Heat Pump Systems",
-    journal: "Energy,320, 135255 (대온도차, LG, IF=9.0, TOP 3.2%)", status: "Published" },
+    journal: "Energy, 320, 135255 (대온도차, LG, IF=9.0, TOP 3.2%)", status: "Published" },
 
   { year: 2025, authors: "Do Seong Yun, Hyung Won Choi, Wan Soo Lee, Seong Kook Park, Hyun Uk Cho, Yong Tae Kang",
     title: "A large temperature difference absorption heat pump system with multi-step heat exchangers for district heating applications",
