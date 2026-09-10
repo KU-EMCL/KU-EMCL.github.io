@@ -13,7 +13,8 @@ window.EMCL_PAPERS = [
 
   // ===== 2026 =====
 
- { year: 2026, authors: "Dae Young Jung, Gyeong Eun Kim, Minjae Kim, Soohwan Lim, Jaehwan Lee, Kyoungrock Kim, Yong Tae Kang",
+   
+   { year: 2026, authors: "Dae Young Jung, Gyeong Eun Kim, Minjae Kim, Soohwan Lim, Jaehwan Lee, Kyoungrock Kim, Yong Tae Kang",
     title: "Self-sustained thermal moisture pump for zero-electric indoor latent heat management",
     journal: "Energy & Environmental Science (초저습, IF = 30.5, TOP 1.8%)", status: "submitted" },
 
@@ -37,6 +38,10 @@ window.EMCL_PAPERS = [
     title: "Joule-heating regenerable CO2 capture filter: From material to system application",
     journal: "Nature Communications (IF=15.7, TOP 4.78%)", status: "In Revision" },
 
+{ year: 2026, authors: 
+    title: "Joule Heated Regenerable Carbon Dioxide Capture Filter for Demand Controlled Ventilation in Indoor Applications",
+    journal: "Nature communications (IF=15.7, TOP 4.78%)", status: "Accepted" },
+   
 { year: 2026, authors: "Yun Mo Ko, Sunghun Lee, Yong Tae Kang",
     title: "A review of thermally regenerative batteries: From heat to electricity via concentration gradient",
     journal: "Renewable and Sustainable Energy Reviews, 242, 117361 (ERC, 중견, IF=18.0, TOP 3.1% )", status: "Published" },
