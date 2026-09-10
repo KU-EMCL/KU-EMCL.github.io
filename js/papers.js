@@ -13,8 +13,7 @@ window.EMCL_PAPERS = [
 
   // ===== 2026 =====
 
-   
-   { year: 2026, authors: "Dae Young Jung, Gyeong Eun Kim, Minjae Kim, Soohwan Lim, Jaehwan Lee, Kyoungrock Kim, Yong Tae Kang",
+      { year: 2026, authors: "Dae Young Jung, Gyeong Eun Kim, Minjae Kim, Soohwan Lim, Jaehwan Lee, Kyoungrock Kim, Yong Tae Kang",
     title: "Self-sustained thermal moisture pump for zero-electric indoor latent heat management",
     journal: "Energy & Environmental Science (초저습, IF = 30.5, TOP 1.8%)", status: "submitted" },
 
