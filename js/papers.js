@@ -37,9 +37,6 @@ window.EMCL_PAPERS = [
     title: "Joule-heating regenerable CO2 capture filter: From material to system application",
     journal: "Nature Communications (IF=15.7, TOP 4.78%)", status: "In Revision" },
 
-{ year: 2026, authors: 
-    title: "Joule Heated Regenerable Carbon Dioxide Capture Filter for Demand Controlled Ventilation in Indoor Applications",
-    journal: "Nature communications (IF=15.7, TOP 4.78%)", status: "Accepted" },
    
 { year: 2026, authors: "Yun Mo Ko, Sunghun Lee, Yong Tae Kang",
     title: "A review of thermally regenerative batteries: From heat to electricity via concentration gradient",
