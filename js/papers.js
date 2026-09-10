@@ -70,7 +70,7 @@ window.EMCL_PAPERS = [
     journal: "Chemical Engineering Journal, 531, 174348 (ERC, 전기화학, IF=13.2, TOP 3.0% )", status: "Published" },
 
   { year: 2026, authors: "M. Khoshvaght-Aliabadi, A. Nasrolahzadeh, P. Ghodrati, Yong Tae Kang",
-    title: "Oblique-fn heat sink design for uniform CPU cooling in immersion-cooled servers",
+    title: "Oblique-fin heat sink design for uniform CPU cooling in immersion-cooled servers",
     journal: "Applied Thermal Engineering, 288, 129628 (ERC, IF=6.9, TOP 4.7% )", status: "Published" },
 
   // ===== 2025 =====
