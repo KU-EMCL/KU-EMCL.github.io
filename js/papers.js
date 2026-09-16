@@ -33,9 +33,9 @@ window.EMCL_PAPERS = [
     title: "Novel Design of Heat Sinks for Enhanced Chip-Level Cooling in Data Center Servers",
     journal: "Energy (IF=9.4, TOP 3.2%)", status: "Under Review" },
 
- { year: 2026, authors: "Minjae Kim, Joo Young Shin, Jungwoo Huh, Gil Jung, Seonggon Kim, Sam S. Yoon, Yong Tae Kang",
-    title: "Joule-heating regenerable CO2 capture filter: From material to system application",
-    journal: "Nature Communications (IF=15.7, TOP 4.78%)", status: "In Revision" },
+ { year: 2026, authors: "Minjae Kim, Joo Young Shin, Jungwoo Huh, Gil Jung, Seonggon Kim, Bora Kim, Jae Won Lee, Hoon Wee, Youngdeog Koh, Sam S. Yoon, Yong Tae Kang",
+    title: "Joule Heated Regenerable Carbon Dioxide Capture Filter for Demand Controlled Ventilation in Indoor Applications",
+    journal: "Nature Communications (IF=15.7, TOP 4.78%)", status: "Accepted" },
 
    
 { year: 2026, authors: "Yun Mo Ko, Sunghun Lee, Yong Tae Kang",
