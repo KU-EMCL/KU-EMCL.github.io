@@ -11,7 +11,7 @@ window.EMCL_GALLERY = [
   ]
  },
   {
-  "title": "YTN 사이언스 언론보도",
+  "title": "CHPC 학회 참석",
   "content": "2026년 10월 20일\n중국 상하이 CHPC 학회 정대영 박사과정, 이상현,이평세 석사과정",
   "year": 2026,
   "images": [
