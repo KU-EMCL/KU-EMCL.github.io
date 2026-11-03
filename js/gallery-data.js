@@ -1,5 +1,29 @@
 /* EMCL 갤러리 데이터 — gallery_posts.xlsx에서 자동 생성. 이미지: images/gXXXX.jpg */
 window.EMCL_GALLERY = [
+  {
+  "title": "초저습 드라이룸 워크샵",
+  "content": "2026년 10월 29일~30일\n초저습 드라이룸 워크샵 김민재 박사, 정대영 박사과정, 김동준 석사과정",
+  "year": 2026,
+  "images": [
+   "dry_1.jpg",
+   "dry_2.jpg",
+   "dry_3.jpg"
+  ]
+ },
+  {
+  "title": "YTN 사이언스 언론보도",
+  "content": "2026년 10월 20일\n중국 상하이 CHPC 학회 정대영 박사과정, 이상현,이평세 석사과정",
+  "year": 2026,
+  "images": [
+   "chpc_0.jpg",
+   "chpc_1.jpg",
+   "chpc_2.jpg",
+   "chpc_3.jpg",
+   "chpc_4.jpg",
+   "chpc_5.jpg",
+   "chpc_6.jpg"
+  ]
+ },
  {
   "title": "YTN 사이언스 언론보도",
   "content": "2026년 08월 31일\n서영환 박사과정 YTN 사이언스 언론보도",
