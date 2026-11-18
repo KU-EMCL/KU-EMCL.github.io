@@ -35,7 +35,7 @@ window.EMCL_PAPERS = [
 
  { year: 2026, authors: "Minjae Kim, Joo Young Shin, Jungwoo Huh, Gil Jung, Seonggon Kim, Bora Kim, Jae Won Lee, Hoon Wee, Youngdeog Koh, Sam S. Yoon, Yong Tae Kang",
     title: "Joule Heated Regenerable Carbon Dioxide Capture Filter for Demand Controlled Ventilation in Indoor Applications",
-    journal: "Nature Communications (IF=15.7, TOP 4.78%)", status: "Accepted" },
+    journal: "Nature Communications (IF=15.7, TOP 4.78%)", status: "Published" },
    
    { year: 2026, authors: "Parvaneh Ghodrati, Morteza Khoshvaght-Aliabadi, Yong Tae Kang",
     title: "Geometry-engineered heat sinks for enhanced cooling performance in immersion-cooled servers",
