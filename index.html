@@ -138,29 +138,47 @@
     </div>
 
     <!-- ---------- 2) 언론 보도 영상 ---------- -->
-    <div class="pop-card pop-card--video" id="pop-video" style="display:none;">
-      <button class="pop-x" data-close aria-label="닫기">&times;</button>
-      <div class="pop-body">
-        <h2>언론 보도 · YTN 사이언스</h2>
-        <div class="pop-video-frame">
-          <iframe id="pop-video-frame"
-                  src=""
-                  title="공기 중 이산화탄소, 알갱이형 흡착제로 잡는다 / YTN 사이언스"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerpolicy="strict-origin-when-cross-origin"
-                  allowfullscreen></iframe>
-        </div>
-        <p><strong>영하 10도에서도 활용 가능한 펠렛형 이산화탄소 흡착제 개발</strong><br>
-          본 연구실의 연구 성과가 YTN 사이언스에 소개되었습니다.</p>
-        <p class="pop-contact">
-          <a href="https://www.youtube.com/watch?v=nU82iI2kT_o" target="_blank" rel="noopener">유튜브에서 보기 ↗</a>
-        </p>
-        <div class="pop-foot">
-          <button class="pop-btn-never" data-never>24시간 동안 보지 않기</button>
-          <button class="pop-btn-close" data-close>닫기</button>
-        </div>
-      </div>
+<div class="pop-card pop-card--video pop-card--paper"
+     id="pop-video"
+     style="display:none;"
+     role="dialog"
+     aria-labelledby="pop-paper-heading">
+
+  <button type="button" class="pop-x" data-close aria-label="닫기">&times;</button>
+
+  <div class="pop-body">
+    <h2 id="pop-paper-heading">Nature Communications 게재</h2>
+
+    <div class="paper-highlight">
+      <time datetime="2026-10-03">2026년 10월 3일</time>
+      <h3>전기로 재생하는<br>실내 CO₂ 포집 필터 개발</h3>
+      <p>
+        탄소섬유에 전류를 흘려 필터를 직접 가열하는 방식으로,
+        100&nbsp;°C에서 15분 이내에 필터를 재생했습니다.
+      </p>
     </div>
+
+    <p class="paper-summary">
+      김민재 박사와 신주영 연구원이 공동 제1저자로 참여한 이번 연구에서는
+      CO₂ 포집 필터를 환기 시스템에 결합했습니다.
+      시뮬레이션에서는 실내 CO₂ 농도를 600&nbsp;ppm으로 유지하면서
+      기존 방식 대비 환기 관련 에너지 부하를 <strong>14.9~25%</strong> 줄였습니다.
+    </p>
+
+    <p class="pop-contact">
+      <a href="https://doi.org/10.1038/s41467-026-78257-7"
+         target="_blank" rel="noopener"
+         aria-label="Nature Communications에서 논문 원문 보기 (새 창)">
+        논문 원문 보기 ↗
+      </a>
+    </p>
+
+    <div class="pop-foot">
+      <button type="button" class="pop-btn-never" data-never>24시간 동안 보지 않기</button>
+      <button type="button" class="pop-btn-close" data-close>닫기</button>
+    </div>
+  </div>
+</div>
 
   </div>
 </div>
