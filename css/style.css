@@ -1102,3 +1102,36 @@ body.nav-open { overflow: hidden; }
 @media (max-width: 560px) {
   .pop-body { padding: 30px 22px 22px; }
 }
+.pop-card--paper .paper-highlight {
+  margin: 16px 0;
+  padding: clamp(20px, 5vw, 32px);
+  border-top: 3px solid #8b1538;
+  border-radius: 3px;
+  background: #f7f3f1;
+  color: #261f20;
+  word-break: keep-all;
+}
+
+.pop-card--paper .paper-highlight time {
+  color: #705c62;
+  font-size: 0.85rem;
+}
+
+.pop-card--paper .paper-highlight h3 {
+  margin: 12px 0;
+  font-size: clamp(1.4rem, 4.5vw, 2rem);
+  line-height: 1.3;
+  letter-spacing: -0.04em;
+}
+
+.pop-card--paper .paper-highlight p,
+.pop-card--paper .paper-summary {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  word-break: keep-all;
+}
+
+.pop-card--paper .paper-summary strong {
+  color: #8b1538;
+}
