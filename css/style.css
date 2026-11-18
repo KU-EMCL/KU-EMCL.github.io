@@ -1135,3 +1135,4 @@ body.nav-open { overflow: hidden; }
 .pop-card--paper .paper-summary strong {
   color: #8b1538;
 }
+#pop-video { display: none !important; }
